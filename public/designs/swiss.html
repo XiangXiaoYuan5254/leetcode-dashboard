@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>风格预览 · 瑞士极简</title>
+<style>
+:root{
+  --bg:#fafafa; --ink:#0a0a0a; --dim:#666; --faint:#a3a3a3;
+  --line:#e5e5e5; --line2:#111;
+  --accent:#ff6a00;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Helvetica Neue",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:48px 32px 100px}
+header{border-bottom:4px solid var(--ink);padding-bottom:22px;display:flex;
+  justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+h1{font-size:52px;font-weight:800;margin:0;letter-spacing:-2.5px;line-height:.95}
+h1 span{color:var(--accent)}
+.meta-top{text-align:right;font-size:12px;color:var(--dim);line-height:1.8;
+  text-transform:uppercase;letter-spacing:1.5px}
+.meta-top b{color:var(--ink)}
+.note{margin-top:16px;font-size:12.5px;color:var(--faint);letter-spacing:.5px}
+.note b{color:var(--accent);font-weight:700}
+.section{margin-top:56px}
+.sec{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:0}
+.sec .no{font-size:12px;font-weight:800;color:var(--accent);letter-spacing:1px}
+.sec h2{font-size:15px;font-weight:800;margin:0;letter-spacing:3px;text-transform:uppercase}
+.sec .en{margin-left:auto;font-size:11px;color:var(--faint);letter-spacing:2px;text-transform:uppercase}
+/* hero */
+.hero{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line)}
+@media(max-width:860px){.hero{grid-template-columns:repeat(2,1fr)}}
+.cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 22px 30px}
+.cell .k{font-size:11px;letter-spacing:2px;color:var(--dim);text-transform:uppercase}
+.cell .v{font-size:64px;font-weight:800;letter-spacing:-3px;line-height:1;margin-top:14px;font-variant-numeric:tabular-nums}
+.cell .v small{font-size:18px;letter-spacing:0;font-weight:600;color:var(--dim)}
+.cell .m{font-size:12px;color:var(--faint);margin-top:10px}
+.cell.hl .v{color:var(--accent)}
+/* plan */
+.plan{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);border-left:1px solid var(--line)}
+@media(max-width:860px){.plan{grid-template-columns:1fr}}
+.plan>div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 26px}
+.giant{font-size:120px;font-weight:800;letter-spacing:-6px;line-height:.9;color:var(--accent);font-variant-numeric:tabular-nums}
+.giant small{font-size:40px;letter-spacing:-1px}
+.plan .cap{font-size:11px;letter-spacing:2px;color:var(--dim);text-transform:uppercase}
+.plan .name{font-size:20px;font-weight:800;margin-top:10px;letter-spacing:-.5px}
+.plan .frac{font-size:13px;color:var(--dim);margin-top:6px}
+.rule{height:10px;background:var(--line);margin-top:22px;position:relative}
+.rule i{position:absolute;inset:0;width:58%;background:var(--ink)}
+.glist{display:flex;flex-direction:column}
+.g{display:flex;align-items:center;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.g:last-child{border-bottom:0}
+.g .n{min-width:104px;font-weight:700}
+.g .n.ok{color:var(--accent)}
+.g .b{flex:1;height:6px;background:var(--line)}
+.g .b i{display:block;height:100%;background:var(--ink)}
+.g.ok .b i{background:var(--accent)}
+.g .f{min-width:48px;text-align:right;color:var(--dim);font-variant-numeric:tabular-nums;font-size:12px}
+.g.lock{color:var(--faint)}
+.g.lock .n{color:var(--faint);font-weight:500}
+/* calendar strip */
+.cal{border-left:1px solid var(--line)}
+.days{display:grid;grid-template-columns:repeat(14,1fr)}
+.d{border-right:1px solid var(--line);border-bottom:1px solid var(--line);aspect-ratio:1;
+  display:flex;flex-direction:column;justify-content:space-between;padding:8px;font-size:11px;
+  color:var(--faint);font-variant-numeric:tabular-nums}
+.d b{font-size:13px;color:var(--ink);font-weight:700}
+.d .dotv{width:100%;display:flex;gap:2px}
+.d .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.d.today{background:var(--ink)}
+.d.today b,.d.today{color:#fff}
+.cal-cap{font-size:11.5px;color:var(--faint);padding:12px 2px;letter-spacing:1px}
+/* tags */
+.tags{border-left:1px solid var(--line)}
+.t{display:grid;grid-template-columns:120px 1fr 60px;align-items:center;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.t .n{padding:14px 18px;font-weight:700;font-size:13.5px;border-right:1px solid var(--line)}
+.t .bwrap{align-self:stretch;position:relative}
+.t .bwrap i{position:absolute;top:0;bottom:0;left:0;background:var(--accent);opacity:.9}
+.t .f{text-align:right;padding:0 18px;font-weight:800;font-size:16px;font-variant-numeric:tabular-nums}
+/* table */
+.tbl{border-left:1px solid var(--line)}
+.row{display:grid;grid-template-columns:70px 1fr 80px 60px 100px;align-items:center;
+  border-bottom:1px solid var(--line);border-right:1px solid var(--line);font-size:13.5px}
+.row.h{font-size:10.5px;letter-spacing:2px;color:var(--faint);text-transform:uppercase;border-bottom:1px solid var(--ink)}
+.row>span{padding:13px 16px}
+.row .id{color:var(--faint);font-variant-numeric:tabular-nums}
+.row .t2{font-weight:700}
+.row .df{font-size:11px;font-weight:700}
+.row .df.e{color:#0a8f6c}.row .df.m{color:#c48a00}
+.row .c{font-weight:800;font-size:16px;color:var(--accent);font-variant-numeric:tabular-nums}
+.row .dt{color:var(--dim);font-size:12px;text-align:right;font-variant-numeric:tabular-nums}
+footer{margin-top:70px;border-top:4px solid var(--ink);padding-top:16px;display:flex;
+  justify-content:space-between;font-size:11px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>力扣刷题<br>年报<span>.</span>2026</h1>
+    </div>
+    <div class="meta-top">
+      <div>USER — <b>wu-si-san</b></div>
+      <div>SYNCED — 2026·07·07</div>
+      <div>TOTAL SOLVED — <b>238</b></div>
+    </div>
+  </header>
+  <div class="note"><b>风格预览 · 风格四「瑞士极简」</b> — 网格 + 细线 + 大号数字 + 单一强调色，冷静克制，信息密度最高</div>
+
+  <div class="section">
+    <div class="sec"><span class="no">01</span><h2>年度指标</h2><span class="en">Key Metrics</span></div>
+    <div class="hero">
+      <div class="cell hl"><div class="k">独立题目</div><div class="v">25<small>题</small></div><div class="m">新题 6 · 复习 19</div></div>
+      <div class="cell"><div class="k">完成次数</div><div class="v">34<small>次</small></div><div class="m">同题同日去重</div></div>
+      <div class="cell"><div class="k">活跃天数</div><div class="v">14<small>天</small></div><div class="m">日均 2.4 题</div></div>
+      <div class="cell"><div class="k">最长连续</div><div class="v">7<small>天</small></div><div class="m">当前 0 天</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec"><span class="no">02</span><h2>当前题单</h2><span class="en">Study Plan</span></div>
+    <div class="plan">
+      <div>
+        <div class="cap">★ 编程基础 0 到 1</div>
+        <div class="giant">58<small>%</small></div>
+        <div class="frac">19 / 33 题 · 会员章节不计入</div>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="glist">
+        <div class="g"><span class="n">基础实现</span><span class="b"><i style="width:91%"></i></span><span class="f">10 / 11</span></div>
+        <div class="g ok"><span class="n ok">内置函数 ✓</span><span class="b"><i style="width:100%"></i></span><span class="f">2 / 2</span></div>
+        <div class="g"><span class="n">模拟</span><span class="b"><i style="width:75%"></i></span><span class="f">3 / 4</span></div>
+        <div class="g"><span class="n">矩阵</span><span class="b"><i style="width:50%"></i></span><span class="f">2 / 4</span></div>
+        <div class="g"><span class="n">数学</span><span class="b"><i style="width:0"></i></span><span class="f">0 / 8</span></div>
+        <div class="g lock"><span class="n">二叉树 — 会员章节</span><span class="b"></span><span class="f">— / 4</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec"><span class="no">03</span><h2>七月 · 近十四日</h2><span class="en">Daily Log</span></div>
+    <div class="cal">
+      <div class="days">
+        <div class="d"><b>24</b></div><div class="d"><b>25</b></div><div class="d"><b>26</b></div><div class="d"><b>27</b></div>
+        <div class="d"><b>28</b></div><div class="d"><b>29</b></div><div class="d"><b>30</b></div>
+        <div class="d"><b>1</b><span class="dotv"><span class="dot"></span></span></div>
+        <div class="d"><b>2</b><span class="dotv"><span class="dot"></span><span class="dot"></span></span></div>
+        <div class="d"><b>3</b></div>
+        <div class="d"><b>4</b><span class="dotv"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div>
+        <div class="d"><b>5</b></div><div class="d"><b>6</b></div>
+        <div class="d today"><b>7</b>今天</div>
+      </div>
+      <div class="cal-cap">● 一点 = 完成一题 · 本月 6 次 / 3 个活跃日</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec"><span class="no">04</span><h2>题型 × 明细</h2><span class="en">Tags &amp; Records</span></div>
+    <div class="tags" style="margin-bottom:40px">
+      <div class="t"><span class="n">数组</span><span class="bwrap"><i style="width:100%"></i></span><span class="f">11</span></div>
+      <div class="t"><span class="n">字符串</span><span class="bwrap"><i style="width:100%"></i></span><span class="f">11</span></div>
+      <div class="t"><span class="n">哈希表</span><span class="bwrap"><i style="width:36%"></i></span><span class="f">4</span></div>
+      <div class="t"><span class="n">模拟</span><span class="bwrap"><i style="width:36%"></i></span><span class="f">4</span></div>
+    </div>
+    <div class="tbl">
+      <div class="row h"><span>题号</span><span>标题</span><span>难度</span><span>次数</span><span style="text-align:right">最近完成</span></div>
+      <div class="row"><span class="id">1275</span><span class="t2">找出井字棋的获胜者</span><span class="df e">简单</span><span class="c">2</span><span class="dt">2026-07-04</span></div>
+      <div class="row"><span class="id">657</span><span class="t2">机器人能否返回原点</span><span class="df e">简单</span><span class="c">1</span><span class="dt">2026-07-04</span></div>
+      <div class="row"><span class="id">709</span><span class="t2">转换成小写字母</span><span class="df e">简单</span><span class="c">1</span><span class="dt">2026-07-02</span></div>
+      <div class="row"><span class="id">146</span><span class="t2">LRU 缓存</span><span class="df m">中等</span><span class="c">1</span><span class="dt">2026-06-21</span></div>
+    </div>
+  </div>
+
+  <footer><span>风格预览 4 / 4 — Swiss Editorial</span><span>Static Mock · No Interaction</span></footer>
+</div>
+</body>
+</html>

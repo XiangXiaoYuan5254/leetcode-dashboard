@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>力扣刷题统计</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="brutal.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="title">
+      <h1>力扣刷题统计<span class="dot">.</span></h1>
+      <p id="subline">每一次提交，都算数</p>
+    </div>
+    <div class="hctrl">
+      <span id="userBadge" class="badge hidden"></span>
+      <span id="demoBadge" class="badge demo hidden">演示数据</span>
+      <select id="yearSel" class="iconbtn" title="选择统计年份"></select>
+      <button id="syncBtn" class="iconbtn primary">⟳ 同步数据</button>
+      <button id="skinBtn" class="iconbtn" title="切换界面风格（玻璃拟态 / 新粗野主义）">◱ 风格</button>
+      <button id="themeBtn" class="iconbtn sq" title="切换日间 / 夜间模式"><span id="themeIcon">🌙</span></button>
+      <button id="settingsBtn" class="iconbtn sq" title="登录力扣账号">⚙</button>
+    </div>
+  </header>
+  <div id="syncBar" class="sync-bar hidden"></div>
+
+  <!-- 空状态 -->
+  <div id="emptyState" class="empty-state hidden">
+    <div class="empty-card card">
+      <div class="empty-icon">📊</div>
+      <h2>还没有数据</h2>
+      <p>两步开始使用：</p>
+      <ol>
+        <li>点击 <b>⚙</b> 登录你的力扣账号（或粘贴 Cookie）</li>
+        <li>点击 <b>⟳ 同步数据</b>，拉取你的全部提交记录</li>
+      </ol>
+      <div class="empty-actions">
+        <button id="emptyLoginBtn" class="iconbtn primary">登录力扣账号</button>
+        <button id="demoBtn" class="iconbtn">先看演示效果</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="dashboard" class="hidden">
+    <!-- 首屏：通过率环 + KPI -->
+    <div class="hero">
+      <div class="card ring-card" id="ringCard"></div>
+      <div class="kpis" id="kpis"></div>
+    </div>
+
+    <!-- 题单进度 -->
+    <div class="section" id="plansSection">
+      <div class="section-head">
+        <h2>题单进度</h2>
+        <span class="sub">按全部年份的完成记录计算 · 同步数据时自动更新</span>
+        <span class="spacer"></span>
+        <button id="addPlanBtn" class="iconbtn">＋ 添加题单</button>
+      </div>
+      <div class="plans-grid" id="plansGrid"></div>
+    </div>
+
+    <!-- 难度 / 月度趋势 -->
+    <div class="grid2 section" style="margin-top:28px">
+      <div>
+        <div class="section-head"><h2>难度分布</h2><span class="sub">按不同题目去重</span></div>
+        <div class="card chart-card"><div id="difficultyChart" class="chart" style="height:290px"></div></div>
+      </div>
+      <div>
+        <div class="section-head"><h2>月度趋势</h2></div>
+        <div class="card chart-card"><div id="monthChart" class="chart" style="height:290px"></div></div>
+      </div>
+    </div>
+
+    <!-- 题型 -->
+    <div class="section">
+      <div class="section-head"><h2>题型分布</h2><span class="sub">每道题按其标签分别计入 · 前 15 类</span></div>
+      <div class="card chart-card"><div id="tagChart" class="chart" style="height:420px"></div></div>
+    </div>
+
+    <!-- 明细表 -->
+    <div class="section">
+      <div class="section-head">
+        <h2>题目完成明细</h2>
+        <span class="sub">每题完成次数 · 同一天多次提交算一次 · 点击标题跳转力扣</span>
+      </div>
+      <div class="card table-card">
+        <div class="toolbar">
+          <input id="tableSearch" type="search" placeholder="搜索题号 / 标题 / 标签…">
+          <span id="tableCount" class="count"></span>
+        </div>
+        <div class="table-wrap">
+          <table id="problemTable">
+            <thead>
+              <tr>
+                <th data-sort="fid">题号</th>
+                <th>标题</th>
+                <th data-sort="difficulty">难度</th>
+                <th>标签</th>
+                <th data-sort="count" class="sorted">完成次数 ▾</th>
+                <th data-sort="last">最近完成</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 年历墙 -->
+    <div class="section">
+      <div class="section-head">
+        <h2>每日刷题日历</h2>
+        <span class="sub">每天完成的不同题目数 · 同题同日多次提交计 1 次 · 刷得越多颜色越深</span>
+        <span class="spacer"></span>
+        <div class="seg" id="calViewSeg">
+          <button data-v="year" class="on">按年</button>
+          <button data-v="month">按月</button>
+        </div>
+        <div class="cal-year">
+          <button id="calPrev">‹</button><b id="calYearLabel"></b><button id="calNext">›</button>
+        </div>
+      </div>
+      <div class="card cal-card">
+        <div id="calBody"></div>
+        <div class="cal-foot">
+          <span id="calSummary"></span>
+          <span class="cal-scale" id="calScale"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- 登录弹窗 -->
+<dialog id="settingsDialog">
+  <h2>登录力扣（leetcode.cn）</h2>
+  <div class="seg" id="authSeg">
+    <button data-m="pwd" class="on">账号密码</button>
+    <button data-m="cookie">Cookie（备用）</button>
+  </div>
+
+  <div id="pwdPane" class="auth-pane">
+    <label for="loginUser">用户名或邮箱</label>
+    <input id="loginUser" autocomplete="username" placeholder="力扣用户名 / 注册邮箱">
+    <label for="loginPass">密码</label>
+    <input id="loginPass" type="password" autocomplete="current-password" placeholder="密码">
+    <p class="dialog-tip">密码只用于向力扣换取登录会话，<b>不会被保存</b>；本机只保留会话 Cookie（data/ 目录）。若力扣要求验证码导致登录失败，请切换到 Cookie 方式。<br>暂不支持手机验证码登录：力扣发送短信前有人机验证，本地程序无法代跑。</p>
+  </div>
+
+  <div id="cookiePane" class="auth-pane hidden">
+    <label for="cookieInput">Cookie</label>
+    <textarea id="cookieInput" rows="5" placeholder="csrftoken=xxx; LEETCODE_SESSION=yyy; ..."></textarea>
+    <p class="dialog-tip">
+      浏览器登录 <a href="https://leetcode.cn" target="_blank">leetcode.cn</a> 后，按 <b>F12</b> →
+      <b>网络（Network）</b> → 刷新页面 → 点任意 <code>leetcode.cn</code> 请求 →
+      复制请求标头里完整的 <b>Cookie</b> 值。Cookie 相当于登录凭证，请勿外传。
+    </p>
+  </div>
+
+  <div id="authMsg" class="dialog-msg"></div>
+  <div class="dialog-actions">
+    <button id="authCancelBtn" class="iconbtn">取消</button>
+    <button id="authOkBtn" class="iconbtn primary">登录</button>
+  </div>
+</dialog>
+
+<!-- 添加题单弹窗 -->
+<dialog id="planDialog">
+  <h2>添加题单</h2>
+  <p class="dialog-tip" style="margin-top:0">常用题单，点击直接添加：</p>
+  <div class="preset-chips" id="planPresets"></div>
+  <div class="auth-pane">
+    <label for="planInput">或粘贴题单链接 / slug</label>
+    <input id="planInput" placeholder="https://leetcode.cn/studyplan/top-interview-150/">
+  </div>
+  <div id="planMsg" class="dialog-msg"></div>
+  <div class="dialog-actions">
+    <button id="planCancelBtn" class="iconbtn">取消</button>
+    <button id="planOkBtn" class="iconbtn primary">添加</button>
+  </div>
+</dialog>
+
+<div id="chartTip" class="tip"></div>
+<div id="toast" class="toast"></div>
+
+<script src="vendor/echarts.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

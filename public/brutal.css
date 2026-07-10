@@ -1,0 +1,231 @@
+/* ============================================================
+   新粗野主义皮肤（Neo-Brutalism）
+   通过 html[data-skin="brutal"] 整体覆盖默认玻璃拟态风格。
+   两种主题：日间 = 米纸底 + 彩色色块；夜间 = 墨底 + 米色描边。
+   ============================================================ */
+
+/* ---------- 变量：日间（米纸） ---------- */
+html[data-skin="brutal"]{
+  --bg:#f2efe6;
+  --surface:#fffdf5;
+  --surface2:#f3efdf;
+  --border:#111111;
+  --border-strong:#111111;
+  --txt:#111111; --txt-dim:#3d3a32; --txt-faint:#736e60;
+  --heat:#ff8a3d; --heat2:#ffb03d;
+  --accent:#5aa9ff;
+  --easy:#3ec46d; --medium:#ffd43b; --hard:#ff5d5d;
+  --track:#e7e2d0;
+  --chip-bg:#efe9d8;
+  --input-bg:#fffdf5;
+  --toast-bg:#fffdf5;
+  --shadow:6px 6px 0 var(--border);
+  --bg-accent1:transparent; --bg-accent2:transparent;
+  --pie-border:#111111;
+  --chart-grid:#ddd6c2;
+  --row-hover:#ffd43b;
+  --c0:#ff8a3d; --c1:#5aa9ff; --c2:#3ec46d; --c3:#ff7bac;
+  --c4:#9a82ff; --c5:#e0a500; --c6:#ff5d5d; --c7:#2bbbc4;
+}
+/* ---------- 变量：夜间（墨底米描边） ---------- */
+html[data-skin="brutal"][data-theme="dark"]{
+  --bg:#17161b;
+  --surface:#211f26;
+  --surface2:#2a2731;
+  --border:#efe8d6;
+  --border-strong:#efe8d6;
+  --txt:#efe8d6; --txt-dim:#c9c2b0; --txt-faint:#8d8779;
+  --heat:#ff8a3d; --heat2:#ffb03d;
+  --accent:#5aa9ff;
+  --easy:#3ec46d; --medium:#ffd43b; --hard:#ff5d5d;
+  --track:#332f3a;
+  --chip-bg:#2e2b35;
+  --input-bg:#1c1a20;
+  --toast-bg:#211f26;
+  --shadow:6px 6px 0 rgba(239,232,214,.85);
+  --pie-border:#211f26;
+  --chart-grid:#3b3743;
+  --row-hover:#39343f;
+}
+
+/* ---------- 页面底：点阵网格纸 ---------- */
+html[data-skin="brutal"] body{
+  background:radial-gradient(rgba(17,17,17,.09) 1.4px, transparent 1.4px) 0 0/22px 22px, var(--bg);
+  background-attachment:fixed;
+}
+html[data-skin="brutal"][data-theme="dark"] body{
+  background:radial-gradient(rgba(239,232,214,.07) 1.4px, transparent 1.4px) 0 0/22px 22px, var(--bg);
+  background-attachment:fixed;
+}
+
+/* ---------- 顶栏 ---------- */
+html[data-skin="brutal"] .title h1{font-weight:900;letter-spacing:0}
+html[data-skin="brutal"] .title h1 .dot{color:var(--heat)}
+html[data-skin="brutal"] .title p{font-weight:700;color:var(--txt-dim)}
+html[data-skin="brutal"] .badge{
+  border:2.5px solid var(--border);border-radius:0;font-weight:900;
+  background:var(--easy);color:#111;box-shadow:2.5px 2.5px 0 var(--border)}
+html[data-skin="brutal"] .badge.demo{background:var(--medium);color:#111}
+
+html[data-skin="brutal"] .iconbtn{
+  background-color:var(--surface);color:var(--txt);
+  border:2.5px solid var(--border);border-radius:0;font-weight:800;
+  box-shadow:3px 3px 0 var(--border);transition:transform .12s,box-shadow .12s}
+html[data-skin="brutal"] .iconbtn:hover{
+  background-color:var(--surface);border-color:var(--border);
+  transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--border)}
+html[data-skin="brutal"] .iconbtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--border)}
+html[data-skin="brutal"] .iconbtn.primary{background-color:var(--heat);color:#111;border-color:var(--border)}
+html[data-skin="brutal"] .iconbtn.primary:hover{filter:none;background-color:var(--heat2)}
+/* .iconbtn 的 background 简写会冲掉基础样式的箭头定位，这里完整重设 */
+html[data-skin="brutal"] select.iconbtn{
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23111111' stroke-width='2' fill='none' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-color:var(--surface)}
+html[data-skin="brutal"][data-theme="dark"] select.iconbtn{
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23efe8d6' stroke-width='2' fill='none' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-color:var(--surface)}
+
+html[data-skin="brutal"] .sync-bar{
+  border:2.5px solid var(--border);border-radius:0;font-weight:700;
+  background:var(--surface);box-shadow:3px 3px 0 var(--border)}
+
+/* ---------- 卡片与分区标题 ---------- */
+html[data-skin="brutal"] .card{
+  border:3px solid var(--border);border-radius:0;
+  box-shadow:var(--shadow);backdrop-filter:none;background:var(--surface)}
+html[data-skin="brutal"] .section-head h2{font-weight:900;letter-spacing:1px}
+html[data-skin="brutal"] .section-head h2::before{
+  content:"";display:inline-block;width:13px;height:13px;margin-right:9px;
+  background:var(--heat);border:2.5px solid var(--border);vertical-align:-1px}
+html[data-skin="brutal"] .section-head .sub{font-weight:600}
+
+/* ---------- 首屏 KPI ---------- */
+html[data-skin="brutal"] .kpi .glow{display:none}
+html[data-skin="brutal"] .kpi .cap{font-weight:900;letter-spacing:.5px}
+html[data-skin="brutal"] .kpi .num{font-weight:900;letter-spacing:-1px}
+html[data-skin="brutal"] .kpi .meta{font-weight:700}
+/* 日间：彩色色块卡（新粗野招牌），文字一律墨色 */
+html[data-skin="brutal"][data-theme="light"] .kpi:nth-child(1){background:var(--medium)}
+html[data-skin="brutal"][data-theme="light"] .kpi:nth-child(2){background:#5aa9ff}
+html[data-skin="brutal"][data-theme="light"] .kpi:nth-child(3){background:#3ec46d}
+html[data-skin="brutal"][data-theme="light"] .kpi:nth-child(4){background:#ff7bac}
+html[data-skin="brutal"][data-theme="light"] .kpi:nth-child(5){background:var(--surface)}
+html[data-skin="brutal"][data-theme="light"] .kpi:nth-child(6){background:var(--heat)}
+html[data-skin="brutal"][data-theme="light"] .kpi .cap,
+html[data-skin="brutal"][data-theme="light"] .kpi .meta{color:rgba(17,17,17,.72)}
+html[data-skin="brutal"][data-theme="light"] .kpi .num,
+html[data-skin="brutal"][data-theme="light"] .kpi .num .txt,
+html[data-skin="brutal"][data-theme="light"] .kpi .num small{color:#111 !important}
+
+/* 通过率 / 题单进度大环 */
+html[data-skin="brutal"] .ring-track,
+html[data-skin="brutal"] .ring-val{stroke-width:18px}
+html[data-skin="brutal"] .ring-center .pct{background:none;color:var(--heat);font-weight:900}
+html[data-skin="brutal"] .ring-center .frac{font-weight:700}
+html[data-skin="brutal"] .ring-label{font-weight:900}
+
+/* ---------- 年历墙 / 月视图 ---------- */
+html[data-skin="brutal"] .cal-year button{
+  background:var(--surface);border:2.5px solid var(--border);border-radius:0;
+  color:var(--txt);font-weight:900;box-shadow:2px 2px 0 var(--border)}
+html[data-skin="brutal"] .cal-year button:hover:not(:disabled){border-color:var(--border);transform:translate(-1px,-1px)}
+html[data-skin="brutal"] .cal-year b{font-weight:900}
+html[data-skin="brutal"] .mcal{border:2.5px solid var(--border);border-radius:0;background:var(--surface);box-shadow:3px 3px 0 var(--border)}
+html[data-skin="brutal"] .mcal.cur{border-color:var(--accent);box-shadow:3px 3px 0 var(--accent)}
+html[data-skin="brutal"] .mc-head b,
+html[data-skin="brutal"] .mc-sum{font-weight:900}
+html[data-skin="brutal"] .mc-cell{border-radius:0;font-weight:700}
+html[data-skin="brutal"] .mc-cell.fut{border:1.5px dashed var(--txt-faint)}
+html[data-skin="brutal"] .mc-cell.l3,
+html[data-skin="brutal"] .mc-cell.l4{color:#111;box-shadow:2px 2px 0 var(--border)}
+html[data-skin="brutal"] .mc-cell.today{outline:2.5px solid var(--accent)}
+html[data-skin="brutal"] .bmc{border-radius:0;border:2px solid var(--border);background:var(--surface2)}
+html[data-skin="brutal"] .bmc.blank{border:0;background:transparent}
+html[data-skin="brutal"] .bmc.fut{border:1.5px dashed var(--txt-faint);background:transparent}
+html[data-skin="brutal"] .bmc.today{outline:2.5px solid var(--accent)}
+html[data-skin="brutal"] .bmc-chip{border:1.5px solid var(--border);border-radius:0;background:var(--surface);font-weight:700}
+html[data-skin="brutal"] .cal-scale i{border:1.5px solid var(--border);border-radius:0}
+html[data-skin="brutal"] .cal-foot{font-weight:700}
+
+/* ---------- 题单进度 ---------- */
+html[data-skin="brutal"] .plan-name,
+html[data-skin="brutal"] .plan-pct{font-weight:900}
+html[data-skin="brutal"] .plan-pct{color:var(--heat)}
+html[data-skin="brutal"] .plan-bar{
+  height:20px;border:2.5px solid var(--border);border-radius:0;background:var(--surface2)}
+html[data-skin="brutal"] .plan-bar>i{background:var(--heat);border-radius:0;border-right:2.5px solid var(--border)}
+html[data-skin="brutal"] .plan-bar>i[data-w="0"],
+html[data-skin="brutal"] .plan-bar>i[style*="width: 0%"]{border-right:0}
+html[data-skin="brutal"] .plan-round{
+  border:2px solid var(--border);border-radius:0;background:var(--medium);
+  color:#111;font-weight:900;box-shadow:2px 2px 0 var(--border)}
+html[data-skin="brutal"] .round-undo{color:rgba(17,17,17,.6);font-weight:800}
+html[data-skin="brutal"] .round-undo:hover{color:#111;background:rgba(255,255,255,.5)}
+html[data-skin="brutal"] .pg-bar{height:9px;border:2px solid var(--border);border-radius:0;background:var(--surface2)}
+html[data-skin="brutal"] .pg-bar>i{border-radius:0;opacity:1}
+html[data-skin="brutal"] .pg-row{font-weight:700}
+html[data-skin="brutal"] .pg-row.clickable{border-radius:0}
+html[data-skin="brutal"] .pg-questions{border-left:2px dashed var(--txt-faint)}
+html[data-skin="brutal"] .pq{border-radius:0;font-weight:700}
+html[data-skin="brutal"] .plan-empty{font-weight:700}
+html[data-skin="brutal"] .preset-chips button{
+  border:2px solid var(--border);border-radius:0;background:var(--surface);
+  color:var(--txt);font-weight:800;box-shadow:2px 2px 0 var(--border)}
+html[data-skin="brutal"] .preset-chips button:hover:not(:disabled){color:var(--txt);border-color:var(--border);transform:translate(-1px,-1px)}
+
+/* ---------- 难度徽标 / 标签 ---------- */
+html[data-skin="brutal"] .diff{
+  border:2px solid var(--border);border-radius:0;font-weight:900;
+  box-shadow:1.5px 1.5px 0 var(--border)}
+html[data-skin="brutal"] .diff.Easy{background:var(--easy);color:#111}
+html[data-skin="brutal"] .diff.Medium{background:var(--medium);color:#111}
+html[data-skin="brutal"] .diff.Hard{background:var(--hard);color:#111}
+html[data-skin="brutal"] .diff.Unknown{background:var(--chip-bg);color:var(--txt-dim)}
+html[data-skin="brutal"] .tag-chip{
+  border:1.5px solid var(--border);border-radius:0;background:var(--surface2);
+  color:var(--txt-dim);font-weight:700}
+
+/* ---------- 明细表 ---------- */
+html[data-skin="brutal"] .toolbar input{
+  border:2.5px solid var(--border);border-radius:0;font-weight:700;
+  box-shadow:2.5px 2.5px 0 var(--border)}
+html[data-skin="brutal"] .toolbar input:focus{border-color:var(--border);box-shadow:2.5px 2.5px 0 var(--accent)}
+html[data-skin="brutal"] .toolbar .count{font-weight:800}
+html[data-skin="brutal"] .table-wrap{border-radius:0}
+html[data-skin="brutal"] thead th{
+  background:var(--surface);color:var(--txt);font-weight:900;
+  border-bottom:3px solid var(--border);backdrop-filter:none}
+html[data-skin="brutal"] tbody td{border-bottom:1.5px solid var(--border)}
+html[data-skin="brutal"] tbody tr:hover{background:var(--row-hover)}
+html[data-skin="brutal"][data-theme="light"] tbody tr:hover td,
+html[data-skin="brutal"][data-theme="light"] tbody tr:hover td a,
+html[data-skin="brutal"][data-theme="light"] tbody tr:hover .fid,
+html[data-skin="brutal"][data-theme="light"] tbody tr:hover .last-cell{color:#111}
+html[data-skin="brutal"] td a{font-weight:800}
+html[data-skin="brutal"] .count-cell{color:var(--heat);font-weight:900}
+
+/* ---------- 空状态 / 弹窗 / 浮层 ---------- */
+html[data-skin="brutal"] .empty-card ol{font-weight:600}
+html[data-skin="brutal"] dialog{
+  border:3px solid var(--border);border-radius:0;box-shadow:8px 8px 0 var(--border);
+  background:var(--surface)}
+html[data-skin="brutal"] dialog h2{font-weight:900}
+html[data-skin="brutal"] .seg{border:2.5px solid var(--border);border-radius:0;background:var(--surface);padding:0}
+html[data-skin="brutal"] .seg button{border-radius:0;font-weight:800;color:var(--txt-dim)}
+html[data-skin="brutal"] .seg button.on{background:var(--accent);color:#111}
+html[data-skin="brutal"] .auth-pane input,
+html[data-skin="brutal"] .auth-pane textarea{border:2.5px solid var(--border);border-radius:0}
+html[data-skin="brutal"] .auth-pane input:focus,
+html[data-skin="brutal"] .auth-pane textarea:focus{border-color:var(--border);box-shadow:2.5px 2.5px 0 var(--accent)}
+html[data-skin="brutal"] .auth-pane label{font-weight:900}
+html[data-skin="brutal"] .dialog-tip code{border:1.5px solid var(--border);border-radius:0}
+html[data-skin="brutal"] .tip{
+  border:2.5px solid var(--border);border-radius:0;background:var(--toast-bg);
+  box-shadow:4px 4px 0 var(--border);font-weight:600}
+html[data-skin="brutal"] .toast{
+  border:2.5px solid var(--border);border-radius:0;background:var(--toast-bg);
+  box-shadow:4px 4px 0 var(--border);font-weight:900}

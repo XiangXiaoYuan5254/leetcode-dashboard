@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>风格预览 · 纸墨书斋</title>
+<style>
+:root{
+  --bg:#f5f0e4; --card:#fdfaf2; --card2:#f8f3e8;
+  --ink:#241f16; --dim:#6e6455; --faint:#a2977f;
+  --line:#e6dcc6; --line2:#d5c9ad;
+  --red:#b5452a; --red-soft:rgba(181,69,42,.10);
+  --gold:#b8862b; --green:#3d6b52; --blue:#4f6d9e;
+  --shadow:0 1px 2px rgba(60,48,25,.05),0 12px 34px -18px rgba(60,48,25,.28);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(ellipse 900px 500px at 80% -5%, rgba(181,69,42,.055), transparent 60%),
+             radial-gradient(ellipse 700px 400px at 0% 8%, rgba(61,107,82,.05), transparent 55%),var(--bg);
+  background-attachment:fixed}
+.serif{font-family:"Noto Serif SC","Songti SC","STSong","SimSun",serif}
+.wrap{max-width:1100px;margin:0 auto;padding:44px 28px 80px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  padding-bottom:26px;border-bottom:1px solid var(--line2)}
+.brand{display:flex;align-items:center;gap:18px}
+.seal{width:52px;height:52px;border-radius:10px;background:var(--red);color:#fdfaf2;display:flex;
+  align-items:center;justify-content:center;font-size:25px;font-weight:900;transform:rotate(-3deg);
+  font-family:"Noto Serif SC","Songti SC",serif;box-shadow:0 4px 14px -4px var(--red)}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:29px;margin:0;letter-spacing:2px}
+h1 em{font-style:normal;color:var(--red)}
+.en{font-size:11px;color:var(--faint);letter-spacing:3.5px;text-transform:uppercase;margin-top:5px}
+.stamp{text-align:right;font-size:12px;color:var(--faint);line-height:1.7}
+.stamp b{color:var(--dim)}
+.note{margin:14px 2px 0;font-size:12px;color:var(--faint)}
+.note i{font-style:normal;color:var(--red);font-weight:600}
+.section{margin-top:46px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.sec-no{font-family:"Noto Serif SC",serif;font-size:14px;font-weight:900;color:var(--red);
+  border:1.5px solid var(--red);border-radius:50%;width:32px;height:32px;display:flex;
+  align-items:center;justify-content:center;flex:none;transform:translateY(4px)}
+.sec-head h2{font-family:"Noto Serif SC","Songti SC",serif;font-size:21px;font-weight:900;margin:0;letter-spacing:1.5px}
+.sec-head .sub{font-size:10.5px;color:var(--faint);letter-spacing:2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:20px;margin-top:34px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.prog{padding:30px 32px 26px}
+.cap{font-size:12px;color:var(--faint);letter-spacing:2.5px;font-weight:600}
+.prog-top{display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-top:14px}
+.bignum{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:72px;line-height:.95;
+  color:var(--red);font-variant-numeric:tabular-nums}
+.bignum small{font-size:28px}
+.frac{padding-bottom:9px;font-size:14px;font-weight:700}
+.frac .f2{font-size:12px;color:var(--faint);margin-top:4px;font-weight:400}
+.track{height:5px;background:var(--line);border-radius:5px;margin-top:20px;overflow:hidden}
+.track i{display:block;height:100%;background:var(--red);border-radius:5px;width:58%}
+.groups{margin-top:20px;display:flex;flex-direction:column;gap:9px}
+.g{display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--dim)}
+.g .n{min-width:96px;font-weight:600}
+.g .n.ok{color:var(--green)}
+.g .b{flex:1;height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.g .b i{display:block;height:100%;background:var(--red);border-radius:4px}
+.g.ok .b i{background:var(--green)}
+.g .f{min-width:44px;text-align:right;color:var(--faint);font-variant-numeric:tabular-nums}
+.kpis{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:18px}
+.kpi{padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.kpi .side{position:absolute;left:0;top:16px;bottom:16px;width:3px;border-radius:0 3px 3px 0}
+.kpi .num{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:40px;line-height:1;margin-top:12px;font-variant-numeric:tabular-nums}
+.kpi .num small{font-size:16px;color:var(--dim);font-weight:500}
+.kpi .meta{font-size:12px;color:var(--dim);margin-top:8px}
+/* calendar */
+.cal{padding:24px 26px}
+.mc-week,.mc-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.mc-week{font-size:11px;color:var(--faint);text-align:center;margin-bottom:8px;letter-spacing:1px}
+.d{aspect-ratio:1.6;border-radius:8px;background:var(--card2);border:1px solid var(--line);
+  display:flex;align-items:flex-start;padding:6px 9px;font-size:12px;color:var(--faint);
+  font-variant-numeric:tabular-nums;font-family:"Noto Serif SC",serif;font-weight:700}
+.d.blank{background:transparent;border:0}
+.d.fut{background:transparent;border:1px dashed var(--line2);opacity:.6}
+.d.l1{background:var(--red-soft);color:var(--red);border-color:transparent}
+.d.l2{background:rgba(181,69,42,.28);color:var(--red);border-color:transparent}
+.d.l3{background:var(--red);color:#fdfaf2;border-color:transparent;box-shadow:0 3px 10px -3px var(--red)}
+.d.today{outline:2px solid var(--gold);outline-offset:1px}
+.cal-foot{margin-top:16px;font-size:12px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.cal-foot b{color:var(--ink)}
+/* tags */
+.tags{padding:22px 26px;display:flex;flex-direction:column;gap:11px}
+.t{display:flex;align-items:center;gap:14px;font-size:13px}
+.t .n{min-width:84px;font-weight:700;font-family:"Noto Serif SC",serif;letter-spacing:.5px}
+.t .b{flex:1;height:14px;background:var(--line);border-radius:4px;overflow:hidden}
+.t .b i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--red),#cf6a4d)}
+.t .f{min-width:30px;text-align:right;color:var(--dim);font-variant-numeric:tabular-nums;font-family:"Noto Serif SC",serif;font-weight:700}
+/* table */
+.tbl{padding:8px 14px}
+.prow{display:flex;align-items:center;gap:14px;padding:13px 12px;border-bottom:1px solid var(--line)}
+.prow:last-child{border-bottom:0}
+.pmark{flex:none;width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:900;font-family:"Noto Serif SC",serif;background:var(--red);color:#fdfaf2;transform:rotate(-4deg);
+  box-shadow:0 2px 8px -2px var(--red)}
+.pid{font-family:"Noto Serif SC",serif;font-weight:900;color:var(--faint);min-width:44px;font-variant-numeric:tabular-nums}
+.pt{flex:1;font-weight:650;font-size:13.5px}
+.pv{font-size:10.5px;font-weight:800;padding:2.5px 8px;border-radius:6px}
+.pv.e{color:var(--green);background:rgba(61,107,82,.12)}
+.pv.m{color:var(--gold);background:rgba(184,134,43,.14)}
+.pcnt{font-family:"Noto Serif SC",serif;font-weight:900;font-size:16px;color:var(--red);min-width:34px;text-align:center}
+.pdate{font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line2);display:flex;
+  justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="seal">刷</div>
+      <div>
+        <h1>力扣题簿 <em>·</em> 刷题手账</h1>
+        <div class="en">LeetCode Practice Journal</div>
+      </div>
+    </div>
+    <div class="stamp">
+      <div>wu-si-san · 数据更新：<b>2026-07-07</b></div>
+      <div>丙午年 · 夏 · 已刷 <b>238</b> 题</div>
+    </div>
+  </header>
+  <div class="note"><i>设计预览 · 风格一「纸墨书斋」</i> — 本页为静态样稿，宣纸底、朱砂笔、衬线大字，确认后可整套替换现有界面。</div>
+
+  <div class="hero">
+    <div class="card prog">
+      <div class="cap">正在修习 · 编程基础 0 到 1</div>
+      <div class="prog-top">
+        <div class="bignum">58<small>%</small></div>
+        <div class="frac">已完成 19 / 33 题<div class="f2">🔒 会员章节未计入 · 在题单卡片可换主题单</div></div>
+      </div>
+      <div class="track"><i></i></div>
+      <div class="groups">
+        <div class="g"><span class="n">基础实现</span><span class="b"><i style="width:91%"></i></span><span class="f">10/11</span></div>
+        <div class="g ok"><span class="n ok">✓ 内置函数</span><span class="b"><i style="width:100%"></i></span><span class="f">2/2</span></div>
+        <div class="g"><span class="n">模拟</span><span class="b"><i style="width:75%"></i></span><span class="f">3/4</span></div>
+        <div class="g"><span class="n">数学</span><span class="b"><i style="width:0"></i></span><span class="f">0/8</span></div>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="card kpi"><div class="side" style="background:var(--red)"></div><span class="cap">今年独立题目</span><div class="num">25<small> 题</small></div><div class="meta">新题 6 · 复习旧题 19</div></div>
+      <div class="card kpi"><div class="side" style="background:var(--gold)"></div><span class="cap">完成次数</span><div class="num">34<small> 次</small></div><div class="meta">同题同日计一次</div></div>
+      <div class="card kpi"><div class="side" style="background:var(--green)"></div><span class="cap">活跃天数</span><div class="num">14<small> 天</small></div><div class="meta">活跃日均 2.4 题</div></div>
+      <div class="card kpi"><div class="side" style="background:var(--blue)"></div><span class="cap">最长连续</span><div class="num">7<small> 天</small></div><div class="meta">当前连续 0 天</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><div class="sec-no">壹</div><h2>刷题日历</h2><span class="sub">JULY 2026 · 颜色越深当日刷得越多</span></div>
+    <div class="card cal">
+      <div class="mc-week"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+      <div class="mc-grid">
+        <span class="d blank"></span><span class="d blank"></span>
+        <span class="d l1">1</span><span class="d l2">2</span><span class="d">3</span><span class="d l3">4</span><span class="d">5</span>
+        <span class="d">6</span><span class="d today">7</span><span class="d fut">8</span><span class="d fut">9</span><span class="d fut">10</span><span class="d fut">11</span><span class="d fut">12</span>
+        <span class="d fut">13</span><span class="d fut">14</span><span class="d fut">15</span><span class="d fut">16</span><span class="d fut">17</span><span class="d fut">18</span><span class="d fut">19</span>
+      </div>
+      <div class="cal-foot"><span>7 月共完成 <b>6</b> 次 · 有刷题的天数 <b>3</b> 天</span><span>朱色深浅 = 当日题量</span></div>
+    </div>
+  </div>
+
+  <div class="section grid2">
+    <div>
+      <div class="sec-head"><div class="sec-no">贰</div><h2>题型分布</h2></div>
+      <div class="card tags">
+        <div class="t"><span class="n">数组</span><span class="b"><i style="width:100%"></i></span><span class="f">11</span></div>
+        <div class="t"><span class="n">字符串</span><span class="b"><i style="width:100%"></i></span><span class="f">11</span></div>
+        <div class="t"><span class="n">哈希表</span><span class="b"><i style="width:36%"></i></span><span class="f">4</span></div>
+        <div class="t"><span class="n">模拟</span><span class="b"><i style="width:36%"></i></span><span class="f">4</span></div>
+        <div class="t"><span class="n">数学</span><span class="b"><i style="width:27%"></i></span><span class="f">3</span></div>
+        <div class="t"><span class="n">双指针</span><span class="b"><i style="width:27%"></i></span><span class="f">3</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="sec-head"><div class="sec-no">叁</div><h2>题目手账</h2><span class="sub">近期完成</span></div>
+      <div class="card tbl">
+        <div class="prow"><span class="pmark">阅</span><span class="pid">1275</span><span class="pt">找出井字棋的获胜者</span><span class="pv e">简单</span><span class="pcnt">2</span><span class="pdate">07-04</span></div>
+        <div class="prow"><span class="pmark">阅</span><span class="pid">657</span><span class="pt">机器人能否返回原点</span><span class="pv e">简单</span><span class="pcnt">1</span><span class="pdate">07-04</span></div>
+        <div class="prow"><span class="pmark">阅</span><span class="pid">709</span><span class="pt">转换成小写字母</span><span class="pv e">简单</span><span class="pcnt">1</span><span class="pdate">07-02</span></div>
+        <div class="prow"><span class="pmark">阅</span><span class="pid">146</span><span class="pt">LRU 缓存</span><span class="pv m">中等</span><span class="pcnt">1</span><span class="pdate">06-21</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="serif">力扣题簿 · 以朱笔记所刷</div>
+    <div>风格预览 1 / 4 · 纸墨书斋</div>
+  </footer>
+</div>
+</body>
+</html>

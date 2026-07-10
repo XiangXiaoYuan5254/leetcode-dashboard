@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d1014">
+<link rel="icon" href="data:,">
+<title>力扣仪表盘 · 完整设计提案</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#eef1f4;background:#0d1014;font-synthesis:none}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:320px;background:radial-gradient(circle at 72% -15%,rgba(90,69,215,.17),transparent 30%),#0d1014;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.page{width:min(1280px,calc(100% - 48px));margin:0 auto;padding:28px 0 80px}
+header{display:flex;align-items:center;justify-content:space-between;height:54px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;letter-spacing:-.03em}
+.brand i{display:grid;width:30px;height:30px;place-items:center;border:1px solid #3a414b;border-radius:8px;color:#b7f36b;font-style:normal}
+.brand small{color:#77818d;font-size:10px;font-weight:600;letter-spacing:.08em}
+.back{padding:9px 13px;border:1px solid #2c333c;border-radius:8px;color:#a5adb8;text-decoration:none;font-size:11px;transition:.18s ease}
+.back:hover{color:#fff;border-color:#596371}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:end;padding:76px 0 64px;border-bottom:1px solid #252b33}
+.hero h1{margin:0;max-width:760px;font-size:clamp(44px,6vw,82px);line-height:.98;letter-spacing:-.07em}
+.hero h1 span{color:#8d70ff}
+.hero aside{padding-bottom:5px}
+.hero p{margin:0;color:#8b949f;font-size:14px;line-height:1.85}
+.hero dl{display:grid;grid-template-columns:repeat(3,1fr);margin:30px 0 0;border-top:1px solid #2b323b}
+.hero dl div{padding:18px 12px 0 0}
+.hero dt{color:#67717c;font:700 9px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase}
+.hero dd{margin:8px 0 0;font-size:20px;font-weight:760}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:54px 0 22px}
+.section-head h2{margin:0;font-size:22px;letter-spacing:-.04em}
+.section-head p{margin:7px 0 0;color:#78828e;font-size:11px}
+.section-head>span{color:#59636f;font:600 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+.new-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.proposal{position:relative;display:flex;min-width:0;overflow:hidden;border:1px solid #2a3038;border-radius:14px;background:#14181e;text-decoration:none;flex-direction:column;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.proposal:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 28px 70px rgba(0,0,0,.28)}
+.cover{position:relative;height:330px;overflow:hidden;background:#0a0c12}
+.cover img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;filter:saturate(.92);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.proposal:hover .cover img{transform:scale(1.035)}
+.cover:after{position:absolute;inset:auto 0 0;height:44%;background:linear-gradient(transparent,#14181e);content:""}
+.cover-label{position:absolute;top:16px;left:16px;z-index:1;padding:7px 9px;border:1px solid rgba(255,255,255,.22);border-radius:7px;color:#fff;background:rgba(8,10,14,.65);backdrop-filter:blur(10px);font:700 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+.proposal-body{display:grid;gap:19px;padding:22px}
+.proposal-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.proposal-title h3{margin:0;font-size:20px;letter-spacing:-.04em}
+.proposal-title h3 small{display:block;margin-top:7px;color:#717b87;font-size:10px;font-weight:650;letter-spacing:.08em}
+.proposal-title b{color:var(--accent);font:750 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+.proposal-body>p{min-height:44px;margin:0;color:#9099a4;font-size:11.5px;line-height:1.75}
+.features{display:flex;gap:6px;flex-wrap:wrap}
+.features span{padding:6px 8px;border:1px solid #2b323a;border-radius:6px;color:#78828e;font-size:9px}
+.proposal-foot{display:flex;align-items:center;justify-content:space-between;padding-top:17px;border-top:1px solid #252b33;color:#8a949f;font-size:10px}
+.proposal-foot strong{color:#eef1f4;font-size:11px}
+.proposal-foot i{display:grid;width:30px;height:30px;place-items:center;border-radius:50%;color:#111;background:var(--accent);font-style:normal;font-size:15px}
+.orbit{--accent:#9a82ff}.daybreak{--accent:#2d65ff}.paceline{--accent:#ff5042}
+.archive{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #252b33;border-radius:12px;overflow:hidden}
+.old{display:grid;gap:16px;min-height:178px;padding:22px;border-left:1px solid #252b33;text-decoration:none;transition:background .18s ease}
+.old:first-child{border-left:0}.old:hover{background:#151a20}
+.old-top{display:flex;align-items:center;justify-content:space-between}
+.swatches{display:flex;width:60px;height:28px;overflow:hidden;border:1px solid #343c46;border-radius:7px}
+.swatches i{flex:1}
+.old-top b{color:#46505c;font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+.old h3{margin:0;font-size:14px}.old p{margin:0;color:#6f7985;font-size:10px;line-height:1.65}
+footer{display:flex;align-items:center;justify-content:space-between;margin-top:54px;padding-top:24px;border-top:1px solid #252b33;color:#59636f;font:500 9px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+@media(max-width:960px){.hero{grid-template-columns:1fr}.new-grid{grid-template-columns:1fr}.cover{height:430px}.archive{grid-template-columns:repeat(2,1fr)}.old:nth-child(3){border-left:0;border-top:1px solid #252b33}.old:nth-child(4){border-top:1px solid #252b33}}
+@media(max-width:600px){.page{width:calc(100% - 24px)}.hero{padding:52px 0}.hero h1{font-size:46px}.hero dl{grid-template-columns:1fr}.hero dl div{display:flex;align-items:center;justify-content:space-between}.cover{height:330px}.archive{grid-template-columns:1fr}.old{border-top:1px solid #252b33;border-left:0}.old:first-child{border-top:0}.section-head{align-items:flex-start;flex-direction:column}footer{align-items:flex-start;gap:8px;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <a class="brand" href="index.html"><i>∴</i><span>力扣仪表盘 <small>DESIGN STUDY / 07</small></span></a>
+    <a class="back" href="/">返回当前仪表盘 ↗</a>
+  </header>
+
+  <section class="hero">
+    <h1>三套完整的<br>新<span>前端提案</span></h1>
+    <aside>
+      <p>这次不再只做首屏换皮。每套方案都完整覆盖题单、难度、趋势、题型、明细表和年历，并包含真实筛选、排序、分页、切换与响应式状态。</p>
+      <dl><div><dt>New systems</dt><dd>03</dd></div><div><dt>Full sections</dt><dd>06 × 3</dd></div><div><dt>Interactive</dt><dd>Yes</dd></div></dl>
+    </aside>
+  </section>
+
+  <div class="section-head"><div><h2>完整新方案</h2><p>同一组信息架构，三种完全不同的视觉与排版逻辑。</p></div><span>SELECT A DIRECTION / 2026</span></div>
+
+  <main class="new-grid">
+    <a class="proposal orbit" href="orbit.html">
+      <div class="cover"><span class="cover-label">DARK OBSERVATORY</span><img src="concepts/orbit-concept.png" alt="轨道 ORBIT 深色仪表盘概念图"></div>
+      <div class="proposal-body">
+        <div class="proposal-title"><h3>轨道<small>ORBIT</small></h3><b>05</b></div>
+        <p>深墨观测台。轨道式主进度、紫与酸橙双强调色、安静的侧栏与开放式数据面板。</p>
+        <div class="features"><span>深色低干扰</span><span>轨道进度</span><span>专业工具感</span></div>
+        <div class="proposal-foot"><strong>打开完整交互稿</strong><i>↗</i></div>
+      </div>
+    </a>
+
+    <a class="proposal daybreak" href="daybreak.html">
+      <div class="cover"><span class="cover-label">EDITORIAL STUDIO</span><img src="concepts/daybreak-concept.png" alt="晴窗 DAYBREAK 明亮仪表盘概念图"></div>
+      <div class="proposal-body">
+        <div class="proposal-title"><h3>晴窗<small>DAYBREAK</small></h3><b>06</b></div>
+        <p>明亮编辑工作室。真白底、钴蓝主轴、超大数字和横向信息带，阅读效率最高。</p>
+        <div class="features"><span>高可读性</span><span>编辑式排版</span><span>轻盈明快</span></div>
+        <div class="proposal-foot"><strong>打开完整交互稿</strong><i>↗</i></div>
+      </div>
+    </a>
+
+    <a class="proposal paceline" href="paceline.html">
+      <div class="cover"><span class="cover-label">PERFORMANCE LAB</span><img src="concepts/paceline-concept.png" alt="配速 PACELINE 训练仪表盘概念图"></div>
+      <div class="proposal-body">
+        <div class="proposal-title"><h3>配速<small>PACELINE</small></h3><b>07</b></div>
+        <p>训练性能实验室。计时刻度、斜切进度赛道、青红信号色，速度感最鲜明。</p>
+        <div class="features"><span>训练氛围</span><span>高信息密度</span><span>技术运动感</span></div>
+        <div class="proposal-foot"><strong>打开完整交互稿</strong><i>↗</i></div>
+      </div>
+    </a>
+  </main>
+
+  <div class="section-head"><div><h2>旧稿参考</h2><p>保留原有四套静态样稿，方便横向比较。</p></div><span>ARCHIVE / 01—04</span></div>
+  <section class="archive">
+    <a class="old" href="paper.html"><div class="old-top"><span class="swatches"><i style="background:#f5f0e4"></i><i style="background:#b5452a"></i><i style="background:#b8862b"></i></span><b>01</b></div><h3>纸墨书斋</h3><p>宣纸底、朱砂印章、手账气质。</p></a>
+    <a class="old" href="terminal.html"><div class="old-top"><span class="swatches"><i style="background:#0c0e10"></i><i style="background:#3ddc84"></i><i style="background:#ffb224"></i></span><b>02</b></div><h3>终端极客</h3><p>等宽字体、荧光绿、命令行结构。</p></a>
+    <a class="old" href="brutal.html"><div class="old-top"><span class="swatches"><i style="background:#f2efe6"></i><i style="background:#ffd43b"></i><i style="background:#5aa9ff"></i></span><b>03</b></div><h3>新粗野主义</h3><p>粗描边、硬阴影、高饱和色块。</p></a>
+    <a class="old" href="swiss.html"><div class="old-top"><span class="swatches"><i style="background:#fafafa"></i><i style="background:#0a0a0a"></i><i style="background:#ff6a00"></i></span><b>04</b></div><h3>瑞士极简</h3><p>网格细线、超大数字、单一强调色。</p></a>
+  </section>
+  <footer><span>LEETCODE DASHBOARD · FRONTEND DESIGN STUDY</span><span>3 COMPLETE PROTOTYPES · 2026</span></footer>
+</div>
+</body>
+</html>

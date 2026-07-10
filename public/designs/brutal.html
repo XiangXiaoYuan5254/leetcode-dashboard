@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>风格预览 · 新粗野主义</title>
+<style>
+:root{
+  --bg:#f2efe6; --ink:#111; --card:#fffdf5;
+  --yellow:#ffd43b; --orange:#ff8a3d; --blue:#5aa9ff; --pink:#ff7bAC; --green:#3ec46d; --red:#ff5d5d;
+  --bs:5px 5px 0 var(--ink);
+  --bs-sm:3px 3px 0 var(--ink);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);min-height:100vh;
+  background-image:radial-gradient(rgba(17,17,17,.06) 1px, transparent 1px);background-size:22px 22px}
+.wrap{max-width:1080px;margin:0 auto;padding:38px 26px 90px}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:16px}
+.mark{width:58px;height:58px;background:var(--orange);border:3px solid var(--ink);box-shadow:var(--bs);
+  display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;transform:rotate(-4deg)}
+h1{font-size:34px;font-weight:900;margin:0;letter-spacing:-.5px;text-transform:uppercase}
+h1 .hl{background:var(--yellow);border:3px solid var(--ink);padding:0 10px;display:inline-block;
+  box-shadow:var(--bs-sm);transform:rotate(1.5deg)}
+.sub{font-size:13px;font-weight:700;margin-top:6px}
+.badge{background:var(--card);border:3px solid var(--ink);box-shadow:var(--bs);padding:10px 16px;
+  font-weight:900;font-size:13px;transform:rotate(2deg)}
+.note{margin:26px 0 0;font-size:13px;font-weight:700;background:var(--pink);border:3px solid var(--ink);
+  display:inline-block;padding:8px 14px;box-shadow:var(--bs-sm)}
+.card{background:var(--card);border:3px solid var(--ink);box-shadow:var(--bs)}
+h2{font-size:19px;font-weight:900;margin:0 0 4px;text-transform:uppercase;letter-spacing:.5px}
+h2 .tag{font-size:11px;background:var(--ink);color:var(--card);padding:2px 8px;vertical-align:middle;margin-left:8px;letter-spacing:1px}
+.section{margin-top:40px}
+/* hero */
+.hero{display:grid;grid-template-columns:5fr 7fr;gap:24px;margin-top:34px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.plan{padding:24px 26px;background:var(--yellow)}
+.plan .cap{font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.plan .big{font-size:88px;font-weight:900;line-height:.95;letter-spacing:-3px;margin-top:8px}
+.plan .big small{font-size:34px;letter-spacing:0}
+.plan .frac{font-weight:800;font-size:15px;margin-top:4px}
+.pbar{height:26px;border:3px solid var(--ink);background:var(--card);margin-top:16px;position:relative}
+.pbar i{position:absolute;inset:0;width:58%;background:repeating-linear-gradient(45deg,var(--orange) 0 12px,#ffa35d 12px 24px);border-right:3px solid var(--ink)}
+.plan .hint{font-size:11.5px;font-weight:700;margin-top:12px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.kpi{padding:16px 18px;position:relative;transition:transform .12s}
+.kpi:hover{transform:translate(-2px,-2px)}
+.kpi .k{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px}
+.kpi .v{font-size:42px;font-weight:900;line-height:1.05;letter-spacing:-1px}
+.kpi .v small{font-size:15px;letter-spacing:0}
+.kpi .m{font-size:12px;font-weight:700;margin-top:2px}
+.kpi.c1{background:var(--blue)}.kpi.c2{background:var(--pink)}.kpi.c3{background:var(--green)}.kpi.c4{background:var(--card)}
+/* calendar */
+.cal{padding:22px 24px}
+.week,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.week{font-size:12px;font-weight:900;margin-bottom:10px;text-align:center;text-transform:uppercase}
+.d{aspect-ratio:1.5;border:3px solid var(--ink);background:var(--card);display:flex;align-items:center;
+  justify-content:center;font-weight:900;font-size:14px}
+.d.off{border-style:dashed;opacity:.4;background:transparent}
+.d.l1{background:var(--yellow)}.d.l2{background:var(--orange)}.d.l3{background:var(--red);color:#fff;box-shadow:var(--bs-sm)}
+.d.today{outline:3px solid var(--blue);outline-offset:2px}
+.cal-foot{margin-top:14px;font-weight:800;font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+/* tags */
+.tags{padding:20px 24px;display:flex;flex-direction:column;gap:12px}
+.t{display:flex;align-items:center;gap:12px;font-weight:800;font-size:13.5px}
+.t .n{min-width:78px}
+.t .b{flex:1;height:20px;border:3px solid var(--ink);background:var(--card);position:relative}
+.t .b i{position:absolute;inset:0;border-right:3px solid var(--ink)}
+.t .f{min-width:26px;text-align:right;font-size:15px;font-weight:900}
+/* table */
+.tbl{padding:6px 0}
+.row{display:flex;align-items:center;gap:14px;padding:13px 20px;border-bottom:3px solid var(--ink);font-weight:700}
+.row:last-child{border-bottom:0}
+.row:hover{background:var(--yellow)}
+.rid{font-weight:900;min-width:48px}
+.rt{flex:1;font-size:14px}
+.diff{border:2.5px solid var(--ink);padding:2px 9px;font-size:11px;font-weight:900;box-shadow:2px 2px 0 var(--ink)}
+.diff.e{background:var(--green)}.diff.m{background:var(--yellow)}
+.rc{font-size:19px;font-weight:900;min-width:40px;text-align:center;background:var(--ink);color:var(--card);padding:1px 0}
+.rd{font-size:12px;min-width:74px;text-align:right}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+footer{margin-top:60px;font-weight:800;font-size:12.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer .stamp{transform:rotate(-2deg);background:var(--ink);color:var(--card);padding:6px 12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">
+      <div class="mark">⌗</div>
+      <div>
+        <h1>刷题<span class="hl">战报</span></h1>
+        <div class="sub">LEETCODE STATS · wu-si-san · 2026</div>
+      </div>
+    </div>
+    <div class="badge">已刷 238 题 ⚡ 连击最高 7 天</div>
+  </header>
+  <div class="note">风格预览 · 风格三「新粗野主义」— 粗黑描边 + 硬阴影 + 高饱和色块，够冲、够醒目</div>
+
+  <div class="hero">
+    <div class="card plan">
+      <div class="cap">★ 当前题单 · 编程基础 0 到 1</div>
+      <div class="big">58<small>%</small></div>
+      <div class="frac">19 / 33 题（🔒 会员章节不计入）</div>
+      <div class="pbar"><i></i></div>
+      <div class="hint">下一组目标：数学 0/8 —— 冲！</div>
+    </div>
+    <div class="kpis">
+      <div class="card kpi c1"><div class="k">今年独立题目</div><div class="v">25<small>题</small></div><div class="m">新题 6 · 复习 19</div></div>
+      <div class="card kpi c2"><div class="k">完成次数</div><div class="v">34<small>次</small></div><div class="m">同题同日算一次</div></div>
+      <div class="card kpi c3"><div class="k">活跃天数</div><div class="v">14<small>天</small></div><div class="m">日均 2.4 题</div></div>
+      <div class="card kpi c4"><div class="k">最长连击</div><div class="v">7<small>天</small></div><div class="m">当前 0 天 · 别断更！</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>七月日历 <span class="tag">JUL 2026</span></h2>
+    <div class="card cal">
+      <div class="week"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+      <div class="days">
+        <span class="d off"></span><span class="d off"></span>
+        <span class="d l1">1</span><span class="d l2">2</span><span class="d">3</span><span class="d l3">4</span><span class="d">5</span>
+        <span class="d">6</span><span class="d today">7</span><span class="d off">8</span><span class="d off">9</span><span class="d off">10</span><span class="d off">11</span><span class="d off">12</span>
+      </div>
+      <div class="cal-foot"><span>本月 6 次完成 / 3 个活跃日</span><span>颜色越红当天刷得越猛</span></div>
+    </div>
+  </div>
+
+  <div class="section grid2">
+    <div>
+      <h2>题型分布</h2>
+      <div class="card tags">
+        <div class="t"><span class="n">数组</span><span class="b"><i style="width:100%;background:var(--orange)"></i></span><span class="f">11</span></div>
+        <div class="t"><span class="n">字符串</span><span class="b"><i style="width:100%;background:var(--blue)"></i></span><span class="f">11</span></div>
+        <div class="t"><span class="n">哈希表</span><span class="b"><i style="width:36%;background:var(--pink)"></i></span><span class="f">4</span></div>
+        <div class="t"><span class="n">模拟</span><span class="b"><i style="width:36%;background:var(--green)"></i></span><span class="f">4</span></div>
+        <div class="t"><span class="n">数学</span><span class="b"><i style="width:27%;background:var(--yellow)"></i></span><span class="f">3</span></div>
+      </div>
+    </div>
+    <div>
+      <h2>最近战绩</h2>
+      <div class="card tbl">
+        <div class="row"><span class="rid">1275</span><span class="rt">找出井字棋的获胜者</span><span class="diff e">简单</span><span class="rc">×2</span><span class="rd">07-04</span></div>
+        <div class="row"><span class="rid">657</span><span class="rt">机器人能否返回原点</span><span class="diff e">简单</span><span class="rc">×1</span><span class="rd">07-04</span></div>
+        <div class="row"><span class="rid">709</span><span class="rt">转换成小写字母</span><span class="diff e">简单</span><span class="rc">×1</span><span class="rd">07-02</span></div>
+        <div class="row"><span class="rid">146</span><span class="rt">LRU 缓存</span><span class="diff m">中等</span><span class="rc">×1</span><span class="rd">06-21</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="stamp">风格预览 3 / 4 · NEO-BRUTALISM</span>
+    <span>静态样稿 · 不含真实交互</span>
+  </footer>
+</div>
+</body>
+</html>
