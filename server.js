@@ -11,12 +11,15 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = Number(process.env.PORT || 5877);
+const PORT = Number(process.env.PORT || 5881);
 const HOST = '127.0.0.1';
 const ROOT = __dirname;
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const DATA_DIR = path.join(ROOT, 'data');
 const BUILTIN_PLANS_FILE = path.join(ROOT, 'builtin-plans.json');
+const APP_VERSION = (() => {
+  try { return fs.readFileSync(path.join(ROOT, 'VERSION'), 'utf8').trim(); } catch { return 'dev'; }
+})();
 const FILES = {
   config: path.join(DATA_DIR, 'config.json'),
   submissions: path.join(DATA_DIR, 'submissions.json'),
@@ -34,8 +37,9 @@ const REQUEST_GAP_MS = 1500;
 // 若做了目录里还没有的新题，resolve 阶段发现标题匹配不上会自动刷新目录兜底。
 const CATALOG_TTL_MS = 30 * 24 * 3600 * 1000;
 const PLAN_TTL_MS = 7 * 24 * 3600 * 1000; // 题单详情缓存 7 天
-const DEFAULT_PLANS = ['programming-skills', 'top-100-liked'];
+const DEFAULT_PLANS = ['programming-skills', 'top-100-liked', 'code-thinking'];
 const BUILTIN_PLANS = (readJson(BUILTIN_PLANS_FILE, {}).plans) || {};
+const BUILTIN_PLANS_VERSION = 1;
 
 // ---------- 小工具 ----------
 
@@ -47,6 +51,17 @@ function writeJson(file, obj) {
   fs.writeFileSync(file, JSON.stringify(obj));
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// 新增内置题单时为已有安装执行一次迁移；用户迁移后主动移除题单不会被再次添加。
+function migrateBuiltInPlans() {
+  const config = readJson(FILES.config, {});
+  if ((config.builtinPlansVersion || 0) >= BUILTIN_PLANS_VERSION) return;
+  const current = Array.isArray(config.plans) ? config.plans : DEFAULT_PLANS;
+  config.plans = [...new Set([...current, ...Object.keys(BUILTIN_PLANS)])];
+  config.builtinPlansVersion = BUILTIN_PLANS_VERSION;
+  writeJson(FILES.config, config);
+}
+migrateBuiltInPlans();
 
 async function withRetry(fn, tries = 4) {
   let lastErr;
@@ -549,7 +564,10 @@ const MIME = {
 };
 
 function sendJson(res, code, obj) {
-  res.writeHead(code, { 'content-type': 'application/json; charset=utf-8' });
+  res.writeHead(code, {
+    'content-type': 'application/json; charset=utf-8',
+    'cache-control': 'no-store',
+  });
   res.end(JSON.stringify(obj));
 }
 
@@ -573,6 +591,7 @@ const server = http.createServer(async (req, res) => {
       const meta = readJson(FILES.meta, {});
       const subs = readJson(FILES.submissions, []);
       return sendJson(res, 200, {
+        appVersion: APP_VERSION,
         hasCookie: !!config.cookie,
         username: meta.username || null,
         lastSync: meta.lastSync || null,
@@ -693,7 +712,10 @@ const server = http.createServer(async (req, res) => {
     if (!full.startsWith(PUBLIC_DIR)) { res.writeHead(403); return res.end(); }
     fs.readFile(full, (err, buf) => {
       if (err) { res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }); return res.end('Not Found'); }
-      res.writeHead(200, { 'content-type': MIME[path.extname(full)] || 'application/octet-stream' });
+      res.writeHead(200, {
+        'content-type': MIME[path.extname(full)] || 'application/octet-stream',
+        'cache-control': 'no-store',
+      });
       res.end(buf);
     });
   } catch (e) {

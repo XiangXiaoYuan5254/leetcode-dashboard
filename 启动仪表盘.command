@@ -3,6 +3,7 @@
 # 启动本地服务并自动在浏览器打开。保持本终端窗口开着即可；关闭窗口 = 停止服务。
 cd "$(dirname "$0")"
 export PORT=5881
+EXPECTED_VERSION="$(tr -d '\r\n' < VERSION)"
 
 if ! command -v node >/dev/null 2>&1; then
   echo "未找到 Node.js，请先安装：https://nodejs.org/"
@@ -10,11 +11,18 @@ if ! command -v node >/dev/null 2>&1; then
   exit 1
 fi
 
-# 若服务已在运行，直接打开浏览器
-if curl -s -o /dev/null --max-time 1 "http://127.0.0.1:$PORT/api/status"; then
-  echo "服务已在运行，正在打开浏览器……"
-  open "http://127.0.0.1:$PORT"
-  exit 0
+# 若服务已在运行，仅复用同一版本；避免下载新版后仍打开旧目录的服务
+STATUS="$(curl -s --max-time 1 "http://127.0.0.1:$PORT/api/status" 2>/dev/null)"
+if [ -n "$STATUS" ]; then
+  if [[ "$STATUS" == *"\"appVersion\":\"$EXPECTED_VERSION\""* ]]; then
+    echo "当前版本服务已在运行，正在打开浏览器……"
+    open "http://127.0.0.1:$PORT"
+    exit 0
+  fi
+  echo "检测到 5881 端口正在运行旧版仪表盘。"
+  echo "请先关闭旧版仪表盘的终端窗口，再重新双击本文件。"
+  read -r -p "按回车键退出…"
+  exit 1
 fi
 
 echo "======================================"
