@@ -16,6 +16,7 @@ const HOST = '127.0.0.1';
 const ROOT = __dirname;
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const DATA_DIR = path.join(ROOT, 'data');
+const BUILTIN_PLANS_FILE = path.join(ROOT, 'builtin-plans.json');
 const FILES = {
   config: path.join(DATA_DIR, 'config.json'),
   submissions: path.join(DATA_DIR, 'submissions.json'),
@@ -34,6 +35,7 @@ const REQUEST_GAP_MS = 1500;
 const CATALOG_TTL_MS = 30 * 24 * 3600 * 1000;
 const PLAN_TTL_MS = 7 * 24 * 3600 * 1000; // 题单详情缓存 7 天
 const DEFAULT_PLANS = ['programming-skills', 'top-100-liked'];
+const BUILTIN_PLANS = (readJson(BUILTIN_PLANS_FILE, {}).plans) || {};
 
 // ---------- 小工具 ----------
 
@@ -118,10 +120,23 @@ async function fetchSubmissionPageREST(cookie, offset, lastKey) {
     if (res.status === 403 || res.status === 401) err.fatal = true;
     throw err;
   }
+  if (res.status === 401) {
+    const err = new Error('力扣登录状态已失效，请在设置中重新登录');
+    err.fatal = true;
+    throw err;
+  }
+  if (res.status === 403) {
+    const err = new Error('力扣拒绝了本次访问（HTTP 403），请重新登录；若仍失败，请稍后再试');
+    err.fatal = true;
+    throw err;
+  }
+  if (res.status === 429) {
+    throw new Error('提交列表请求过于频繁（HTTP 429），稍后重试');
+  }
   // 限流时会返回不含 submissions_dump 的响应体，抛错交给 withRetry 退避重试，
   // 否则会被误判为“没有更多数据”而丢失历史提交
   if (!('submissions_dump' in json)) {
-    throw new Error(`提交列表被限流（HTTP ${res.status}），稍后重试`);
+    throw new Error(`提交列表返回异常（HTTP ${res.status}），稍后重试`);
   }
   return {
     submissions: json.submissions_dump.map(normalizeRestSubmission),
@@ -295,11 +310,14 @@ function enabledPlanSlugs() {
 
 function readPlanCache() {
   const cache = readJson(FILES.plans, {});
-  return cache.plans || {};
+  return { ...(cache.plans || {}), ...BUILTIN_PLANS };
 }
 
 function writePlanCache(plans) {
-  writeJson(FILES.plans, { plans });
+  const remotePlans = Object.fromEntries(
+    Object.entries(plans).filter(([slug]) => !BUILTIN_PLANS[slug])
+  );
+  writeJson(FILES.plans, { plans: remotePlans });
 }
 
 // 从用户输入（slug 或题单页 URL）提取 slug
@@ -484,7 +502,7 @@ async function runSync() {
   const planCache = readPlanCache();
   for (const slug of enabledPlanSlugs()) {
     const cached = planCache[slug];
-    if (cached && (Date.now() - (cached.fetchedAt || 0)) < PLAN_TTL_MS) continue;
+    if (cached && (cached.builtIn || (Date.now() - (cached.fetchedAt || 0)) < PLAN_TTL_MS)) continue;
     syncState.message = `正在更新题单「${slug}」…`;
     try {
       const detail = await withRetry(() => fetchPlanDetail(config.cookie, slug), 2);
@@ -606,9 +624,9 @@ const server = http.createServer(async (req, res) => {
       const slug = parsePlanSlug(body.slug);
       if (!slug) return sendJson(res, 400, { ok: false, error: '无法识别题单，请输入题单页链接或 slug' });
       const config = readJson(FILES.config, {});
-      if (!config.cookie) return sendJson(res, 400, { ok: false, error: '请先登录力扣账号' });
       const planCache = readPlanCache();
       if (!planCache[slug]) {
+        if (!config.cookie) return sendJson(res, 400, { ok: false, error: '请先登录力扣账号' });
         try {
           const detail = await fetchPlanDetail(config.cookie, slug);
           if (!detail) return sendJson(res, 404, { ok: false, error: `没有找到题单「${slug}」，请检查链接` });

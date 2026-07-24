@@ -1,0 +1,3127 @@
+{
+  "plans": {
+    "code-thinking": {
+      "slug": "code-thinking",
+      "name": "代码随想录",
+      "questionNum": 128,
+      "questionOccurrences": 130,
+      "videoCount": 170,
+      "builtIn": true,
+      "sourceUrl": "https://www.bilibili.com/video/BV1fA4y1o715/",
+      "sourceName": "《代码随想录》算法公开课-跟着Carl学算法",
+      "sourceStats": {
+        "videoCount": 170,
+        "basicVideoCount": 140,
+        "graphVideoCount": 30,
+        "problemVideoCount": 132,
+        "basicTheoryOrSummaryVideoCount": 8,
+        "uniqueLeetcodeQuestionCount": 128,
+        "groupQuestionOccurrenceCount": 130
+      },
+      "groups": [
+        {
+          "name": "数组",
+          "questionNum": 5,
+          "videoCount": 5,
+          "questions": [
+            {
+              "slug": "binary-search",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "数组：1.二分查找法",
+                  "url": "https://www.bilibili.com/video/BV1fA4y1o715/"
+                }
+              ]
+            },
+            {
+              "slug": "remove-element",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "数组：2.移除元素",
+                  "url": "https://www.bilibili.com/video/BV12A4y1Z7LP/"
+                }
+              ]
+            },
+            {
+              "slug": "squares-of-a-sorted-array",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "数组：3.有序数组的平方",
+                  "url": "https://www.bilibili.com/video/BV1QB4y1D7ep/"
+                }
+              ]
+            },
+            {
+              "slug": "minimum-size-subarray-sum",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "数组：4.长度最小的子数组 | 滑动窗口",
+                  "url": "https://www.bilibili.com/video/BV1tZ4y1q7XE/"
+                }
+              ]
+            },
+            {
+              "slug": "spiral-matrix-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "数组：5.螺旋矩阵II",
+                  "url": "https://www.bilibili.com/video/BV1SL4y1N7mV/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 1,
+              "title": "数组：1.二分查找法",
+              "bvid": "BV1fA4y1o715",
+              "videoUrl": "https://www.bilibili.com/video/BV1fA4y1o715/",
+              "questionSlugs": [
+                "binary-search"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 2,
+              "title": "数组：2.移除元素",
+              "bvid": "BV12A4y1Z7LP",
+              "videoUrl": "https://www.bilibili.com/video/BV12A4y1Z7LP/",
+              "questionSlugs": [
+                "remove-element"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 3,
+              "title": "数组：3.有序数组的平方",
+              "bvid": "BV1QB4y1D7ep",
+              "videoUrl": "https://www.bilibili.com/video/BV1QB4y1D7ep/",
+              "questionSlugs": [
+                "squares-of-a-sorted-array"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 4,
+              "title": "数组：4.长度最小的子数组 | 滑动窗口",
+              "bvid": "BV1tZ4y1q7XE",
+              "videoUrl": "https://www.bilibili.com/video/BV1tZ4y1q7XE/",
+              "questionSlugs": [
+                "minimum-size-subarray-sum"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 5,
+              "title": "数组：5.螺旋矩阵II",
+              "bvid": "BV1SL4y1N7mV",
+              "videoUrl": "https://www.bilibili.com/video/BV1SL4y1N7mV/",
+              "questionSlugs": [
+                "spiral-matrix-ii"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "链表",
+          "questionNum": 6,
+          "videoCount": 6,
+          "questions": [
+            {
+              "slug": "remove-linked-list-elements",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "链表：1.移除链表元素",
+                  "url": "https://www.bilibili.com/video/BV18B4y1s7R9/"
+                }
+              ]
+            },
+            {
+              "slug": "design-linked-list",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "链表：2.设计链表",
+                  "url": "https://www.bilibili.com/video/BV1FU4y1X7WD/"
+                }
+              ]
+            },
+            {
+              "slug": "reverse-linked-list",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "链表：3.反转链表",
+                  "url": "https://www.bilibili.com/video/BV1nB4y1i7eL/"
+                }
+              ]
+            },
+            {
+              "slug": "swap-nodes-in-pairs",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "链表：4. 两两交换链表中的节点",
+                  "url": "https://www.bilibili.com/video/BV1YT411g7br/"
+                }
+              ]
+            },
+            {
+              "slug": "remove-nth-node-from-end-of-list",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "链表：5.删除链表倒数第N个节点",
+                  "url": "https://www.bilibili.com/video/BV1vW4y1U7Gf/"
+                }
+              ]
+            },
+            {
+              "slug": "linked-list-cycle-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "链表：6.环形链表||",
+                  "url": "https://www.bilibili.com/video/BV1if4y1d7ob/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 6,
+              "title": "链表：1.移除链表元素",
+              "bvid": "BV18B4y1s7R9",
+              "videoUrl": "https://www.bilibili.com/video/BV18B4y1s7R9/",
+              "questionSlugs": [
+                "remove-linked-list-elements"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 7,
+              "title": "链表：2.设计链表",
+              "bvid": "BV1FU4y1X7WD",
+              "videoUrl": "https://www.bilibili.com/video/BV1FU4y1X7WD/",
+              "questionSlugs": [
+                "design-linked-list"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 8,
+              "title": "链表：3.反转链表",
+              "bvid": "BV1nB4y1i7eL",
+              "videoUrl": "https://www.bilibili.com/video/BV1nB4y1i7eL/",
+              "questionSlugs": [
+                "reverse-linked-list"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 9,
+              "title": "链表：4. 两两交换链表中的节点",
+              "bvid": "BV1YT411g7br",
+              "videoUrl": "https://www.bilibili.com/video/BV1YT411g7br/",
+              "questionSlugs": [
+                "swap-nodes-in-pairs"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 10,
+              "title": "链表：5.删除链表倒数第N个节点",
+              "bvid": "BV1vW4y1U7Gf",
+              "videoUrl": "https://www.bilibili.com/video/BV1vW4y1U7Gf/",
+              "questionSlugs": [
+                "remove-nth-node-from-end-of-list"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 11,
+              "title": "链表：6.环形链表||",
+              "bvid": "BV1if4y1d7ob",
+              "videoUrl": "https://www.bilibili.com/video/BV1if4y1d7ob/",
+              "questionSlugs": [
+                "linked-list-cycle-ii"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "哈希表",
+          "questionNum": 6,
+          "videoCount": 6,
+          "questions": [
+            {
+              "slug": "valid-anagram",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "哈希表：1.有效的字母异位词",
+                  "url": "https://www.bilibili.com/video/BV1YG411p7BA/"
+                }
+              ]
+            },
+            {
+              "slug": "intersection-of-two-arrays",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "哈希表：2. 两个数组的交集",
+                  "url": "https://www.bilibili.com/video/BV1ba411S7wu/"
+                }
+              ]
+            },
+            {
+              "slug": "two-sum",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "哈希表：3.两数之和",
+                  "url": "https://www.bilibili.com/video/BV1aT41177mK/"
+                }
+              ]
+            },
+            {
+              "slug": "4sum-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "哈希表：4.四数相加",
+                  "url": "https://www.bilibili.com/video/BV1Md4y1Q7Yh/"
+                }
+              ]
+            },
+            {
+              "slug": "3sum",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "哈希表：5.三数之和",
+                  "url": "https://www.bilibili.com/video/BV1GW4y127qo/"
+                }
+              ]
+            },
+            {
+              "slug": "4sum",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "哈希表：6. 四数之和",
+                  "url": "https://www.bilibili.com/video/BV1DS4y147US/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 12,
+              "title": "哈希表：1.有效的字母异位词",
+              "bvid": "BV1YG411p7BA",
+              "videoUrl": "https://www.bilibili.com/video/BV1YG411p7BA/",
+              "questionSlugs": [
+                "valid-anagram"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 13,
+              "title": "哈希表：2. 两个数组的交集",
+              "bvid": "BV1ba411S7wu",
+              "videoUrl": "https://www.bilibili.com/video/BV1ba411S7wu/",
+              "questionSlugs": [
+                "intersection-of-two-arrays"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 14,
+              "title": "哈希表：3.两数之和",
+              "bvid": "BV1aT41177mK",
+              "videoUrl": "https://www.bilibili.com/video/BV1aT41177mK/",
+              "questionSlugs": [
+                "two-sum"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 15,
+              "title": "哈希表：4.四数相加",
+              "bvid": "BV1Md4y1Q7Yh",
+              "videoUrl": "https://www.bilibili.com/video/BV1Md4y1Q7Yh/",
+              "questionSlugs": [
+                "4sum-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 16,
+              "title": "哈希表：5.三数之和",
+              "bvid": "BV1GW4y127qo",
+              "videoUrl": "https://www.bilibili.com/video/BV1GW4y127qo/",
+              "questionSlugs": [
+                "3sum"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 17,
+              "title": "哈希表：6. 四数之和",
+              "bvid": "BV1DS4y147US",
+              "videoUrl": "https://www.bilibili.com/video/BV1DS4y147US/",
+              "questionSlugs": [
+                "4sum"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "字符串",
+          "questionNum": 5,
+          "videoCount": 6,
+          "questions": [
+            {
+              "slug": "reverse-string",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "字符串：1.反转字符串",
+                  "url": "https://www.bilibili.com/video/BV1fV4y17748/"
+                }
+              ]
+            },
+            {
+              "slug": "reverse-string-ii",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "字符串：2. 反转字符串II",
+                  "url": "https://www.bilibili.com/video/BV1dT411j7NN/"
+                }
+              ]
+            },
+            {
+              "slug": "reverse-words-in-a-string",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "字符串：3.翻转字符串里的单词",
+                  "url": "https://www.bilibili.com/video/BV1uT41177fX/"
+                }
+              ]
+            },
+            {
+              "slug": "find-the-index-of-the-first-occurrence-in-a-string",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "字符串：4.KMP算法（理论篇）",
+                  "url": "https://www.bilibili.com/video/BV1PD4y1o7nd/"
+                },
+                {
+                  "title": "字符串：5.KMP算法（代码篇）",
+                  "url": "https://www.bilibili.com/video/BV1M5411j7Xx/"
+                }
+              ]
+            },
+            {
+              "slug": "repeated-substring-pattern",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "字符串：6.重复的子字符串",
+                  "url": "https://www.bilibili.com/video/BV1cg41127fw/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 18,
+              "title": "字符串：1.反转字符串",
+              "bvid": "BV1fV4y17748",
+              "videoUrl": "https://www.bilibili.com/video/BV1fV4y17748/",
+              "questionSlugs": [
+                "reverse-string"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 19,
+              "title": "字符串：2. 反转字符串II",
+              "bvid": "BV1dT411j7NN",
+              "videoUrl": "https://www.bilibili.com/video/BV1dT411j7NN/",
+              "questionSlugs": [
+                "reverse-string-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 20,
+              "title": "字符串：3.翻转字符串里的单词",
+              "bvid": "BV1uT41177fX",
+              "videoUrl": "https://www.bilibili.com/video/BV1uT41177fX/",
+              "questionSlugs": [
+                "reverse-words-in-a-string"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 21,
+              "title": "字符串：4.KMP算法（理论篇）",
+              "bvid": "BV1PD4y1o7nd",
+              "videoUrl": "https://www.bilibili.com/video/BV1PD4y1o7nd/",
+              "questionSlugs": [
+                "find-the-index-of-the-first-occurrence-in-a-string"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 22,
+              "title": "字符串：5.KMP算法（代码篇）",
+              "bvid": "BV1M5411j7Xx",
+              "videoUrl": "https://www.bilibili.com/video/BV1M5411j7Xx/",
+              "questionSlugs": [
+                "find-the-index-of-the-first-occurrence-in-a-string"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 23,
+              "title": "字符串：6.重复的子字符串",
+              "bvid": "BV1cg41127fw",
+              "videoUrl": "https://www.bilibili.com/video/BV1cg41127fw/",
+              "questionSlugs": [
+                "repeated-substring-pattern"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "栈与队列",
+          "questionNum": 7,
+          "videoCount": 7,
+          "questions": [
+            {
+              "slug": "implement-queue-using-stacks",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "栈与队列：1.用栈实现队列",
+                  "url": "https://www.bilibili.com/video/BV1nY4y1w7VC/"
+                }
+              ]
+            },
+            {
+              "slug": "implement-stack-using-queues",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "栈与队列：2. 用队列实现栈",
+                  "url": "https://www.bilibili.com/video/BV1Fd4y1K7sm/"
+                }
+              ]
+            },
+            {
+              "slug": "valid-parentheses",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "栈与队列：3.有效的括号",
+                  "url": "https://www.bilibili.com/video/BV1AF411w78g/"
+                }
+              ]
+            },
+            {
+              "slug": "remove-all-adjacent-duplicates-in-string",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "栈与队列：4. 删除字符串中的所有相邻重复项",
+                  "url": "https://www.bilibili.com/video/BV12a411P7mw/"
+                }
+              ]
+            },
+            {
+              "slug": "evaluate-reverse-polish-notation",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "栈与队列：5.逆波兰表达式求值",
+                  "url": "https://www.bilibili.com/video/BV1kd4y1o7on/"
+                }
+              ]
+            },
+            {
+              "slug": "sliding-window-maximum",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "栈与队列： 6. 滑动窗口最大值",
+                  "url": "https://www.bilibili.com/video/BV1XS4y1p7qj/"
+                }
+              ]
+            },
+            {
+              "slug": "top-k-frequent-elements",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "栈与队列：7.前 K 个高频元素",
+                  "url": "https://www.bilibili.com/video/BV1Xg41167Lz/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 24,
+              "title": "栈与队列：1.用栈实现队列",
+              "bvid": "BV1nY4y1w7VC",
+              "videoUrl": "https://www.bilibili.com/video/BV1nY4y1w7VC/",
+              "questionSlugs": [
+                "implement-queue-using-stacks"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 25,
+              "title": "栈与队列：2. 用队列实现栈",
+              "bvid": "BV1Fd4y1K7sm",
+              "videoUrl": "https://www.bilibili.com/video/BV1Fd4y1K7sm/",
+              "questionSlugs": [
+                "implement-stack-using-queues"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 26,
+              "title": "栈与队列：3.有效的括号",
+              "bvid": "BV1AF411w78g",
+              "videoUrl": "https://www.bilibili.com/video/BV1AF411w78g/",
+              "questionSlugs": [
+                "valid-parentheses"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 27,
+              "title": "栈与队列：4. 删除字符串中的所有相邻重复项",
+              "bvid": "BV12a411P7mw",
+              "videoUrl": "https://www.bilibili.com/video/BV12a411P7mw/",
+              "questionSlugs": [
+                "remove-all-adjacent-duplicates-in-string"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 28,
+              "title": "栈与队列：5.逆波兰表达式求值",
+              "bvid": "BV1kd4y1o7on",
+              "videoUrl": "https://www.bilibili.com/video/BV1kd4y1o7on/",
+              "questionSlugs": [
+                "evaluate-reverse-polish-notation"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 29,
+              "title": "栈与队列： 6. 滑动窗口最大值",
+              "bvid": "BV1XS4y1p7qj",
+              "videoUrl": "https://www.bilibili.com/video/BV1XS4y1p7qj/",
+              "questionSlugs": [
+                "sliding-window-maximum"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 30,
+              "title": "栈与队列：7.前 K 个高频元素",
+              "bvid": "BV1Xg41167Lz",
+              "videoUrl": "https://www.bilibili.com/video/BV1Xg41167Lz/",
+              "questionSlugs": [
+                "top-k-frequent-elements"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "二叉树",
+          "questionNum": 28,
+          "videoCount": 29,
+          "questions": [
+            {
+              "slug": "binary-tree-preorder-traversal",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：2.递归遍历",
+                  "url": "https://www.bilibili.com/video/BV1Wh411S7xt/"
+                },
+                {
+                  "title": "二叉树：3.非递归遍历",
+                  "url": "https://www.bilibili.com/video/BV15f4y1W7i2/"
+                }
+              ]
+            },
+            {
+              "slug": "binary-tree-postorder-traversal",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：2.递归遍历",
+                  "url": "https://www.bilibili.com/video/BV1Wh411S7xt/"
+                }
+              ]
+            },
+            {
+              "slug": "binary-tree-inorder-traversal",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：2.递归遍历",
+                  "url": "https://www.bilibili.com/video/BV1Wh411S7xt/"
+                },
+                {
+                  "title": "二叉树：3.非递归遍历",
+                  "url": "https://www.bilibili.com/video/BV15f4y1W7i2/"
+                },
+                {
+                  "title": "二叉树：4.非递归遍历-中序",
+                  "url": "https://www.bilibili.com/video/BV1Zf4y1a77g/"
+                }
+              ]
+            },
+            {
+              "slug": "binary-tree-level-order-traversal",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：5.层序遍历（广搜优先搜索）",
+                  "url": "https://www.bilibili.com/video/BV1GY4y1u7b2/"
+                }
+              ]
+            },
+            {
+              "slug": "invert-binary-tree",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：6.翻转二叉树",
+                  "url": "https://www.bilibili.com/video/BV1sP4y1f7q7/"
+                }
+              ]
+            },
+            {
+              "slug": "symmetric-tree",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树： 7. 对称二叉树",
+                  "url": "https://www.bilibili.com/video/BV1ue4y1Y7Mf/"
+                }
+              ]
+            },
+            {
+              "slug": "maximum-depth-of-binary-tree",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：8.二叉树的最大深度",
+                  "url": "https://www.bilibili.com/video/BV1Gd4y1V75u/"
+                }
+              ]
+            },
+            {
+              "slug": "minimum-depth-of-binary-tree",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：9.二叉树的最小深度",
+                  "url": "https://www.bilibili.com/video/BV1QD4y1B7e2/"
+                }
+              ]
+            },
+            {
+              "slug": "count-complete-tree-nodes",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：10.完全二叉树节点的数量",
+                  "url": "https://www.bilibili.com/video/BV1eW4y1B7pD/"
+                }
+              ]
+            },
+            {
+              "slug": "balanced-binary-tree",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：11.平衡二叉树",
+                  "url": "https://www.bilibili.com/video/BV1Ug411S7my/"
+                }
+              ]
+            },
+            {
+              "slug": "binary-tree-paths",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：12.二叉树的所有路径",
+                  "url": "https://www.bilibili.com/video/BV1ZG411G7Dh/"
+                }
+              ]
+            },
+            {
+              "slug": "sum-of-left-leaves",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：13.左叶子之和",
+                  "url": "https://www.bilibili.com/video/BV1GY4y1K7z8/"
+                }
+              ]
+            },
+            {
+              "slug": "find-bottom-left-tree-value",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：14.找左下角的值",
+                  "url": "https://www.bilibili.com/video/BV1424y1Z7pn/"
+                }
+              ]
+            },
+            {
+              "slug": "path-sum",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：15. 路径总和",
+                  "url": "https://www.bilibili.com/video/BV19t4y1L7CR/"
+                }
+              ]
+            },
+            {
+              "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：16.从中序与后序遍历序列构造二叉树",
+                  "url": "https://www.bilibili.com/video/BV1vW4y1i7dn/"
+                }
+              ]
+            },
+            {
+              "slug": "maximum-binary-tree",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：17.最大二叉树",
+                  "url": "https://www.bilibili.com/video/BV1MG411G7ox/"
+                }
+              ]
+            },
+            {
+              "slug": "merge-two-binary-trees",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：18.合并二叉树",
+                  "url": "https://www.bilibili.com/video/BV1m14y1Y7JK/"
+                }
+              ]
+            },
+            {
+              "slug": "search-in-a-binary-search-tree",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：19.二叉搜索树中的搜索",
+                  "url": "https://www.bilibili.com/video/BV1wG411g7sF/"
+                }
+              ]
+            },
+            {
+              "slug": "validate-binary-search-tree",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：20.验证二叉搜索树",
+                  "url": "https://www.bilibili.com/video/BV18P411n7Q4/"
+                }
+              ]
+            },
+            {
+              "slug": "minimum-absolute-difference-in-bst",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：21.二叉搜索树的最小绝对差",
+                  "url": "https://www.bilibili.com/video/BV1DD4y11779/"
+                }
+              ]
+            },
+            {
+              "slug": "find-mode-in-binary-search-tree",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：22.二叉搜索树中的众数",
+                  "url": "https://www.bilibili.com/video/BV1fD4y117gp/"
+                }
+              ]
+            },
+            {
+              "slug": "lowest-common-ancestor-of-a-binary-tree",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：23. 二叉树的最近公共祖先",
+                  "url": "https://www.bilibili.com/video/BV1jd4y1B7E2/"
+                }
+              ]
+            },
+            {
+              "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：24. 二叉搜索树的最近公共祖先",
+                  "url": "https://www.bilibili.com/video/BV1Zt4y1F7ww/"
+                }
+              ]
+            },
+            {
+              "slug": "insert-into-a-binary-search-tree",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：25.二叉搜索树中的插入操作",
+                  "url": "https://www.bilibili.com/video/BV1Et4y1c78Y/"
+                }
+              ]
+            },
+            {
+              "slug": "delete-node-in-a-bst",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：26.删除二叉搜索树中的节点",
+                  "url": "https://www.bilibili.com/video/BV1tP41177us/"
+                }
+              ]
+            },
+            {
+              "slug": "trim-a-binary-search-tree",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：27. 修剪二叉搜索树",
+                  "url": "https://www.bilibili.com/video/BV17P41177ud/"
+                }
+              ]
+            },
+            {
+              "slug": "convert-sorted-array-to-binary-search-tree",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "二叉树：28.将有序数组转换为二叉搜索树",
+                  "url": "https://www.bilibili.com/video/BV1uR4y1X7qL/"
+                }
+              ]
+            },
+            {
+              "slug": "convert-bst-to-greater-tree",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "二叉树：29.把二叉搜索树转换为累加树",
+                  "url": "https://www.bilibili.com/video/BV1d44y1f7wP/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 31,
+              "title": "二叉树：1.理论基础",
+              "bvid": "BV1Hy4y1t7ij",
+              "videoUrl": "https://www.bilibili.com/video/BV1Hy4y1t7ij/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 32,
+              "title": "二叉树：2.递归遍历",
+              "bvid": "BV1Wh411S7xt",
+              "videoUrl": "https://www.bilibili.com/video/BV1Wh411S7xt/",
+              "questionSlugs": [
+                "binary-tree-preorder-traversal",
+                "binary-tree-postorder-traversal",
+                "binary-tree-inorder-traversal"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 33,
+              "title": "二叉树：3.非递归遍历",
+              "bvid": "BV15f4y1W7i2",
+              "videoUrl": "https://www.bilibili.com/video/BV15f4y1W7i2/",
+              "questionSlugs": [
+                "binary-tree-preorder-traversal",
+                "binary-tree-inorder-traversal"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 34,
+              "title": "二叉树：4.非递归遍历-中序",
+              "bvid": "BV1Zf4y1a77g",
+              "videoUrl": "https://www.bilibili.com/video/BV1Zf4y1a77g/",
+              "questionSlugs": [
+                "binary-tree-inorder-traversal"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 35,
+              "title": "二叉树：5.层序遍历（广搜优先搜索）",
+              "bvid": "BV1GY4y1u7b2",
+              "videoUrl": "https://www.bilibili.com/video/BV1GY4y1u7b2/",
+              "questionSlugs": [
+                "binary-tree-level-order-traversal"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 36,
+              "title": "二叉树：6.翻转二叉树",
+              "bvid": "BV1sP4y1f7q7",
+              "videoUrl": "https://www.bilibili.com/video/BV1sP4y1f7q7/",
+              "questionSlugs": [
+                "invert-binary-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 37,
+              "title": "二叉树： 7. 对称二叉树",
+              "bvid": "BV1ue4y1Y7Mf",
+              "videoUrl": "https://www.bilibili.com/video/BV1ue4y1Y7Mf/",
+              "questionSlugs": [
+                "symmetric-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 38,
+              "title": "二叉树：8.二叉树的最大深度",
+              "bvid": "BV1Gd4y1V75u",
+              "videoUrl": "https://www.bilibili.com/video/BV1Gd4y1V75u/",
+              "questionSlugs": [
+                "maximum-depth-of-binary-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 39,
+              "title": "二叉树：9.二叉树的最小深度",
+              "bvid": "BV1QD4y1B7e2",
+              "videoUrl": "https://www.bilibili.com/video/BV1QD4y1B7e2/",
+              "questionSlugs": [
+                "minimum-depth-of-binary-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 40,
+              "title": "二叉树：10.完全二叉树节点的数量",
+              "bvid": "BV1eW4y1B7pD",
+              "videoUrl": "https://www.bilibili.com/video/BV1eW4y1B7pD/",
+              "questionSlugs": [
+                "count-complete-tree-nodes"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 41,
+              "title": "二叉树：11.平衡二叉树",
+              "bvid": "BV1Ug411S7my",
+              "videoUrl": "https://www.bilibili.com/video/BV1Ug411S7my/",
+              "questionSlugs": [
+                "balanced-binary-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 42,
+              "title": "二叉树：12.二叉树的所有路径",
+              "bvid": "BV1ZG411G7Dh",
+              "videoUrl": "https://www.bilibili.com/video/BV1ZG411G7Dh/",
+              "questionSlugs": [
+                "binary-tree-paths"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 43,
+              "title": "二叉树：13.左叶子之和",
+              "bvid": "BV1GY4y1K7z8",
+              "videoUrl": "https://www.bilibili.com/video/BV1GY4y1K7z8/",
+              "questionSlugs": [
+                "sum-of-left-leaves"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 44,
+              "title": "二叉树：14.找左下角的值",
+              "bvid": "BV1424y1Z7pn",
+              "videoUrl": "https://www.bilibili.com/video/BV1424y1Z7pn/",
+              "questionSlugs": [
+                "find-bottom-left-tree-value"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 45,
+              "title": "二叉树：15. 路径总和",
+              "bvid": "BV19t4y1L7CR",
+              "videoUrl": "https://www.bilibili.com/video/BV19t4y1L7CR/",
+              "questionSlugs": [
+                "path-sum"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 46,
+              "title": "二叉树：16.从中序与后序遍历序列构造二叉树",
+              "bvid": "BV1vW4y1i7dn",
+              "videoUrl": "https://www.bilibili.com/video/BV1vW4y1i7dn/",
+              "questionSlugs": [
+                "construct-binary-tree-from-inorder-and-postorder-traversal"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 47,
+              "title": "二叉树：17.最大二叉树",
+              "bvid": "BV1MG411G7ox",
+              "videoUrl": "https://www.bilibili.com/video/BV1MG411G7ox/",
+              "questionSlugs": [
+                "maximum-binary-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 48,
+              "title": "二叉树：18.合并二叉树",
+              "bvid": "BV1m14y1Y7JK",
+              "videoUrl": "https://www.bilibili.com/video/BV1m14y1Y7JK/",
+              "questionSlugs": [
+                "merge-two-binary-trees"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 49,
+              "title": "二叉树：19.二叉搜索树中的搜索",
+              "bvid": "BV1wG411g7sF",
+              "videoUrl": "https://www.bilibili.com/video/BV1wG411g7sF/",
+              "questionSlugs": [
+                "search-in-a-binary-search-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 50,
+              "title": "二叉树：20.验证二叉搜索树",
+              "bvid": "BV18P411n7Q4",
+              "videoUrl": "https://www.bilibili.com/video/BV18P411n7Q4/",
+              "questionSlugs": [
+                "validate-binary-search-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 51,
+              "title": "二叉树：21.二叉搜索树的最小绝对差",
+              "bvid": "BV1DD4y11779",
+              "videoUrl": "https://www.bilibili.com/video/BV1DD4y11779/",
+              "questionSlugs": [
+                "minimum-absolute-difference-in-bst"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 52,
+              "title": "二叉树：22.二叉搜索树中的众数",
+              "bvid": "BV1fD4y117gp",
+              "videoUrl": "https://www.bilibili.com/video/BV1fD4y117gp/",
+              "questionSlugs": [
+                "find-mode-in-binary-search-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 53,
+              "title": "二叉树：23. 二叉树的最近公共祖先",
+              "bvid": "BV1jd4y1B7E2",
+              "videoUrl": "https://www.bilibili.com/video/BV1jd4y1B7E2/",
+              "questionSlugs": [
+                "lowest-common-ancestor-of-a-binary-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 54,
+              "title": "二叉树：24. 二叉搜索树的最近公共祖先",
+              "bvid": "BV1Zt4y1F7ww",
+              "videoUrl": "https://www.bilibili.com/video/BV1Zt4y1F7ww/",
+              "questionSlugs": [
+                "lowest-common-ancestor-of-a-binary-search-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 55,
+              "title": "二叉树：25.二叉搜索树中的插入操作",
+              "bvid": "BV1Et4y1c78Y",
+              "videoUrl": "https://www.bilibili.com/video/BV1Et4y1c78Y/",
+              "questionSlugs": [
+                "insert-into-a-binary-search-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 56,
+              "title": "二叉树：26.删除二叉搜索树中的节点",
+              "bvid": "BV1tP41177us",
+              "videoUrl": "https://www.bilibili.com/video/BV1tP41177us/",
+              "questionSlugs": [
+                "delete-node-in-a-bst"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 57,
+              "title": "二叉树：27. 修剪二叉搜索树",
+              "bvid": "BV17P41177ud",
+              "videoUrl": "https://www.bilibili.com/video/BV17P41177ud/",
+              "questionSlugs": [
+                "trim-a-binary-search-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 58,
+              "title": "二叉树：28.将有序数组转换为二叉搜索树",
+              "bvid": "BV1uR4y1X7qL",
+              "videoUrl": "https://www.bilibili.com/video/BV1uR4y1X7qL/",
+              "questionSlugs": [
+                "convert-sorted-array-to-binary-search-tree"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 59,
+              "title": "二叉树：29.把二叉搜索树转换为累加树",
+              "bvid": "BV1d44y1f7wP",
+              "videoUrl": "https://www.bilibili.com/video/BV1d44y1f7wP/",
+              "questionSlugs": [
+                "convert-bst-to-greater-tree"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "回溯算法",
+          "questionNum": 14,
+          "videoCount": 16,
+          "questions": [
+            {
+              "slug": "combinations",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：2.组合问题",
+                  "url": "https://www.bilibili.com/video/BV1ti4y1L7cv/"
+                },
+                {
+                  "title": "回溯算法：3.组合问题的剪枝操作",
+                  "url": "https://www.bilibili.com/video/BV1wi4y157er/"
+                }
+              ]
+            },
+            {
+              "slug": "combination-sum-iii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：4.组合总和III",
+                  "url": "https://www.bilibili.com/video/BV1wg411873x/"
+                }
+              ]
+            },
+            {
+              "slug": "letter-combinations-of-a-phone-number",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：5.电话号码的字母组合",
+                  "url": "https://www.bilibili.com/video/BV1yV4y1V7Ug/"
+                }
+              ]
+            },
+            {
+              "slug": "combination-sum",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：6.组合总和",
+                  "url": "https://www.bilibili.com/video/BV1KT4y1M7HJ/"
+                }
+              ]
+            },
+            {
+              "slug": "combination-sum-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：7.组合总和II",
+                  "url": "https://www.bilibili.com/video/BV12V4y1V73A/"
+                }
+              ]
+            },
+            {
+              "slug": "palindrome-partitioning",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：8.分割回文串",
+                  "url": "https://www.bilibili.com/video/BV1c54y1e7k6/"
+                }
+              ]
+            },
+            {
+              "slug": "restore-ip-addresses",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：9.复原IP地址",
+                  "url": "https://www.bilibili.com/video/BV1XP4y1U73i/"
+                }
+              ]
+            },
+            {
+              "slug": "subsets",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：10.子集",
+                  "url": "https://www.bilibili.com/video/BV1U84y1q7Ci/"
+                }
+              ]
+            },
+            {
+              "slug": "subsets-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：11.子集II",
+                  "url": "https://www.bilibili.com/video/BV1vm4y1F71J/"
+                }
+              ]
+            },
+            {
+              "slug": "non-decreasing-subsequences",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：12.递增子序列",
+                  "url": "https://www.bilibili.com/video/BV1EG4y1h78v/"
+                }
+              ]
+            },
+            {
+              "slug": "permutations",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：13.全排列",
+                  "url": "https://www.bilibili.com/video/BV19v4y1S79W/"
+                }
+              ]
+            },
+            {
+              "slug": "permutations-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "回溯算法：14.全排列 II",
+                  "url": "https://www.bilibili.com/video/BV1R84y1i7Tm/"
+                }
+              ]
+            },
+            {
+              "slug": "n-queens",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "回溯算法：15.N皇后",
+                  "url": "https://www.bilibili.com/video/BV1Rd4y1c7Bq/"
+                }
+              ]
+            },
+            {
+              "slug": "sudoku-solver",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "回溯算法：16. 解数独",
+                  "url": "https://www.bilibili.com/video/BV1TW4y1471V/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 60,
+              "title": "回溯算法：1.理论基础",
+              "bvid": "BV1cy4y167mM",
+              "videoUrl": "https://www.bilibili.com/video/BV1cy4y167mM/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 61,
+              "title": "回溯算法：2.组合问题",
+              "bvid": "BV1ti4y1L7cv",
+              "videoUrl": "https://www.bilibili.com/video/BV1ti4y1L7cv/",
+              "questionSlugs": [
+                "combinations"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 62,
+              "title": "回溯算法：3.组合问题的剪枝操作",
+              "bvid": "BV1wi4y157er",
+              "videoUrl": "https://www.bilibili.com/video/BV1wi4y157er/",
+              "questionSlugs": [
+                "combinations"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 63,
+              "title": "回溯算法：4.组合总和III",
+              "bvid": "BV1wg411873x",
+              "videoUrl": "https://www.bilibili.com/video/BV1wg411873x/",
+              "questionSlugs": [
+                "combination-sum-iii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 64,
+              "title": "回溯算法：5.电话号码的字母组合",
+              "bvid": "BV1yV4y1V7Ug",
+              "videoUrl": "https://www.bilibili.com/video/BV1yV4y1V7Ug/",
+              "questionSlugs": [
+                "letter-combinations-of-a-phone-number"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 65,
+              "title": "回溯算法：6.组合总和",
+              "bvid": "BV1KT4y1M7HJ",
+              "videoUrl": "https://www.bilibili.com/video/BV1KT4y1M7HJ/",
+              "questionSlugs": [
+                "combination-sum"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 66,
+              "title": "回溯算法：7.组合总和II",
+              "bvid": "BV12V4y1V73A",
+              "videoUrl": "https://www.bilibili.com/video/BV12V4y1V73A/",
+              "questionSlugs": [
+                "combination-sum-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 67,
+              "title": "回溯算法：8.分割回文串",
+              "bvid": "BV1c54y1e7k6",
+              "videoUrl": "https://www.bilibili.com/video/BV1c54y1e7k6/",
+              "questionSlugs": [
+                "palindrome-partitioning"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 68,
+              "title": "回溯算法：9.复原IP地址",
+              "bvid": "BV1XP4y1U73i",
+              "videoUrl": "https://www.bilibili.com/video/BV1XP4y1U73i/",
+              "questionSlugs": [
+                "restore-ip-addresses"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 69,
+              "title": "回溯算法：10.子集",
+              "bvid": "BV1U84y1q7Ci",
+              "videoUrl": "https://www.bilibili.com/video/BV1U84y1q7Ci/",
+              "questionSlugs": [
+                "subsets"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 70,
+              "title": "回溯算法：11.子集II",
+              "bvid": "BV1vm4y1F71J",
+              "videoUrl": "https://www.bilibili.com/video/BV1vm4y1F71J/",
+              "questionSlugs": [
+                "subsets-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 71,
+              "title": "回溯算法：12.递增子序列",
+              "bvid": "BV1EG4y1h78v",
+              "videoUrl": "https://www.bilibili.com/video/BV1EG4y1h78v/",
+              "questionSlugs": [
+                "non-decreasing-subsequences"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 72,
+              "title": "回溯算法：13.全排列",
+              "bvid": "BV19v4y1S79W",
+              "videoUrl": "https://www.bilibili.com/video/BV19v4y1S79W/",
+              "questionSlugs": [
+                "permutations"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 73,
+              "title": "回溯算法：14.全排列 II",
+              "bvid": "BV1R84y1i7Tm",
+              "videoUrl": "https://www.bilibili.com/video/BV1R84y1i7Tm/",
+              "questionSlugs": [
+                "permutations-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 74,
+              "title": "回溯算法：15.N皇后",
+              "bvid": "BV1Rd4y1c7Bq",
+              "videoUrl": "https://www.bilibili.com/video/BV1Rd4y1c7Bq/",
+              "questionSlugs": [
+                "n-queens"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 75,
+              "title": "回溯算法：16. 解数独",
+              "bvid": "BV1TW4y1471V",
+              "videoUrl": "https://www.bilibili.com/video/BV1TW4y1471V/",
+              "questionSlugs": [
+                "sudoku-solver"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "贪心算法",
+          "questionNum": 17,
+          "videoCount": 18,
+          "questions": [
+            {
+              "slug": "assign-cookies",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "贪心算法：1.分发饼干",
+                  "url": "https://www.bilibili.com/video/BV1MM411b7cq/"
+                }
+              ]
+            },
+            {
+              "slug": "wiggle-subsequence",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：2.摆动序列",
+                  "url": "https://www.bilibili.com/video/BV17M411b7NS/"
+                }
+              ]
+            },
+            {
+              "slug": "maximum-subarray",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：3. 最大子序和",
+                  "url": "https://www.bilibili.com/video/BV1aY4y1Z7ya/"
+                }
+              ]
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：4.买卖股票最佳时机II",
+                  "url": "https://www.bilibili.com/video/BV1ev4y1C7na/"
+                }
+              ]
+            },
+            {
+              "slug": "jump-game",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：5.跳跃游戏",
+                  "url": "https://www.bilibili.com/video/BV1VG4y1X7kB/"
+                }
+              ]
+            },
+            {
+              "slug": "jump-game-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：6.跳跃游戏II",
+                  "url": "https://www.bilibili.com/video/BV1Y24y1r7XZ/"
+                }
+              ]
+            },
+            {
+              "slug": "maximize-sum-of-array-after-k-negations",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "贪心算法：7.K次取反后最大化的数组和",
+                  "url": "https://www.bilibili.com/video/BV138411G7LY/"
+                }
+              ]
+            },
+            {
+              "slug": "gas-station",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：8.加油站",
+                  "url": "https://www.bilibili.com/video/BV1jA411r7WX/"
+                }
+              ]
+            },
+            {
+              "slug": "candy",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "贪心算法：9.分发糖果",
+                  "url": "https://www.bilibili.com/video/BV1ev4y1r7wN/"
+                }
+              ]
+            },
+            {
+              "slug": "lemonade-change",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "贪心算法：10.柠檬水找零",
+                  "url": "https://www.bilibili.com/video/BV12x4y1j7DD/"
+                }
+              ]
+            },
+            {
+              "slug": "queue-reconstruction-by-height",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：11.根据身高重建队列",
+                  "url": "https://www.bilibili.com/video/BV1EA411675Y/"
+                }
+              ]
+            },
+            {
+              "slug": "minimum-number-of-arrows-to-burst-balloons",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：12.用最少数量的箭引爆气球",
+                  "url": "https://www.bilibili.com/video/BV1SA41167xe/"
+                }
+              ]
+            },
+            {
+              "slug": "non-overlapping-intervals",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：13.无重叠区间",
+                  "url": "https://www.bilibili.com/video/BV1A14y1c7E1/"
+                }
+              ]
+            },
+            {
+              "slug": "partition-labels",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：14.划分字母区间",
+                  "url": "https://www.bilibili.com/video/BV18G4y1K7d5/"
+                }
+              ]
+            },
+            {
+              "slug": "merge-intervals",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：15.合并区间",
+                  "url": "https://www.bilibili.com/video/BV1wx4y157nD/"
+                }
+              ]
+            },
+            {
+              "slug": "monotone-increasing-digits",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "贪心算法：16.单调自增的数字",
+                  "url": "https://www.bilibili.com/video/BV1Kv4y1x7tP/"
+                }
+              ]
+            },
+            {
+              "slug": "binary-tree-cameras",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "贪心算法：17.监督二叉树",
+                  "url": "https://www.bilibili.com/video/BV1SA411U75i/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 76,
+              "title": "贪心算法理论基础",
+              "bvid": "BV1WK4y1R71x",
+              "videoUrl": "https://www.bilibili.com/video/BV1WK4y1R71x/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 77,
+              "title": "贪心算法：1.分发饼干",
+              "bvid": "BV1MM411b7cq",
+              "videoUrl": "https://www.bilibili.com/video/BV1MM411b7cq/",
+              "questionSlugs": [
+                "assign-cookies"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 78,
+              "title": "贪心算法：2.摆动序列",
+              "bvid": "BV17M411b7NS",
+              "videoUrl": "https://www.bilibili.com/video/BV17M411b7NS/",
+              "questionSlugs": [
+                "wiggle-subsequence"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 79,
+              "title": "贪心算法：3. 最大子序和",
+              "bvid": "BV1aY4y1Z7ya",
+              "videoUrl": "https://www.bilibili.com/video/BV1aY4y1Z7ya/",
+              "questionSlugs": [
+                "maximum-subarray"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 80,
+              "title": "贪心算法：4.买卖股票最佳时机II",
+              "bvid": "BV1ev4y1C7na",
+              "videoUrl": "https://www.bilibili.com/video/BV1ev4y1C7na/",
+              "questionSlugs": [
+                "best-time-to-buy-and-sell-stock-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 81,
+              "title": "贪心算法：5.跳跃游戏",
+              "bvid": "BV1VG4y1X7kB",
+              "videoUrl": "https://www.bilibili.com/video/BV1VG4y1X7kB/",
+              "questionSlugs": [
+                "jump-game"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 82,
+              "title": "贪心算法：6.跳跃游戏II",
+              "bvid": "BV1Y24y1r7XZ",
+              "videoUrl": "https://www.bilibili.com/video/BV1Y24y1r7XZ/",
+              "questionSlugs": [
+                "jump-game-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 83,
+              "title": "贪心算法：7.K次取反后最大化的数组和",
+              "bvid": "BV138411G7LY",
+              "videoUrl": "https://www.bilibili.com/video/BV138411G7LY/",
+              "questionSlugs": [
+                "maximize-sum-of-array-after-k-negations"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 84,
+              "title": "贪心算法：8.加油站",
+              "bvid": "BV1jA411r7WX",
+              "videoUrl": "https://www.bilibili.com/video/BV1jA411r7WX/",
+              "questionSlugs": [
+                "gas-station"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 85,
+              "title": "贪心算法：9.分发糖果",
+              "bvid": "BV1ev4y1r7wN",
+              "videoUrl": "https://www.bilibili.com/video/BV1ev4y1r7wN/",
+              "questionSlugs": [
+                "candy"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 86,
+              "title": "贪心算法：10.柠檬水找零",
+              "bvid": "BV12x4y1j7DD",
+              "videoUrl": "https://www.bilibili.com/video/BV12x4y1j7DD/",
+              "questionSlugs": [
+                "lemonade-change"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 87,
+              "title": "贪心算法：11.根据身高重建队列",
+              "bvid": "BV1EA411675Y",
+              "videoUrl": "https://www.bilibili.com/video/BV1EA411675Y/",
+              "questionSlugs": [
+                "queue-reconstruction-by-height"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 88,
+              "title": "贪心算法：12.用最少数量的箭引爆气球",
+              "bvid": "BV1SA41167xe",
+              "videoUrl": "https://www.bilibili.com/video/BV1SA41167xe/",
+              "questionSlugs": [
+                "minimum-number-of-arrows-to-burst-balloons"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 89,
+              "title": "贪心算法：13.无重叠区间",
+              "bvid": "BV1A14y1c7E1",
+              "videoUrl": "https://www.bilibili.com/video/BV1A14y1c7E1/",
+              "questionSlugs": [
+                "non-overlapping-intervals"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 90,
+              "title": "贪心算法：14.划分字母区间",
+              "bvid": "BV18G4y1K7d5",
+              "videoUrl": "https://www.bilibili.com/video/BV18G4y1K7d5/",
+              "questionSlugs": [
+                "partition-labels"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 91,
+              "title": "贪心算法：15.合并区间",
+              "bvid": "BV1wx4y157nD",
+              "videoUrl": "https://www.bilibili.com/video/BV1wx4y157nD/",
+              "questionSlugs": [
+                "merge-intervals"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 92,
+              "title": "贪心算法：16.单调自增的数字",
+              "bvid": "BV1Kv4y1x7tP",
+              "videoUrl": "https://www.bilibili.com/video/BV1Kv4y1x7tP/",
+              "questionSlugs": [
+                "monotone-increasing-digits"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 93,
+              "title": "贪心算法：17.监督二叉树",
+              "bvid": "BV1SA411U75i",
+              "videoUrl": "https://www.bilibili.com/video/BV1SA411U75i/",
+              "questionSlugs": [
+                "binary-tree-cameras"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "动态规划",
+          "questionNum": 37,
+          "videoCount": 41,
+          "questions": [
+            {
+              "slug": "fibonacci-number",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "动态规划：2.斐波那契数列",
+                  "url": "https://www.bilibili.com/video/BV1f5411K7mo/"
+                }
+              ]
+            },
+            {
+              "slug": "climbing-stairs",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "动态规划：3.爬楼梯",
+                  "url": "https://www.bilibili.com/video/BV17h411h7UH/"
+                }
+              ]
+            },
+            {
+              "slug": "min-cost-climbing-stairs",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "动态规划：4.使用最小花费爬楼梯",
+                  "url": "https://www.bilibili.com/video/BV16G411c7yZ/"
+                }
+              ]
+            },
+            {
+              "slug": "unique-paths",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：5.不同路径",
+                  "url": "https://www.bilibili.com/video/BV1ve4y1x7Eu/"
+                }
+              ]
+            },
+            {
+              "slug": "unique-paths-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：6. 不同路径 II",
+                  "url": "https://www.bilibili.com/video/BV1Ld4y1k7c6/"
+                }
+              ]
+            },
+            {
+              "slug": "integer-break",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：7.整数拆分",
+                  "url": "https://www.bilibili.com/video/BV1Mg411q7YJ/"
+                }
+              ]
+            },
+            {
+              "slug": "unique-binary-search-trees",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：8.不同的二叉搜索树",
+                  "url": "https://www.bilibili.com/video/BV1eK411o7QA/"
+                }
+              ]
+            },
+            {
+              "slug": "partition-equal-subset-sum",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：11.分割等和子集",
+                  "url": "https://www.bilibili.com/video/BV1rt4y1N7jE/"
+                }
+              ]
+            },
+            {
+              "slug": "last-stone-weight-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：12.最后一块石头的重量II",
+                  "url": "https://www.bilibili.com/video/BV14M411C7oV/"
+                }
+              ]
+            },
+            {
+              "slug": "target-sum",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：13.目标和",
+                  "url": "https://www.bilibili.com/video/BV1o8411j73x/"
+                }
+              ]
+            },
+            {
+              "slug": "ones-and-zeroes",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：14.一和零",
+                  "url": "https://www.bilibili.com/video/BV1rW4y1x7ZQ/"
+                }
+              ]
+            },
+            {
+              "slug": "coin-change-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：16.零钱兑换II",
+                  "url": "https://www.bilibili.com/video/BV1KM411k75j/"
+                }
+              ]
+            },
+            {
+              "slug": "combination-sum-iv",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：17.组合总和IV",
+                  "url": "https://www.bilibili.com/video/BV1V14y1n7B6/"
+                }
+              ]
+            },
+            {
+              "slug": "coin-change",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：18.零钱兑换",
+                  "url": "https://www.bilibili.com/video/BV14K411R7yv/"
+                }
+              ]
+            },
+            {
+              "slug": "perfect-squares",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：19.完全平方数",
+                  "url": "https://www.bilibili.com/video/BV12P411T7Br/"
+                }
+              ]
+            },
+            {
+              "slug": "word-break",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：20.单词拆分",
+                  "url": "https://www.bilibili.com/video/BV1pd4y147Rh/"
+                }
+              ]
+            },
+            {
+              "slug": "house-robber",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：21.打家劫舍",
+                  "url": "https://www.bilibili.com/video/BV1Te411N7SX/"
+                }
+              ]
+            },
+            {
+              "slug": "house-robber-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：22.打家劫舍II",
+                  "url": "https://www.bilibili.com/video/BV1oM411B7xq/"
+                }
+              ]
+            },
+            {
+              "slug": "house-robber-iii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：23.打家劫舍III",
+                  "url": "https://www.bilibili.com/video/BV1H24y1Q7sY/"
+                }
+              ]
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "动态规划：24.买卖股票的最佳时机1",
+                  "url": "https://www.bilibili.com/video/BV1Xe4y1u77q/"
+                }
+              ]
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：25.买卖股票的最佳时机II",
+                  "url": "https://www.bilibili.com/video/BV1D24y1Q7Ls/"
+                }
+              ]
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-iii",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "动态规划：26.买卖股票最佳时机III",
+                  "url": "https://www.bilibili.com/video/BV1WG411K7AR/"
+                }
+              ]
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-iv",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "动态规划：27.买卖股票最佳时机4",
+                  "url": "https://www.bilibili.com/video/BV16M411U7XJ/"
+                }
+              ]
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-with-cooldown",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：28.买卖股票的最佳时机含冷冻期",
+                  "url": "https://www.bilibili.com/video/BV1rP4y1D7ku/"
+                }
+              ]
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-with-transaction-fee",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：29.买卖股票的最佳时机含手续费",
+                  "url": "https://www.bilibili.com/video/BV1z44y1Z7UR/"
+                }
+              ]
+            },
+            {
+              "slug": "longest-increasing-subsequence",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：30.最长递增子序列",
+                  "url": "https://www.bilibili.com/video/BV1ng411J7xP/"
+                }
+              ]
+            },
+            {
+              "slug": "longest-continuous-increasing-subsequence",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "动态规划：31.最长连续递增序列",
+                  "url": "https://www.bilibili.com/video/BV1bD4y1778v/"
+                }
+              ]
+            },
+            {
+              "slug": "maximum-length-of-repeated-subarray",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：32.最长重复子数组",
+                  "url": "https://www.bilibili.com/video/BV178411H7hV/"
+                }
+              ]
+            },
+            {
+              "slug": "longest-common-subsequence",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：33.最长公共子序列",
+                  "url": "https://www.bilibili.com/video/BV1ye4y1L7CQ/"
+                }
+              ]
+            },
+            {
+              "slug": "uncrossed-lines",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：34.不相交的线",
+                  "url": "https://www.bilibili.com/video/BV1h84y1x7MP/"
+                }
+              ]
+            },
+            {
+              "slug": "maximum-subarray",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划 ：35.最大子序和",
+                  "url": "https://www.bilibili.com/video/BV19V4y1F7b5/"
+                }
+              ]
+            },
+            {
+              "slug": "is-subsequence",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "动态规划：36.判断子序列",
+                  "url": "https://www.bilibili.com/video/BV1tv4y1B7ym/"
+                }
+              ]
+            },
+            {
+              "slug": "distinct-subsequences",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "动态规划：37.不同的子序列",
+                  "url": "https://www.bilibili.com/video/BV1fG4y1m75Q/"
+                }
+              ]
+            },
+            {
+              "slug": "delete-operation-for-two-strings",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：38.两个字符串的删除操作",
+                  "url": "https://www.bilibili.com/video/BV1we4y157wB/"
+                }
+              ]
+            },
+            {
+              "slug": "edit-distance",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：39.编辑距离",
+                  "url": "https://www.bilibili.com/video/BV1qv4y1q78f/"
+                }
+              ]
+            },
+            {
+              "slug": "palindromic-substrings",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：40.回文子串",
+                  "url": "https://www.bilibili.com/video/BV17G4y1y7z9/"
+                }
+              ]
+            },
+            {
+              "slug": "longest-palindromic-subsequence",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "动态规划：42.最长回文子序列",
+                  "url": "https://www.bilibili.com/video/BV1d8411K7W6/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 94,
+              "title": "动态规划：1.理论基础",
+              "bvid": "BV13Q4y197Wg",
+              "videoUrl": "https://www.bilibili.com/video/BV13Q4y197Wg/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 95,
+              "title": "动态规划：2.斐波那契数列",
+              "bvid": "BV1f5411K7mo",
+              "videoUrl": "https://www.bilibili.com/video/BV1f5411K7mo/",
+              "questionSlugs": [
+                "fibonacci-number"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 96,
+              "title": "动态规划：3.爬楼梯",
+              "bvid": "BV17h411h7UH",
+              "videoUrl": "https://www.bilibili.com/video/BV17h411h7UH/",
+              "questionSlugs": [
+                "climbing-stairs"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 97,
+              "title": "动态规划：4.使用最小花费爬楼梯",
+              "bvid": "BV16G411c7yZ",
+              "videoUrl": "https://www.bilibili.com/video/BV16G411c7yZ/",
+              "questionSlugs": [
+                "min-cost-climbing-stairs"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 98,
+              "title": "动态规划：5.不同路径",
+              "bvid": "BV1ve4y1x7Eu",
+              "videoUrl": "https://www.bilibili.com/video/BV1ve4y1x7Eu/",
+              "questionSlugs": [
+                "unique-paths"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 99,
+              "title": "动态规划：6. 不同路径 II",
+              "bvid": "BV1Ld4y1k7c6",
+              "videoUrl": "https://www.bilibili.com/video/BV1Ld4y1k7c6/",
+              "questionSlugs": [
+                "unique-paths-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 100,
+              "title": "动态规划：7.整数拆分",
+              "bvid": "BV1Mg411q7YJ",
+              "videoUrl": "https://www.bilibili.com/video/BV1Mg411q7YJ/",
+              "questionSlugs": [
+                "integer-break"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 101,
+              "title": "动态规划：8.不同的二叉搜索树",
+              "bvid": "BV1eK411o7QA",
+              "videoUrl": "https://www.bilibili.com/video/BV1eK411o7QA/",
+              "questionSlugs": [
+                "unique-binary-search-trees"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 102,
+              "title": "动态规划：9. 0-1背包问题理论基础",
+              "bvid": "BV1cg411g7Y6",
+              "videoUrl": "https://www.bilibili.com/video/BV1cg411g7Y6/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 103,
+              "title": "动态规划：10. 0-1背包问题之滚动数组",
+              "bvid": "BV1BU4y177kY",
+              "videoUrl": "https://www.bilibili.com/video/BV1BU4y177kY/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 104,
+              "title": "动态规划：11.分割等和子集",
+              "bvid": "BV1rt4y1N7jE",
+              "videoUrl": "https://www.bilibili.com/video/BV1rt4y1N7jE/",
+              "questionSlugs": [
+                "partition-equal-subset-sum"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 105,
+              "title": "动态规划：12.最后一块石头的重量II",
+              "bvid": "BV14M411C7oV",
+              "videoUrl": "https://www.bilibili.com/video/BV14M411C7oV/",
+              "questionSlugs": [
+                "last-stone-weight-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 106,
+              "title": "动态规划：13.目标和",
+              "bvid": "BV1o8411j73x",
+              "videoUrl": "https://www.bilibili.com/video/BV1o8411j73x/",
+              "questionSlugs": [
+                "target-sum"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 107,
+              "title": "动态规划：14.一和零",
+              "bvid": "BV1rW4y1x7ZQ",
+              "videoUrl": "https://www.bilibili.com/video/BV1rW4y1x7ZQ/",
+              "questionSlugs": [
+                "ones-and-zeroes"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 108,
+              "title": "动态规划：15.完全背包理论基础",
+              "bvid": "BV1uK411o7c9",
+              "videoUrl": "https://www.bilibili.com/video/BV1uK411o7c9/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 109,
+              "title": "动态规划：16.零钱兑换II",
+              "bvid": "BV1KM411k75j",
+              "videoUrl": "https://www.bilibili.com/video/BV1KM411k75j/",
+              "questionSlugs": [
+                "coin-change-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 110,
+              "title": "动态规划：17.组合总和IV",
+              "bvid": "BV1V14y1n7B6",
+              "videoUrl": "https://www.bilibili.com/video/BV1V14y1n7B6/",
+              "questionSlugs": [
+                "combination-sum-iv"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 111,
+              "title": "动态规划：18.零钱兑换",
+              "bvid": "BV14K411R7yv",
+              "videoUrl": "https://www.bilibili.com/video/BV14K411R7yv/",
+              "questionSlugs": [
+                "coin-change"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 112,
+              "title": "动态规划：19.完全平方数",
+              "bvid": "BV12P411T7Br",
+              "videoUrl": "https://www.bilibili.com/video/BV12P411T7Br/",
+              "questionSlugs": [
+                "perfect-squares"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 113,
+              "title": "动态规划：20.单词拆分",
+              "bvid": "BV1pd4y147Rh",
+              "videoUrl": "https://www.bilibili.com/video/BV1pd4y147Rh/",
+              "questionSlugs": [
+                "word-break"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 114,
+              "title": "动态规划：21.打家劫舍",
+              "bvid": "BV1Te411N7SX",
+              "videoUrl": "https://www.bilibili.com/video/BV1Te411N7SX/",
+              "questionSlugs": [
+                "house-robber"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 115,
+              "title": "动态规划：22.打家劫舍II",
+              "bvid": "BV1oM411B7xq",
+              "videoUrl": "https://www.bilibili.com/video/BV1oM411B7xq/",
+              "questionSlugs": [
+                "house-robber-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 116,
+              "title": "动态规划：23.打家劫舍III",
+              "bvid": "BV1H24y1Q7sY",
+              "videoUrl": "https://www.bilibili.com/video/BV1H24y1Q7sY/",
+              "questionSlugs": [
+                "house-robber-iii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 117,
+              "title": "动态规划：24.买卖股票的最佳时机1",
+              "bvid": "BV1Xe4y1u77q",
+              "videoUrl": "https://www.bilibili.com/video/BV1Xe4y1u77q/",
+              "questionSlugs": [
+                "best-time-to-buy-and-sell-stock"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 118,
+              "title": "动态规划：25.买卖股票的最佳时机II",
+              "bvid": "BV1D24y1Q7Ls",
+              "videoUrl": "https://www.bilibili.com/video/BV1D24y1Q7Ls/",
+              "questionSlugs": [
+                "best-time-to-buy-and-sell-stock-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 119,
+              "title": "动态规划：26.买卖股票最佳时机III",
+              "bvid": "BV1WG411K7AR",
+              "videoUrl": "https://www.bilibili.com/video/BV1WG411K7AR/",
+              "questionSlugs": [
+                "best-time-to-buy-and-sell-stock-iii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 120,
+              "title": "动态规划：27.买卖股票最佳时机4",
+              "bvid": "BV16M411U7XJ",
+              "videoUrl": "https://www.bilibili.com/video/BV16M411U7XJ/",
+              "questionSlugs": [
+                "best-time-to-buy-and-sell-stock-iv"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 121,
+              "title": "动态规划：28.买卖股票的最佳时机含冷冻期",
+              "bvid": "BV1rP4y1D7ku",
+              "videoUrl": "https://www.bilibili.com/video/BV1rP4y1D7ku/",
+              "questionSlugs": [
+                "best-time-to-buy-and-sell-stock-with-cooldown"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 122,
+              "title": "动态规划：29.买卖股票的最佳时机含手续费",
+              "bvid": "BV1z44y1Z7UR",
+              "videoUrl": "https://www.bilibili.com/video/BV1z44y1Z7UR/",
+              "questionSlugs": [
+                "best-time-to-buy-and-sell-stock-with-transaction-fee"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 123,
+              "title": "动态规划：30.最长递增子序列",
+              "bvid": "BV1ng411J7xP",
+              "videoUrl": "https://www.bilibili.com/video/BV1ng411J7xP/",
+              "questionSlugs": [
+                "longest-increasing-subsequence"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 124,
+              "title": "动态规划：31.最长连续递增序列",
+              "bvid": "BV1bD4y1778v",
+              "videoUrl": "https://www.bilibili.com/video/BV1bD4y1778v/",
+              "questionSlugs": [
+                "longest-continuous-increasing-subsequence"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 125,
+              "title": "动态规划：32.最长重复子数组",
+              "bvid": "BV178411H7hV",
+              "videoUrl": "https://www.bilibili.com/video/BV178411H7hV/",
+              "questionSlugs": [
+                "maximum-length-of-repeated-subarray"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 126,
+              "title": "动态规划：33.最长公共子序列",
+              "bvid": "BV1ye4y1L7CQ",
+              "videoUrl": "https://www.bilibili.com/video/BV1ye4y1L7CQ/",
+              "questionSlugs": [
+                "longest-common-subsequence"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 127,
+              "title": "动态规划：34.不相交的线",
+              "bvid": "BV1h84y1x7MP",
+              "videoUrl": "https://www.bilibili.com/video/BV1h84y1x7MP/",
+              "questionSlugs": [
+                "uncrossed-lines"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 128,
+              "title": "动态规划 ：35.最大子序和",
+              "bvid": "BV19V4y1F7b5",
+              "videoUrl": "https://www.bilibili.com/video/BV19V4y1F7b5/",
+              "questionSlugs": [
+                "maximum-subarray"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 129,
+              "title": "动态规划：36.判断子序列",
+              "bvid": "BV1tv4y1B7ym",
+              "videoUrl": "https://www.bilibili.com/video/BV1tv4y1B7ym/",
+              "questionSlugs": [
+                "is-subsequence"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 130,
+              "title": "动态规划：37.不同的子序列",
+              "bvid": "BV1fG4y1m75Q",
+              "videoUrl": "https://www.bilibili.com/video/BV1fG4y1m75Q/",
+              "questionSlugs": [
+                "distinct-subsequences"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 131,
+              "title": "动态规划：38.两个字符串的删除操作",
+              "bvid": "BV1we4y157wB",
+              "videoUrl": "https://www.bilibili.com/video/BV1we4y157wB/",
+              "questionSlugs": [
+                "delete-operation-for-two-strings"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 132,
+              "title": "动态规划：39.编辑距离",
+              "bvid": "BV1qv4y1q78f",
+              "videoUrl": "https://www.bilibili.com/video/BV1qv4y1q78f/",
+              "questionSlugs": [
+                "edit-distance"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 133,
+              "title": "动态规划：40.回文子串",
+              "bvid": "BV17G4y1y7z9",
+              "videoUrl": "https://www.bilibili.com/video/BV17G4y1y7z9/",
+              "questionSlugs": [
+                "palindromic-substrings"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 134,
+              "title": "动态规划：42.最长回文子序列",
+              "bvid": "BV1d8411K7W6",
+              "videoUrl": "https://www.bilibili.com/video/BV1d8411K7W6/",
+              "questionSlugs": [
+                "longest-palindromic-subsequence"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "单调栈",
+          "questionNum": 5,
+          "videoCount": 5,
+          "questions": [
+            {
+              "slug": "daily-temperatures",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "单调栈：1.每日温度",
+                  "url": "https://www.bilibili.com/video/BV1my4y1Z7jj/"
+                }
+              ]
+            },
+            {
+              "slug": "next-greater-element-i",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "单调栈：2.下一个更大元素",
+                  "url": "https://www.bilibili.com/video/BV1jA411m7dX/"
+                }
+              ]
+            },
+            {
+              "slug": "next-greater-element-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "单调栈：3.下一个更大元素II",
+                  "url": "https://www.bilibili.com/video/BV15y4y1o7Dw/"
+                }
+              ]
+            },
+            {
+              "slug": "trapping-rain-water",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "单调栈：4.接雨水",
+                  "url": "https://www.bilibili.com/video/BV1uD4y1u75P/"
+                }
+              ]
+            },
+            {
+              "slug": "largest-rectangle-in-histogram",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "单调栈：5.柱状图中最大的矩形",
+                  "url": "https://www.bilibili.com/video/BV1Ns4y1o7uB/"
+                }
+              ]
+            }
+          ],
+          "lessons": [
+            {
+              "index": 135,
+              "title": "单调栈：1.每日温度",
+              "bvid": "BV1my4y1Z7jj",
+              "videoUrl": "https://www.bilibili.com/video/BV1my4y1Z7jj/",
+              "questionSlugs": [
+                "daily-temperatures"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 136,
+              "title": "单调栈：2.下一个更大元素",
+              "bvid": "BV1jA411m7dX",
+              "videoUrl": "https://www.bilibili.com/video/BV1jA411m7dX/",
+              "questionSlugs": [
+                "next-greater-element-i"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 137,
+              "title": "单调栈：3.下一个更大元素II",
+              "bvid": "BV15y4y1o7Dw",
+              "videoUrl": "https://www.bilibili.com/video/BV15y4y1o7Dw/",
+              "questionSlugs": [
+                "next-greater-element-ii"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 138,
+              "title": "单调栈：4.接雨水",
+              "bvid": "BV1uD4y1u75P",
+              "videoUrl": "https://www.bilibili.com/video/BV1uD4y1u75P/",
+              "questionSlugs": [
+                "trapping-rain-water"
+              ],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 139,
+              "title": "单调栈：5.柱状图中最大的矩形",
+              "bvid": "BV1Ns4y1o7uB",
+              "videoUrl": "https://www.bilibili.com/video/BV1Ns4y1o7uB/",
+              "questionSlugs": [
+                "largest-rectangle-in-histogram"
+              ],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "课程总结",
+          "questionNum": 0,
+          "videoCount": 1,
+          "questions": [],
+          "lessons": [
+            {
+              "index": 140,
+              "title": "我更完了，你看完了吗？",
+              "bvid": "BV1VP411t7TZ",
+              "videoUrl": "https://www.bilibili.com/video/BV1VP411t7TZ/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            }
+          ]
+        },
+        {
+          "name": "图论（卡码网 ACM）",
+          "questionNum": 0,
+          "videoCount": 30,
+          "questions": [],
+          "lessons": [
+            {
+              "index": 141,
+              "title": "图论算法视频正式开更！",
+              "bvid": "BV13cN9e6E7N",
+              "videoUrl": "https://www.bilibili.com/video/BV13cN9e6E7N/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 142,
+              "title": "图论：1.理论基础篇",
+              "bvid": "BV1hYNBeYEvb",
+              "videoUrl": "https://www.bilibili.com/video/BV1hYNBeYEvb/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 143,
+              "title": "图论：2.深度优先搜索理论基础",
+              "bvid": "BV1hFA8eKE6C",
+              "videoUrl": "https://www.bilibili.com/video/BV1hFA8eKE6C/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 144,
+              "title": "图论：3. 所有可达路径",
+              "bvid": "BV1VePeepEpP",
+              "videoUrl": "https://www.bilibili.com/video/BV1VePeepEpP/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "all-paths-from-source-to-target"
+              ]
+            },
+            {
+              "index": 145,
+              "title": "图论：4.广度优先搜索理论基础",
+              "bvid": "BV1M19iY4EL9",
+              "videoUrl": "https://www.bilibili.com/video/BV1M19iY4EL9/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 146,
+              "title": "图论：5.岛屿系列（一）岛屿数量（深搜）",
+              "bvid": "BV18PRGYcEiB",
+              "videoUrl": "https://www.bilibili.com/video/BV18PRGYcEiB/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "number-of-islands"
+              ]
+            },
+            {
+              "index": 147,
+              "title": "图论：6.岛屿系列（二）岛屿数量（广搜）",
+              "bvid": "BV12QQqYWE6x",
+              "videoUrl": "https://www.bilibili.com/video/BV12QQqYWE6x/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "number-of-islands"
+              ]
+            },
+            {
+              "index": 148,
+              "title": "图论：7.岛屿系列（三）岛屿的最大面积",
+              "bvid": "BV1FzoyY5EXH",
+              "videoUrl": "https://www.bilibili.com/video/BV1FzoyY5EXH/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "max-area-of-island"
+              ]
+            },
+            {
+              "index": 149,
+              "title": "图论：8.岛屿系列（四）孤岛总面积",
+              "bvid": "BV1mmZJYRESc",
+              "videoUrl": "https://www.bilibili.com/video/BV1mmZJYRESc/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "number-of-enclaves"
+              ]
+            },
+            {
+              "index": 150,
+              "title": "图论：9.岛屿系列（五）沉没孤岛",
+              "bvid": "BV1fjdWYyEGu",
+              "videoUrl": "https://www.bilibili.com/video/BV1fjdWYyEGu/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "surrounded-regions"
+              ]
+            },
+            {
+              "index": 151,
+              "title": "图论：10.岛屿系列（六）水流问题",
+              "bvid": "BV1WNoEYrEio",
+              "videoUrl": "https://www.bilibili.com/video/BV1WNoEYrEio/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "pacific-atlantic-water-flow"
+              ]
+            },
+            {
+              "index": 152,
+              "title": "图论：11.岛屿系列（七）建造最大岛屿",
+              "bvid": "BV1Dn5CzZEw1",
+              "videoUrl": "https://www.bilibili.com/video/BV1Dn5CzZEw1/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "making-a-large-island"
+              ]
+            },
+            {
+              "index": 153,
+              "title": "图论：12.岛屿系列（八）岛屿的周长",
+              "bvid": "BV13fjczSEyV",
+              "videoUrl": "https://www.bilibili.com/video/BV13fjczSEyV/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "island-perimeter"
+              ]
+            },
+            {
+              "index": 154,
+              "title": "图论：13.字符串接龙",
+              "bvid": "BV1QEEizDEC4",
+              "videoUrl": "https://www.bilibili.com/video/BV1QEEizDEC4/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "word-ladder"
+              ]
+            },
+            {
+              "index": 155,
+              "title": "图论：14.有向图的完全联通",
+              "bvid": "BV1QRJ6ziEvJ",
+              "videoUrl": "https://www.bilibili.com/video/BV1QRJ6ziEvJ/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "keys-and-rooms"
+              ]
+            },
+            {
+              "index": 156,
+              "title": "图论：15.并查集理论基础",
+              "bvid": "BV1pFjUzvES2",
+              "videoUrl": "https://www.bilibili.com/video/BV1pFjUzvES2/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 157,
+              "title": "图论：16. 寻找存在的路径",
+              "bvid": "BV1k3T7zWEVj",
+              "videoUrl": "https://www.bilibili.com/video/BV1k3T7zWEVj/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "find-if-path-exists-in-graph"
+              ]
+            },
+            {
+              "index": 158,
+              "title": "图论：17.冗余连接",
+              "bvid": "BV1gRM3z9EwZ",
+              "videoUrl": "https://www.bilibili.com/video/BV1gRM3z9EwZ/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "redundant-connection"
+              ]
+            },
+            {
+              "index": 159,
+              "title": "图论：18. 冗余连接II",
+              "bvid": "BV1t2NEzaEMR",
+              "videoUrl": "https://www.bilibili.com/video/BV1t2NEzaEMR/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "redundant-connection-ii"
+              ]
+            },
+            {
+              "index": 160,
+              "title": "图论：19.最小生成树之prim算法",
+              "bvid": "BV1gFKVzpExq",
+              "videoUrl": "https://www.bilibili.com/video/BV1gFKVzpExq/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "min-cost-to-connect-all-points"
+              ]
+            },
+            {
+              "index": 161,
+              "title": "图论：20.最小生成树之kruskal算法",
+              "bvid": "BV1GD3uz8EY4",
+              "videoUrl": "https://www.bilibili.com/video/BV1GD3uz8EY4/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "min-cost-to-connect-all-points"
+              ]
+            },
+            {
+              "index": 162,
+              "title": "图论：21.拓扑排序",
+              "bvid": "BV1czGJzkERe",
+              "videoUrl": "https://www.bilibili.com/video/BV1czGJzkERe/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "course-schedule",
+                "course-schedule-ii"
+              ]
+            },
+            {
+              "index": 163,
+              "title": "图论：22.最短路算法之Dijkstra （朴素版）",
+              "bvid": "BV1kXuEzAEaz",
+              "videoUrl": "https://www.bilibili.com/video/BV1kXuEzAEaz/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "network-delay-time"
+              ]
+            },
+            {
+              "index": 164,
+              "title": "图论：23.最短路算法之Dijkstra（堆优化版）",
+              "bvid": "BV1HigNz8Emt",
+              "videoUrl": "https://www.bilibili.com/video/BV1HigNz8Emt/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "network-delay-time"
+              ]
+            },
+            {
+              "index": 165,
+              "title": "图论：24.最短路算法之Bellman-ford算法",
+              "bvid": "BV1t48JzhEmi",
+              "videoUrl": "https://www.bilibili.com/video/BV1t48JzhEmi/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "network-delay-time"
+              ]
+            },
+            {
+              "index": 166,
+              "title": "图论：25. 最短路算法之Bellman-ford算法（队列优化）",
+              "bvid": "BV1YehwzdEVT",
+              "videoUrl": "https://www.bilibili.com/video/BV1YehwzdEVT/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "network-delay-time"
+              ]
+            },
+            {
+              "index": 167,
+              "title": "图论：26.最短路算法之bellman_ford算法判断负权回路",
+              "bvid": "BV1EitczREi5",
+              "videoUrl": "https://www.bilibili.com/video/BV1EitczREi5/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": []
+            },
+            {
+              "index": 168,
+              "title": "图论：27.最短路算法之bellman_ford算法之单源有限最短路",
+              "bvid": "BV1hQtdzAEBb",
+              "videoUrl": "https://www.bilibili.com/video/BV1hQtdzAEBb/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "cheapest-flights-within-k-stops"
+              ]
+            },
+            {
+              "index": 169,
+              "title": "图论：28.最短路算法之Floyd算法",
+              "bvid": "BV15rbzzfEWY",
+              "videoUrl": "https://www.bilibili.com/video/BV15rbzzfEWY/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance"
+              ]
+            },
+            {
+              "index": 170,
+              "title": "图论：29.最短路算法之A*算法",
+              "bvid": "BV15RY4zTEdh",
+              "videoUrl": "https://www.bilibili.com/video/BV15RY4zTEdh/",
+              "questionSlugs": [],
+              "relatedQuestionSlugs": [
+                "minimum-knight-moves"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -179,21 +179,25 @@ select.iconbtn{appearance:none;-webkit-appearance:none;padding-right:26px;
 .bmc-more{font-size:10px;color:var(--txt-faint);font-weight:600}
 
 /* ============ 题单进度 ============ */
-.plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media(max-width:860px){.plans-grid{grid-template-columns:1fr}}
-.plan-card{padding:20px 22px;position:relative}
-.plan-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.plans-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;min-width:0}
+@media(max-width:860px){.plans-grid{grid-template-columns:minmax(0,1fr)}}
+.plan-card{padding:20px 22px;position:relative;min-width:0}
+.plan-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;min-width:0}
 .plan-name{font-weight:700;font-size:15.5px}
 .plan-name a{color:var(--txt);text-decoration:none}
 .plan-name a:hover{color:var(--heat)}
 .plan-spacer{flex:1}
 .plan-frac{font-size:13px;color:var(--txt-dim);font-variant-numeric:tabular-nums}
 .plan-frac b{color:var(--txt);font-weight:800;font-size:16px}
+.plan-video-count{font-size:11px;font-weight:700;color:var(--heat);background:color-mix(in srgb,var(--heat) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--heat) 24%,transparent);padding:2px 7px;border-radius:999px;white-space:nowrap}
 .plan-pct{font-weight:800;font-size:15px;color:var(--heat);font-variant-numeric:tabular-nums}
 .plan-bar{height:9px;border-radius:8px;background:var(--track);margin-top:12px;overflow:hidden}
 .plan-bar>i{display:block;height:100%;border-radius:8px;width:0;
   background:linear-gradient(90deg,var(--heat),var(--heat2));transition:width 1s cubic-bezier(.2,.8,.2,1)}
 .plan-groups{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.plan-source-note{margin-top:10px;padding:8px 10px;border-radius:9px;background:var(--surface2);
+  color:var(--txt-faint);font-size:11px;line-height:1.55;overflow-wrap:anywhere}
 .pg-row{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--txt-dim)}
 .pg-name{min-width:118px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pg-bar{flex:1;height:5px;border-radius:5px;background:var(--track);overflow:hidden}
@@ -201,6 +205,7 @@ select.iconbtn{appearance:none;-webkit-appearance:none;padding-right:26px;
 .pg-row.done .pg-name{color:var(--easy)}
 .pg-row.done .pg-bar>i{background:var(--easy)}
 .pg-frac{min-width:48px;text-align:right;color:var(--txt-faint);font-variant-numeric:tabular-nums}
+.pg-row.course .pg-bar>i{width:100% !important;background:var(--txt-faint);opacity:.22}
 .pg-lock{color:var(--txt-faint);opacity:.7}
 .pg-row .chev{width:11px;flex:none;font-size:10px;color:var(--txt-faint);transition:transform .18s}
 .pg-row.clickable{cursor:pointer;border-radius:8px;padding:3px 6px;margin:-3px -6px;transition:background .14s}
@@ -217,6 +222,16 @@ select.iconbtn{appearance:none;-webkit-appearance:none;padding-right:26px;
 .pq.solved .pq-t{color:var(--txt)}
 .pq:not(.solved) .pq-t{opacity:.75}
 .pq .diff{font-size:10px;padding:1.5px 7px}
+.lesson-row{min-height:28px}
+.lesson-video{color:inherit;text-decoration:none}
+.lesson-video:hover{color:var(--heat)}
+.lesson-links{display:flex;align-items:center;justify-content:flex-end;gap:5px;flex-wrap:wrap;max-width:48%}
+.lesson-q,.lesson-kind{font-size:9.5px;font-weight:700;line-height:1.2;padding:2px 6px;border-radius:999px;
+  white-space:nowrap;text-decoration:none;border:1px solid var(--border);color:var(--txt-dim);background:var(--surface2)}
+.lesson-q:hover{color:var(--heat);border-color:color-mix(in srgb,var(--heat) 45%,var(--border))}
+.lesson-q.solved{color:var(--easy);border-color:color-mix(in srgb,var(--easy) 42%,var(--border))}
+.lesson-q.related{color:var(--medium)}
+.lesson-kind{color:var(--txt-faint)}
 .plan-actions{display:flex;gap:0;margin-left:2px}
 .plan-star,.plan-del,.plan-restart{background:transparent;border:0;color:var(--txt-faint);
   font-size:15px;cursor:pointer;transition:.15s;padding:4px 7px;border-radius:7px;font-family:inherit}
@@ -233,7 +248,7 @@ select.iconbtn{appearance:none;-webkit-appearance:none;padding-right:26px;
   padding:2px 6px;margin:-2px 2px -2px -4px;border-radius:6px;transition:transform .2s,color .15s;flex:none}
 .plan-collapse:hover{color:var(--txt)}
 .plan-card.collapsed .plan-collapse{transform:rotate(-90deg)}
-.plan-card.collapsed .plan-bar,.plan-card.collapsed .plan-groups{display:none}
+.plan-card.collapsed .plan-bar,.plan-card.collapsed .plan-source-note,.plan-card.collapsed .plan-groups{display:none}
 .plan-card.collapsed{padding-bottom:20px}
 .plan-card.collapsed .plan-top{margin-bottom:0}
 /* 重刷轮次徽标 */
@@ -245,6 +260,12 @@ select.iconbtn{appearance:none;-webkit-appearance:none;padding-right:26px;
 .round-undo:hover{color:var(--txt);background:var(--chip-bg)}
 .ring-hint{display:block;font-size:11px;color:var(--txt-faint);font-weight:400;margin-top:5px;text-align:center}
 .plan-empty{padding:26px;text-align:center;color:var(--txt-faint);font-size:13px}
+@media(max-width:560px){
+  .lesson-row{align-items:flex-start}
+  .lesson-links{max-width:42%}
+  .plan-source-note{font-size:10.5px}
+  .pg-frac{min-width:66px}
+}
 .preset-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
 .preset-chips button{background:var(--chip-bg);border:1px solid var(--border);color:var(--txt-dim);
   border-radius:999px;padding:6px 14px;font-size:12.5px;cursor:pointer;font-weight:600;transition:.15s;font-family:inherit}

@@ -209,10 +209,15 @@ function solvedSince(solvedTsByKey, slug, cutoff) {
 // 题单进度（只统计接口可见的题目；会员锁定章节不计入；按当前轮次的 cutoff 计）
 function planProgress(p, solvedTsByKey, cutoff) {
   let done = 0, total = 0;
+  const seen = new Set();
   for (const g of p.groups) {
     if (g.questions.length === 0 && g.questionNum > 0) continue; // 🔒 会员章节
-    total += g.questions.length;
-    done += g.questions.filter((q) => solvedSince(solvedTsByKey, q.slug, cutoff)).length;
+    for (const q of g.questions) {
+      if (q.trackable === false || seen.has(q.slug)) continue;
+      seen.add(q.slug);
+      total++;
+      if (solvedSince(solvedTsByKey, q.slug, cutoff)) done++;
+    }
   }
   return { done, total, pct: total ? done / total : 0 };
 }
@@ -419,13 +424,36 @@ function renderPlans(s) {
     const cutoff = planCutoff(p);
     const round = planRound(p);
     const isCollapsed = collapsed.has(p.slug);
-    // 会员锁定章节（接口读不到题目）直接不展示、不计入
-    const groupRows = p.groups.filter((g) => g.questions.length > 0).map((g) => {
-      const gDone = g.questions.filter((q) => solvedSince(s.allSolvedTs, q.slug, cutoff)).length;
-      const total = g.questions.length;
+    // 会员锁定章节（接口读不到题目）不展示；内置课程可用 lessons 展示逐期视频
+    const groupRows = p.groups.filter((g) => g.questions.length > 0 || (g.lessons || []).length > 0).map((g) => {
+      const questions = g.questions.filter((q) => q.trackable !== false);
+      const lessons = g.lessons || [];
+      const gDone = questions.filter((q) => solvedSince(s.allSolvedTs, q.slug, cutoff)).length;
+      const total = questions.length;
       const pct = total ? Math.round((gDone / total) * 100) : 0;
-      // 分组下的题目明细（点击分组行展开）
-      const qRows = g.questions.map((q) => {
+      // 代码随想录按 B 站合集逐期展示；普通官方题单仍按题目展示
+      const lessonRows = lessons.map((lesson) => {
+        const exact = (lesson.questionSlugs || []).map((slug) => {
+          const info = problemOf(slug);
+          const solved = solvedSince(s.allSolvedTs, slug, cutoff);
+          const id = info.frontendId || slug;
+          return `<a class="lesson-q${solved ? ' solved' : ''}" href="https://leetcode.cn/problems/${slug}/" target="_blank" title="${escapeHtml(info.translatedTitle || slug)}">${solved ? '✓ ' : ''}LC ${escapeHtml(id)}</a>`;
+        }).join('');
+        const related = (lesson.relatedQuestionSlugs || []).map((slug) => {
+          const info = problemOf(slug);
+          const id = info.frontendId || slug;
+          return `<a class="lesson-q related" href="https://leetcode.cn/problems/${slug}/" target="_blank" title="同类力扣题：${escapeHtml(info.translatedTitle || slug)}">同类 LC ${escapeHtml(id)}</a>`;
+        }).join('');
+        const exactSlugs = lesson.questionSlugs || [];
+        const solved = exactSlugs.length > 0 && exactSlugs.every((slug) => solvedSince(s.allSolvedTs, slug, cutoff));
+        const kind = !exact && !related ? '<span class="lesson-kind">课程</span>' : '';
+        return `<div class="pq lesson-row${solved ? ' solved' : ''}">
+          <i>${solved ? '✓' : '▶'}</i>
+          <a class="pq-t lesson-video" href="${escapeHtml(lesson.videoUrl)}" target="_blank">${lesson.index}. ${escapeHtml(lesson.title)}</a>
+          <span class="lesson-links">${exact}${related}${kind}</span>
+        </div>`;
+      }).join('');
+      const questionRows = g.questions.map((q) => {
         const info = problemOf(q.slug);
         const solved = solvedSince(s.allSolvedTs, q.slug, cutoff);
         const title = (info.frontendId ? info.frontendId + '. ' : '') + (info.translatedTitle || q.slug);
@@ -434,12 +462,16 @@ function renderPlans(s) {
           <span class="pq-t">${escapeHtml(title)}</span>
           <span class="diff ${q.difficulty}">${DIFF_NAME[q.difficulty] || q.difficulty}</span></a>`;
       }).join('');
-      return `<div class="pg-row clickable${gDone === total && total > 0 ? ' done' : ''}">
+      const detailRows = lessons.length ? lessonRows : questionRows;
+      const frac = total
+        ? `${gDone} / ${total}${g.videoCount ? ` · ${g.videoCount}期` : ''}`
+        : `${g.videoCount || lessons.length} 期`;
+      return `<div class="pg-row clickable${gDone === total && total > 0 ? ' done' : ''}${total === 0 ? ' course' : ''}">
         <span class="chev">▸</span>
         <span class="pg-name" title="${escapeHtml(g.name)}">${gDone === total && total > 0 ? '✓ ' : ''}${escapeHtml(g.name)}</span>
         <span class="pg-bar"><i style="width:${pct}%"></i></span>
-        <span class="pg-frac">${gDone} / ${total}</span></div>
-      <div class="pg-questions">${qRows}</div>`;
+        <span class="pg-frac">${frac}</span></div>
+      <div class="pg-questions">${detailRows}</div>`;
     }).join('');
     const pr = planProgress(p, s.allSolvedTs, cutoff);
     const pct = Math.round(pr.pct * 100);
@@ -447,13 +479,17 @@ function renderPlans(s) {
     const roundBadge = round > 1
       ? `<span class="plan-round" title="自 ${new Date(cutoff).toLocaleDateString('zh-CN')} 起重新计数">第 ${round} 轮 · ${new Date(cutoff).toLocaleDateString('zh-CN', { month: 'numeric', day: 'numeric' })} 起<button class="round-undo" data-slug="${p.slug}" title="撤销本次重刷，回到上一轮">撤销</button></span>`
       : '';
+    const sourceStats = p.sourceStats
+      ? `<div class="plan-source-note">合集 ${p.sourceStats.videoCount} 期 = ${p.sourceStats.problemVideoCount} 期力扣题相关视频 + ${p.sourceStats.basicTheoryOrSummaryVideoCount} 期基础理论/总结 + ${p.sourceStats.graphVideoCount} 期图论（卡码网 ACM） · 章节内共 ${p.sourceStats.groupQuestionOccurrenceCount} 个题目位置，全局去重 ${p.sourceStats.uniqueLeetcodeQuestionCount} 题</div>`
+      : '';
     return `<div class="card plan-card${isCollapsed ? ' collapsed' : ''}">
       <div class="plan-top">
         <button class="plan-collapse" data-slug="${p.slug}" title="${isCollapsed ? '展开题单' : '收起题单'}">▾</button>
-        <span class="plan-name"><a href="https://leetcode.cn/studyplan/${p.slug}/" target="_blank">${escapeHtml(p.name)}</a></span>
+        <span class="plan-name"><a href="${escapeHtml(p.sourceUrl || `https://leetcode.cn/studyplan/${p.slug}/`)}" target="_blank">${escapeHtml(p.name)}</a></span>
         ${roundBadge}
         <span class="plan-spacer"></span>
-        <span class="plan-frac"><b>${pr.done}</b> / ${pr.total} 题</span>
+        <span class="plan-frac"><b>${pr.done}</b> / ${pr.total} ${p.videoCount ? '道力扣' : '题'}</span>
+        ${p.videoCount ? `<span class="plan-video-count">${p.videoCount} 期视频</span>` : ''}
         <span class="plan-pct">${pct}%</span>
         <span class="plan-actions">
           <button class="plan-star${isPrimary ? ' on' : ''}" data-slug="${p.slug}" title="${isPrimary ? '当前展示在首页大环' : '设为首页展示的题单'}">${isPrimary ? '★' : '☆'}</button>
@@ -462,6 +498,7 @@ function renderPlans(s) {
         </span>
       </div>
       <div class="plan-bar"><i style="width:0" data-w="${pct}"></i></div>
+      ${sourceStats}
       <div class="plan-groups">${groupRows}</div>
     </div>`;
   }).join('');
@@ -471,6 +508,7 @@ function renderPlans(s) {
 }
 
 const PLAN_PRESETS = [
+  { slug: 'code-thinking', name: '代码随想录' },
   { slug: 'programming-skills', name: '编程基础 0 到 1' },
   { slug: 'top-100-liked', name: 'LeetCode 热题 100' },
   { slug: 'top-interview-150', name: '面试经典 150 题' },
