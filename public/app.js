@@ -424,6 +424,9 @@ function renderPlans(s) {
     const cutoff = planCutoff(p);
     const round = planRound(p);
     const isCollapsed = collapsed.has(p.slug);
+    const difficultyBySlug = new Map(
+      p.groups.flatMap((group) => group.questions.map((q) => [q.slug, q.difficulty]))
+    );
     // 会员锁定章节（接口读不到题目）不展示；内置课程可用 lessons 展示逐期视频
     const groupRows = p.groups.filter((g) => g.questions.length > 0 || (g.lessons || []).length > 0).map((g) => {
       const questions = g.questions.filter((q) => q.trackable !== false);
@@ -437,12 +440,20 @@ function renderPlans(s) {
           const info = problemOf(slug);
           const solved = solvedSince(s.allSolvedTs, slug, cutoff);
           const id = info.frontendId || slug;
-          return `<a class="lesson-q${solved ? ' solved' : ''}" href="https://leetcode.cn/problems/${slug}/" target="_blank" title="${escapeHtml(info.translatedTitle || slug)}">${solved ? '✓ ' : ''}LC ${escapeHtml(id)}</a>`;
+          const difficulty = difficultyBySlug.get(slug) || info.difficulty || 'Unknown';
+          return `<span class="lesson-question">
+            <a class="lesson-q${solved ? ' solved' : ''}" href="https://leetcode.cn/problems/${slug}/" target="_blank" title="${escapeHtml(info.translatedTitle || slug)}">${solved ? '✓ ' : ''}LC ${escapeHtml(id)}</a>
+            <span class="diff ${difficulty}">${DIFF_NAME[difficulty] || difficulty}</span>
+          </span>`;
         }).join('');
         const related = (lesson.relatedQuestionSlugs || []).map((slug) => {
           const info = problemOf(slug);
           const id = info.frontendId || slug;
-          return `<a class="lesson-q related" href="https://leetcode.cn/problems/${slug}/" target="_blank" title="同类力扣题：${escapeHtml(info.translatedTitle || slug)}">同类 LC ${escapeHtml(id)}</a>`;
+          const difficulty = difficultyBySlug.get(slug) || info.difficulty || 'Unknown';
+          return `<span class="lesson-question">
+            <a class="lesson-q related" href="https://leetcode.cn/problems/${slug}/" target="_blank" title="同类力扣题：${escapeHtml(info.translatedTitle || slug)}">同类 LC ${escapeHtml(id)}</a>
+            <span class="diff ${difficulty}">${DIFF_NAME[difficulty] || difficulty}</span>
+          </span>`;
         }).join('');
         const exactSlugs = lesson.questionSlugs || [];
         const solved = exactSlugs.length > 0 && exactSlugs.every((slug) => solvedSince(s.allSolvedTs, slug, cutoff));
