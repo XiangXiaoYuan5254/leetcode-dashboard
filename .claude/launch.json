@@ -5,7 +5,8 @@
       "name": "leetcode-dashboard",
       "runtimeExecutable": "node",
       "runtimeArgs": ["server.js"],
-      "port": 5877
+      "port": 5881,
+      "autoPort": true
     }
   ]
 }

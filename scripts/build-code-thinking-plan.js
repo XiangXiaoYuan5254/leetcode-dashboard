@@ -7,8 +7,7 @@
  * 口径：
  * - 合集中的每一期视频都保留在 lessons 中，顺序与 B 站一致；
  * - questions 只放视频明确讲解的力扣题；
- * - 图论课程以卡码网 ACM 题为主，仅将相近的力扣题标为 relatedQuestions，
- *   不混入力扣完成率。
+ * - 图论课程以卡码网 ACM 题为主，同时将相近的力扣题作为练习纳入进度统计。
  */
 
 const fs = require('fs');
@@ -211,7 +210,7 @@ const groupSpecs = [
   },
 ];
 
-// 图论视频主要对应卡码网 ACM 题；这里只给出相近的力扣练习，不算作精确映射。
+// 图论视频主要对应卡码网 ACM 题；这里将相近的力扣练习纳入题单进度统计。
 const graphRelated = [
   [],
   [],
@@ -245,6 +244,9 @@ const graphRelated = [
   ['minimum-knight-moves'],
 ];
 
+// 保留会员题的课程关联和链接，但不纳入题单统计。
+const excludedQuestions = { 'minimum-knight-moves': '会员题' };
+
 function lessonOf(ep, index, questionSlugs = [], relatedQuestionSlugs = []) {
   return {
     index,
@@ -256,11 +258,11 @@ function lessonOf(ep, index, questionSlugs = [], relatedQuestionSlugs = []) {
   };
 }
 
-function questionsFromLessons(lessons, catalog) {
+function questionsFromLessons(lessons, catalog, field = 'questionSlugs') {
   const order = [];
   const videosBySlug = new Map();
   for (const lesson of lessons) {
-    for (const slug of lesson.questionSlugs) {
+    for (const slug of lesson[field] || []) {
       if (!videosBySlug.has(slug)) {
         order.push(slug);
         videosBySlug.set(slug, []);
@@ -274,6 +276,7 @@ function questionsFromLessons(lessons, catalog) {
     return {
       slug,
       difficulty: q.difficulty,
+      ...(excludedQuestions[slug] ? { trackable: false, exclusionReason: excludedQuestions[slug] } : {}),
       videos: videosBySlug.get(slug),
     };
   });
@@ -329,17 +332,22 @@ async function main() {
   const graphLessons = graphEpisodes.map((ep, i) =>
     lessonOf(ep, cursor + i + 1, [], graphRelated[i])
   );
+  const graphQuestions = questionsFromLessons(graphLessons, catalog, 'relatedQuestionSlugs');
+  const trackedGraphQuestions = graphQuestions.filter((q) => q.trackable !== false);
   const graphGroup = {
     name: '图论（卡码网 ACM）',
-    questionNum: 0,
+    questionNum: trackedGraphQuestions.length,
     videoCount: graphLessons.length,
-    questions: [],
+    questions: graphQuestions,
     lessons: graphLessons,
   };
 
   const allGroups = [...basicGroups, summaryGroup, graphGroup];
   const exactQuestions = basicGroups.flatMap((group) => group.questions);
-  const uniqueExact = new Set(exactQuestions.map((q) => q.slug));
+  const graphQuestionOccurrences = graphLessons.reduce((n, lesson) =>
+    n + (lesson.relatedQuestionSlugs || []).filter((slug) => !excludedQuestions[slug]).length, 0);
+  const allQuestions = [...exactQuestions, ...trackedGraphQuestions];
+  const uniqueExact = new Set(allQuestions.map((q) => q.slug));
   const problemVideoCount = basicGroups
     .flatMap((group) => group.lessons)
     .filter((lesson) => lesson.questionSlugs.length > 0).length;
@@ -348,7 +356,7 @@ async function main() {
     slug: 'code-thinking',
     name: '代码随想录',
     questionNum: uniqueExact.size,
-    questionOccurrences: exactQuestions.length,
+    questionOccurrences: exactQuestions.length + graphQuestionOccurrences,
     videoCount: episodes.length,
     builtIn: true,
     sourceUrl: SOURCE_URL,
@@ -360,13 +368,18 @@ async function main() {
       problemVideoCount,
       basicTheoryOrSummaryVideoCount: 140 - problemVideoCount,
       uniqueLeetcodeQuestionCount: uniqueExact.size,
-      groupQuestionOccurrenceCount: exactQuestions.length,
+      groupQuestionOccurrenceCount: exactQuestions.length + graphQuestionOccurrences,
+      graphRelatedQuestionOccurrenceCount: graphQuestionOccurrences,
+      graphRelatedLeetcodeQuestionCount: trackedGraphQuestions.length,
     },
     groups: allGroups,
   };
 
+  // 只替换本题单，保留其它内置题单（如 build-lingshen-plans.js 生成的灵神题单）
   const outFile = path.join(ROOT, 'builtin-plans.json');
-  fs.writeFileSync(outFile, JSON.stringify({ plans: { 'code-thinking': plan } }, null, 2) + '\n');
+  const existing = fs.existsSync(outFile) ? JSON.parse(fs.readFileSync(outFile, 'utf8')) : {};
+  existing.plans = { ...(existing.plans || {}), 'code-thinking': plan };
+  fs.writeFileSync(outFile, JSON.stringify(existing, null, 2) + '\n');
   console.log(JSON.stringify(plan.sourceStats, null, 2));
 }
 

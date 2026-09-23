@@ -3,8 +3,8 @@
     "code-thinking": {
       "slug": "code-thinking",
       "name": "代码随想录",
-      "questionNum": 128,
-      "questionOccurrences": 130,
+      "questionNum": 147,
+      "questionOccurrences": 154,
       "videoCount": 170,
       "builtIn": true,
       "sourceUrl": "https://www.bilibili.com/video/BV1fA4y1o715/",
@@ -15,8 +15,10 @@
         "graphVideoCount": 30,
         "problemVideoCount": 132,
         "basicTheoryOrSummaryVideoCount": 8,
-        "uniqueLeetcodeQuestionCount": 128,
-        "groupQuestionOccurrenceCount": 130
+        "uniqueLeetcodeQuestionCount": 147,
+        "groupQuestionOccurrenceCount": 154,
+        "graphRelatedQuestionOccurrenceCount": 24,
+        "graphRelatedLeetcodeQuestionCount": 19
       },
       "groups": [
         {
@@ -757,7 +759,7 @@
             },
             {
               "slug": "count-complete-tree-nodes",
-              "difficulty": "Easy",
+              "difficulty": "Medium",
               "videos": [
                 {
                   "title": "二叉树：10.完全二叉树节点的数量",
@@ -2826,9 +2828,232 @@
         },
         {
           "name": "图论（卡码网 ACM）",
-          "questionNum": 0,
+          "questionNum": 19,
           "videoCount": 30,
-          "questions": [],
+          "questions": [
+            {
+              "slug": "all-paths-from-source-to-target",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：3. 所有可达路径",
+                  "url": "https://www.bilibili.com/video/BV1VePeepEpP/"
+                }
+              ]
+            },
+            {
+              "slug": "number-of-islands",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：5.岛屿系列（一）岛屿数量（深搜）",
+                  "url": "https://www.bilibili.com/video/BV18PRGYcEiB/"
+                },
+                {
+                  "title": "图论：6.岛屿系列（二）岛屿数量（广搜）",
+                  "url": "https://www.bilibili.com/video/BV12QQqYWE6x/"
+                }
+              ]
+            },
+            {
+              "slug": "max-area-of-island",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：7.岛屿系列（三）岛屿的最大面积",
+                  "url": "https://www.bilibili.com/video/BV1FzoyY5EXH/"
+                }
+              ]
+            },
+            {
+              "slug": "number-of-enclaves",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：8.岛屿系列（四）孤岛总面积",
+                  "url": "https://www.bilibili.com/video/BV1mmZJYRESc/"
+                }
+              ]
+            },
+            {
+              "slug": "surrounded-regions",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：9.岛屿系列（五）沉没孤岛",
+                  "url": "https://www.bilibili.com/video/BV1fjdWYyEGu/"
+                }
+              ]
+            },
+            {
+              "slug": "pacific-atlantic-water-flow",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：10.岛屿系列（六）水流问题",
+                  "url": "https://www.bilibili.com/video/BV1WNoEYrEio/"
+                }
+              ]
+            },
+            {
+              "slug": "making-a-large-island",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "图论：11.岛屿系列（七）建造最大岛屿",
+                  "url": "https://www.bilibili.com/video/BV1Dn5CzZEw1/"
+                }
+              ]
+            },
+            {
+              "slug": "island-perimeter",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "图论：12.岛屿系列（八）岛屿的周长",
+                  "url": "https://www.bilibili.com/video/BV13fjczSEyV/"
+                }
+              ]
+            },
+            {
+              "slug": "word-ladder",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "图论：13.字符串接龙",
+                  "url": "https://www.bilibili.com/video/BV1QEEizDEC4/"
+                }
+              ]
+            },
+            {
+              "slug": "keys-and-rooms",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：14.有向图的完全联通",
+                  "url": "https://www.bilibili.com/video/BV1QRJ6ziEvJ/"
+                }
+              ]
+            },
+            {
+              "slug": "find-if-path-exists-in-graph",
+              "difficulty": "Easy",
+              "videos": [
+                {
+                  "title": "图论：16. 寻找存在的路径",
+                  "url": "https://www.bilibili.com/video/BV1k3T7zWEVj/"
+                }
+              ]
+            },
+            {
+              "slug": "redundant-connection",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：17.冗余连接",
+                  "url": "https://www.bilibili.com/video/BV1gRM3z9EwZ/"
+                }
+              ]
+            },
+            {
+              "slug": "redundant-connection-ii",
+              "difficulty": "Hard",
+              "videos": [
+                {
+                  "title": "图论：18. 冗余连接II",
+                  "url": "https://www.bilibili.com/video/BV1t2NEzaEMR/"
+                }
+              ]
+            },
+            {
+              "slug": "min-cost-to-connect-all-points",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：19.最小生成树之prim算法",
+                  "url": "https://www.bilibili.com/video/BV1gFKVzpExq/"
+                },
+                {
+                  "title": "图论：20.最小生成树之kruskal算法",
+                  "url": "https://www.bilibili.com/video/BV1GD3uz8EY4/"
+                }
+              ]
+            },
+            {
+              "slug": "course-schedule",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：21.拓扑排序",
+                  "url": "https://www.bilibili.com/video/BV1czGJzkERe/"
+                }
+              ]
+            },
+            {
+              "slug": "course-schedule-ii",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：21.拓扑排序",
+                  "url": "https://www.bilibili.com/video/BV1czGJzkERe/"
+                }
+              ]
+            },
+            {
+              "slug": "network-delay-time",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：22.最短路算法之Dijkstra （朴素版）",
+                  "url": "https://www.bilibili.com/video/BV1kXuEzAEaz/"
+                },
+                {
+                  "title": "图论：23.最短路算法之Dijkstra（堆优化版）",
+                  "url": "https://www.bilibili.com/video/BV1HigNz8Emt/"
+                },
+                {
+                  "title": "图论：24.最短路算法之Bellman-ford算法",
+                  "url": "https://www.bilibili.com/video/BV1t48JzhEmi/"
+                },
+                {
+                  "title": "图论：25. 最短路算法之Bellman-ford算法（队列优化）",
+                  "url": "https://www.bilibili.com/video/BV1YehwzdEVT/"
+                }
+              ]
+            },
+            {
+              "slug": "cheapest-flights-within-k-stops",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：27.最短路算法之bellman_ford算法之单源有限最短路",
+                  "url": "https://www.bilibili.com/video/BV1hQtdzAEBb/"
+                }
+              ]
+            },
+            {
+              "slug": "find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：28.最短路算法之Floyd算法",
+                  "url": "https://www.bilibili.com/video/BV15rbzzfEWY/"
+                }
+              ]
+            },
+            {
+              "slug": "minimum-knight-moves",
+              "difficulty": "Medium",
+              "videos": [
+                {
+                  "title": "图论：29.最短路算法之A*算法",
+                  "url": "https://www.bilibili.com/video/BV15RY4zTEdh/"
+                }
+              ],
+              "trackable": false,
+              "exclusionReason": "会员题"
+            }
+          ],
           "lessons": [
             {
               "index": 141,
@@ -3118,6 +3343,3864 @@
               "relatedQuestionSlugs": [
                 "minimum-knight-moves"
               ]
+            }
+          ]
+        }
+      ]
+    },
+    "lingshen-le1700": {
+      "slug": "lingshen-le1700",
+      "name": "灵神题单 · 难度分 ≤1700",
+      "questionNum": 212,
+      "builtIn": true,
+      "sourceUrl": "https://leetcode.cn/discuss/post/3141566/ru-he-ke-xue-shua-ti-by-endlesscheng-q3yd/",
+      "sourceName": "如何科学刷题（灵茶山艾府）",
+      "note": "按灵神「如何科学刷题」核心路线的必做内容整理（滑窗 → 二分查找 → 数据结构 → 二叉树 DFS → 网格图 DFS → 回溯 → DP 前六章），不含会员题和「选做」小节，跨章节重复的题只保留第一次出现。难度分取自题单，题单没写的用 zerotrac 周赛难度分补齐。题单内容截至 2026-09-23。",
+      "groups": [
+        {
+          "name": "1. 滑动窗口 · 定长滑动窗口",
+          "questionNum": 7,
+          "questions": [
+            {
+              "slug": "maximum-number-of-vowels-in-a-substring-of-given-length",
+              "difficulty": "Medium",
+              "rating": 1263
+            },
+            {
+              "slug": "number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold",
+              "difficulty": "Medium",
+              "rating": 1317
+            },
+            {
+              "slug": "k-radius-subarray-averages",
+              "difficulty": "Medium",
+              "rating": 1358
+            },
+            {
+              "slug": "minimum-recolors-to-get-k-consecutive-black-blocks",
+              "difficulty": "Easy",
+              "rating": 1360
+            },
+            {
+              "slug": "maximum-sum-of-almost-unique-subarray",
+              "difficulty": "Medium",
+              "rating": 1546
+            },
+            {
+              "slug": "maximum-sum-of-distinct-subarrays-with-length-k",
+              "difficulty": "Medium",
+              "rating": 1553
+            },
+            {
+              "slug": "maximum-points-you-can-obtain-from-cards",
+              "difficulty": "Medium",
+              "rating": 1574
+            }
+          ]
+        },
+        {
+          "name": "1. 滑动窗口 · 不定长滑动窗口",
+          "questionNum": 18,
+          "questions": [
+            {
+              "slug": "maximum-length-substring-with-two-occurrences",
+              "difficulty": "Easy",
+              "rating": 1329
+            },
+            {
+              "slug": "longest-subarray-of-1s-after-deleting-one-element",
+              "difficulty": "Medium",
+              "rating": 1423
+            },
+            {
+              "slug": "minimum-removals-to-balance-array",
+              "difficulty": "Medium",
+              "rating": 1453
+            },
+            {
+              "slug": "get-equal-substrings-within-budget",
+              "difficulty": "Medium",
+              "rating": 1497
+            },
+            {
+              "slug": "fruit-into-baskets",
+              "difficulty": "Medium",
+              "rating": 1516
+            },
+            {
+              "slug": "maximum-erasure-value",
+              "difficulty": "Medium",
+              "rating": 1529
+            },
+            {
+              "slug": "length-of-longest-subarray-with-at-most-k-frequency",
+              "difficulty": "Medium",
+              "rating": 1535
+            },
+            {
+              "slug": "maximize-the-confusion-of-an-exam",
+              "difficulty": "Medium",
+              "rating": 1643
+            },
+            {
+              "slug": "max-consecutive-ones-iii",
+              "difficulty": "Medium",
+              "rating": 1656
+            },
+            {
+              "slug": "minimum-subarray-length-with-distinct-sum-at-least-k",
+              "difficulty": "Medium",
+              "rating": 1505
+            },
+            {
+              "slug": "shortest-and-lexicographically-smallest-beautiful-string",
+              "difficulty": "Medium",
+              "rating": 1483
+            },
+            {
+              "slug": "count-substrings-that-satisfy-k-constraint-i",
+              "difficulty": "Easy",
+              "rating": 1258
+            },
+            {
+              "slug": "number-of-substrings-containing-all-three-characters",
+              "difficulty": "Medium",
+              "rating": 1646
+            },
+            {
+              "slug": "count-substrings-with-k-frequency-characters-i",
+              "difficulty": "Medium",
+              "rating": 1455
+            },
+            {
+              "slug": "count-vowel-substrings-of-a-string",
+              "difficulty": "Easy",
+              "rating": 1458
+            },
+            {
+              "slug": "count-complete-subarrays-in-an-array",
+              "difficulty": "Medium",
+              "rating": 1398
+            },
+            {
+              "slug": "binary-subarrays-with-sum",
+              "difficulty": "Medium",
+              "rating": 1592
+            },
+            {
+              "slug": "count-number-of-nice-subarrays",
+              "difficulty": "Medium",
+              "rating": 1624
+            }
+          ]
+        },
+        {
+          "name": "2. 二分算法 · 二分查找",
+          "questionNum": 9,
+          "questions": [
+            {
+              "slug": "maximum-count-of-positive-integer-and-negative-integer",
+              "difficulty": "Easy",
+              "rating": 1196
+            },
+            {
+              "slug": "find-the-distance-value-between-two-arrays",
+              "difficulty": "Easy",
+              "rating": 1235
+            },
+            {
+              "slug": "compare-strings-by-frequency-of-the-smallest-character",
+              "difficulty": "Medium",
+              "rating": 1432
+            },
+            {
+              "slug": "successful-pairs-of-spells-and-potions",
+              "difficulty": "Medium",
+              "rating": 1477
+            },
+            {
+              "slug": "longest-subsequence-with-limited-sum",
+              "difficulty": "Easy",
+              "rating": 1388
+            },
+            {
+              "slug": "closest-equal-element-queries",
+              "difficulty": "Medium",
+              "rating": 1699
+            },
+            {
+              "slug": "time-based-key-value-store",
+              "difficulty": "Medium",
+              "rating": 1575
+            },
+            {
+              "slug": "element-appearing-more-than-25-in-sorted-array",
+              "difficulty": "Easy",
+              "rating": 1179
+            },
+            {
+              "slug": "closest-nodes-queries-in-a-binary-search-tree",
+              "difficulty": "Medium",
+              "rating": 1597
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 常用枚举技巧",
+          "questionNum": 34,
+          "questions": [
+            {
+              "slug": "number-of-good-pairs",
+              "difficulty": "Easy",
+              "rating": 1161
+            },
+            {
+              "slug": "largest-positive-integer-that-exists-with-its-negative",
+              "difficulty": "Easy",
+              "rating": 1168
+            },
+            {
+              "slug": "maximum-difference-between-increasing-elements",
+              "difficulty": "Easy",
+              "rating": 1246
+            },
+            {
+              "slug": "minimum-absolute-difference-between-two-values",
+              "difficulty": "Easy",
+              "rating": 1257
+            },
+            {
+              "slug": "max-sum-of-a-pair-with-equal-sum-of-digits",
+              "difficulty": "Medium",
+              "rating": 1309
+            },
+            {
+              "slug": "maximum-valid-pair-sum",
+              "difficulty": "Medium",
+              "rating": 1328
+            },
+            {
+              "slug": "number-of-equivalent-domino-pairs",
+              "difficulty": "Easy",
+              "rating": 1333
+            },
+            {
+              "slug": "max-number-of-k-sum-pairs",
+              "difficulty": "Medium",
+              "rating": 1346
+            },
+            {
+              "slug": "minimum-consecutive-cards-to-pick-up",
+              "difficulty": "Medium",
+              "rating": 1365
+            },
+            {
+              "slug": "number-of-pairs-of-interchangeable-rectangles",
+              "difficulty": "Medium",
+              "rating": 1436
+            },
+            {
+              "slug": "max-pair-sum-in-an-array",
+              "difficulty": "Easy",
+              "rating": 1295
+            },
+            {
+              "slug": "count-number-of-trapezoids-i",
+              "difficulty": "Medium",
+              "rating": 1580
+            },
+            {
+              "slug": "count-number-of-bad-pairs",
+              "difficulty": "Medium",
+              "rating": 1622
+            },
+            {
+              "slug": "count-caesar-cipher-pairs",
+              "difficulty": "Medium",
+              "rating": 1624
+            },
+            {
+              "slug": "identify-the-largest-outlier-in-an-array",
+              "difficulty": "Medium",
+              "rating": 1644
+            },
+            {
+              "slug": "minimum-absolute-distance-between-mirror-pairs",
+              "difficulty": "Medium",
+              "rating": 1669
+            },
+            {
+              "slug": "pairs-of-songs-with-total-durations-divisible-by-60",
+              "difficulty": "Medium",
+              "rating": 1377
+            },
+            {
+              "slug": "count-pairs-that-form-a-complete-day-ii",
+              "difficulty": "Medium",
+              "rating": 1385
+            },
+            {
+              "slug": "number-of-beautiful-pairs",
+              "difficulty": "Easy",
+              "rating": 1301
+            },
+            {
+              "slug": "count-pairs-of-similar-strings",
+              "difficulty": "Easy",
+              "rating": 1335
+            },
+            {
+              "slug": "maximum-value-of-an-ordered-triplet-ii",
+              "difficulty": "Medium",
+              "rating": 1583
+            },
+            {
+              "slug": "maximum-sum-of-two-non-overlapping-subarrays",
+              "difficulty": "Medium",
+              "rating": 1680
+            },
+            {
+              "slug": "count-special-quadruplets",
+              "difficulty": "Easy",
+              "rating": 1352
+            },
+            {
+              "slug": "count-indices-with-opposite-parity",
+              "difficulty": "Easy",
+              "rating": 1199
+            },
+            {
+              "slug": "two-furthest-houses-with-different-colors",
+              "difficulty": "Easy",
+              "rating": 1241
+            },
+            {
+              "slug": "longest-balanced-substring-i",
+              "difficulty": "Medium",
+              "rating": 1490
+            },
+            {
+              "slug": "count-special-triplets",
+              "difficulty": "Medium",
+              "rating": 1510
+            },
+            {
+              "slug": "unique-length-3-palindromic-subsequences",
+              "difficulty": "Medium",
+              "rating": 1533
+            },
+            {
+              "slug": "right-triangles",
+              "difficulty": "Medium",
+              "rating": 1541
+            },
+            {
+              "slug": "minimum-sum-of-mountain-triplets-ii",
+              "difficulty": "Medium",
+              "rating": 1479
+            },
+            {
+              "slug": "count-good-triplets",
+              "difficulty": "Easy",
+              "rating": 1279
+            },
+            {
+              "slug": "sort-matrix-by-diagonals",
+              "difficulty": "Medium",
+              "rating": 1373
+            },
+            {
+              "slug": "difference-of-number-of-distinct-values-on-diagonals",
+              "difficulty": "Medium",
+              "rating": 1429
+            },
+            {
+              "slug": "sort-the-matrix-diagonally",
+              "difficulty": "Medium",
+              "rating": 1548
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 前缀和",
+          "questionNum": 23,
+          "questions": [
+            {
+              "slug": "sum-of-variable-length-subarrays",
+              "difficulty": "Easy",
+              "rating": 1216
+            },
+            {
+              "slug": "count-vowel-strings-in-ranges",
+              "difficulty": "Medium",
+              "rating": 1435
+            },
+            {
+              "slug": "xor-queries-of-a-subarray",
+              "difficulty": "Medium",
+              "rating": 1460
+            },
+            {
+              "slug": "special-array-ii",
+              "difficulty": "Medium",
+              "rating": 1523
+            },
+            {
+              "slug": "maximum-absolute-sum-of-any-subarray",
+              "difficulty": "Medium",
+              "rating": 1542
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-using-strategy",
+              "difficulty": "Medium",
+              "rating": 1557
+            },
+            {
+              "slug": "shift-distance-between-two-strings",
+              "difficulty": "Medium",
+              "rating": 1553
+            },
+            {
+              "slug": "count-odd-numbers-in-an-interval-range",
+              "difficulty": "Easy",
+              "rating": 1209
+            },
+            {
+              "slug": "shifting-letters",
+              "difficulty": "Medium",
+              "rating": 1353
+            },
+            {
+              "slug": "number-of-sub-arrays-with-odd-sum",
+              "difficulty": "Medium",
+              "rating": 1611
+            },
+            {
+              "slug": "subarray-sums-divisible-by-k",
+              "difficulty": "Medium",
+              "rating": 1676
+            },
+            {
+              "slug": "count-the-number-of-beautiful-subarrays",
+              "difficulty": "Medium",
+              "rating": 1697
+            },
+            {
+              "slug": "find-maximum-balanced-xor-subarray-length",
+              "difficulty": "Medium",
+              "rating": 1663
+            },
+            {
+              "slug": "count-triplets-that-can-form-two-arrays-of-equal-xor",
+              "difficulty": "Medium",
+              "rating": 1525
+            },
+            {
+              "slug": "valid-subarrays-with-matching-sum-digits-i",
+              "difficulty": "Medium",
+              "rating": 1397
+            },
+            {
+              "slug": "minimum-positive-sum-subarray",
+              "difficulty": "Easy",
+              "rating": 1301
+            },
+            {
+              "slug": "sum-of-absolute-differences-in-a-sorted-array",
+              "difficulty": "Medium",
+              "rating": 1496
+            },
+            {
+              "slug": "minimum-operations-to-make-array-modulo-alternating-i",
+              "difficulty": "Medium",
+              "rating": 1626
+            },
+            {
+              "slug": "design-exam-scores-tracker",
+              "difficulty": "Medium",
+              "rating": 1648
+            },
+            {
+              "slug": "matrix-block-sum",
+              "difficulty": "Medium",
+              "rating": 1484
+            },
+            {
+              "slug": "count-submatrices-with-top-left-element-and-sum-less-than-k",
+              "difficulty": "Medium",
+              "rating": 1499
+            },
+            {
+              "slug": "find-kth-largest-xor-coordinate-value",
+              "difficulty": "Medium",
+              "rating": 1671
+            },
+            {
+              "slug": "count-submatrices-with-equal-frequency-of-x-and-y",
+              "difficulty": "Medium",
+              "rating": 1673
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 栈",
+          "questionNum": 26,
+          "questions": [
+            {
+              "slug": "build-an-array-with-stack-operations",
+              "difficulty": "Medium",
+              "rating": 1180
+            },
+            {
+              "slug": "backspace-string-compare",
+              "difficulty": "Easy",
+              "rating": 1228
+            },
+            {
+              "slug": "removing-stars-from-a-string",
+              "difficulty": "Medium",
+              "rating": 1348
+            },
+            {
+              "slug": "design-browser-history",
+              "difficulty": "Medium",
+              "rating": 1454
+            },
+            {
+              "slug": "validate-stack-sequences",
+              "difficulty": "Medium",
+              "rating": 1462
+            },
+            {
+              "slug": "find-mirror-score-of-a-string",
+              "difficulty": "Medium",
+              "rating": 1578
+            },
+            {
+              "slug": "design-a-stack-with-increment-operation",
+              "difficulty": "Medium",
+              "rating": 1286
+            },
+            {
+              "slug": "minimum-string-length-after-removing-substrings",
+              "difficulty": "Easy",
+              "rating": 1282
+            },
+            {
+              "slug": "remove-all-adjacent-duplicates-in-string",
+              "difficulty": "Easy",
+              "rating": 1286
+            },
+            {
+              "slug": "make-the-string-great",
+              "difficulty": "Easy",
+              "rating": 1344
+            },
+            {
+              "slug": "resulting-string-after-adjacent-removals",
+              "difficulty": "Medium",
+              "rating": 1397
+            },
+            {
+              "slug": "check-if-word-is-valid-after-substitutions",
+              "difficulty": "Medium",
+              "rating": 1427
+            },
+            {
+              "slug": "merge-adjacent-equal-elements",
+              "difficulty": "Medium",
+              "rating": 1429
+            },
+            {
+              "slug": "merge-close-characters",
+              "difficulty": "Medium",
+              "rating": 1472
+            },
+            {
+              "slug": "minimum-deletions-to-make-array-beautiful",
+              "difficulty": "Medium",
+              "rating": 1510
+            },
+            {
+              "slug": "remove-all-adjacent-duplicates-in-string-ii",
+              "difficulty": "Medium",
+              "rating": 1542
+            },
+            {
+              "slug": "car-fleet",
+              "difficulty": "Medium",
+              "rating": 1678
+            },
+            {
+              "slug": "minimum-add-to-make-parentheses-valid",
+              "difficulty": "Medium",
+              "rating": 1242
+            },
+            {
+              "slug": "remove-outermost-parentheses",
+              "difficulty": "Easy",
+              "rating": 1311
+            },
+            {
+              "slug": "maximum-nesting-depth-of-the-parentheses",
+              "difficulty": "Easy",
+              "rating": 1323
+            },
+            {
+              "slug": "reverse-substrings-between-each-pair-of-parentheses",
+              "difficulty": "Medium",
+              "rating": 1486
+            },
+            {
+              "slug": "score-of-parentheses",
+              "difficulty": "Medium",
+              "rating": 1563
+            },
+            {
+              "slug": "minimum-remove-to-make-valid-parentheses",
+              "difficulty": "Medium",
+              "rating": 1657
+            },
+            {
+              "slug": "minimum-number-of-swaps-to-make-the-string-balanced",
+              "difficulty": "Medium",
+              "rating": 1689
+            },
+            {
+              "slug": "valid-parenthesis-string",
+              "difficulty": "Medium",
+              "rating": 1700,
+              "ratingApprox": true
+            },
+            {
+              "slug": "clumsy-factorial",
+              "difficulty": "Medium",
+              "rating": 1408
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 队列",
+          "questionNum": 6,
+          "questions": [
+            {
+              "slug": "number-of-recent-calls",
+              "difficulty": "Easy",
+              "rating": 1338
+            },
+            {
+              "slug": "design-ride-sharing-system",
+              "difficulty": "Medium",
+              "rating": 1594
+            },
+            {
+              "slug": "reveal-cards-in-increasing-order",
+              "difficulty": "Medium",
+              "rating": 1686
+            },
+            {
+              "slug": "design-front-middle-back-queue",
+              "difficulty": "Medium",
+              "rating": 1610
+            },
+            {
+              "slug": "faulty-keyboard",
+              "difficulty": "Easy",
+              "rating": 1193
+            },
+            {
+              "slug": "longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit",
+              "difficulty": "Medium",
+              "rating": 1672
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 堆",
+          "questionNum": 18,
+          "questions": [
+            {
+              "slug": "last-stone-weight",
+              "difficulty": "Easy",
+              "rating": 1173
+            },
+            {
+              "slug": "final-array-state-after-k-multiplication-operations-i",
+              "difficulty": "Easy",
+              "rating": 1178
+            },
+            {
+              "slug": "take-gifts-from-the-richest-pile",
+              "difficulty": "Easy",
+              "rating": 1277
+            },
+            {
+              "slug": "smallest-number-in-infinite-set",
+              "difficulty": "Medium",
+              "rating": 1375
+            },
+            {
+              "slug": "maximal-score-after-applying-k-operations",
+              "difficulty": "Medium",
+              "rating": 1386
+            },
+            {
+              "slug": "minimum-operations-to-exceed-threshold-value-ii",
+              "difficulty": "Medium",
+              "rating": 1400
+            },
+            {
+              "slug": "remove-stones-to-minimize-the-total",
+              "difficulty": "Medium",
+              "rating": 1419
+            },
+            {
+              "slug": "k-th-nearest-obstacle-queries",
+              "difficulty": "Medium",
+              "rating": 1420
+            },
+            {
+              "slug": "seat-reservation-manager",
+              "difficulty": "Medium",
+              "rating": 1429
+            },
+            {
+              "slug": "minimum-operations-to-halve-array-sum",
+              "difficulty": "Medium",
+              "rating": 1550
+            },
+            {
+              "slug": "maximum-product-after-k-increments",
+              "difficulty": "Medium",
+              "rating": 1686
+            },
+            {
+              "slug": "minimum-number-of-seconds-to-make-mountain-height-zero",
+              "difficulty": "Medium",
+              "rating": 1695
+            },
+            {
+              "slug": "the-number-of-the-smallest-unoccupied-chair",
+              "difficulty": "Medium",
+              "rating": 1695
+            },
+            {
+              "slug": "string-without-aaa-or-bbb",
+              "difficulty": "Medium",
+              "rating": 1474
+            },
+            {
+              "slug": "reorganize-string",
+              "difficulty": "Medium",
+              "rating": 1681
+            },
+            {
+              "slug": "design-a-number-container-system",
+              "difficulty": "Medium",
+              "rating": 1540
+            },
+            {
+              "slug": "design-event-manager",
+              "difficulty": "Medium",
+              "rating": 1548
+            },
+            {
+              "slug": "power-grid-maintenance",
+              "difficulty": "Medium",
+              "rating": 1700
+            }
+          ]
+        },
+        {
+          "name": "4. 链表树回溯 · 二叉树 DFS",
+          "questionNum": 31,
+          "questions": [
+            {
+              "slug": "leaf-similar-trees",
+              "difficulty": "Easy",
+              "rating": 1288
+            },
+            {
+              "slug": "count-good-nodes-in-binary-tree",
+              "difficulty": "Medium",
+              "rating": 1360
+            },
+            {
+              "slug": "sum-of-nodes-with-even-valued-grandparent",
+              "difficulty": "Medium",
+              "rating": 1427
+            },
+            {
+              "slug": "smallest-string-starting-from-leaf",
+              "difficulty": "Medium",
+              "rating": 1429
+            },
+            {
+              "slug": "maximum-difference-between-node-and-ancestor",
+              "difficulty": "Medium",
+              "rating": 1446
+            },
+            {
+              "slug": "sum-of-root-to-leaf-binary-numbers",
+              "difficulty": "Easy",
+              "rating": 1462
+            },
+            {
+              "slug": "univalued-binary-tree",
+              "difficulty": "Easy",
+              "rating": 1178
+            },
+            {
+              "slug": "flip-equivalent-binary-trees",
+              "difficulty": "Medium",
+              "rating": 1477
+            },
+            {
+              "slug": "evaluate-boolean-binary-tree",
+              "difficulty": "Easy",
+              "rating": 1304
+            },
+            {
+              "slug": "count-dominant-nodes-in-a-binary-tree",
+              "difficulty": "Medium",
+              "rating": 1427
+            },
+            {
+              "slug": "count-nodes-equal-to-average-of-subtree",
+              "difficulty": "Medium",
+              "rating": 1473
+            },
+            {
+              "slug": "k-th-largest-perfect-subtree-size-in-binary-tree",
+              "difficulty": "Medium",
+              "rating": 1603
+            },
+            {
+              "slug": "maximum-product-of-splitted-binary-tree",
+              "difficulty": "Medium",
+              "rating": 1675
+            },
+            {
+              "slug": "finish-time-of-tasks-i",
+              "difficulty": "Medium",
+              "rating": 1699
+            },
+            {
+              "slug": "binary-tree-pruning",
+              "difficulty": "Medium",
+              "rating": 1380
+            },
+            {
+              "slug": "delete-leaves-with-a-given-value",
+              "difficulty": "Medium",
+              "rating": 1407
+            },
+            {
+              "slug": "delete-nodes-and-return-forest",
+              "difficulty": "Medium",
+              "rating": 1511
+            },
+            {
+              "slug": "convert-bst-to-greater-tree",
+              "difficulty": "Medium",
+              "rating": 1375
+            },
+            {
+              "slug": "binary-search-tree-to-greater-sum-tree",
+              "difficulty": "Medium",
+              "rating": 1375
+            },
+            {
+              "slug": "smallest-subtree-with-all-the-deepest-nodes",
+              "difficulty": "Medium",
+              "rating": 1534
+            },
+            {
+              "slug": "pseudo-palindromic-paths-in-a-binary-tree",
+              "difficulty": "Medium",
+              "rating": 1405
+            },
+            {
+              "slug": "lowest-common-ancestor-of-deepest-leaves",
+              "difficulty": "Medium",
+              "rating": 1607
+            },
+            {
+              "slug": "minimum-absolute-difference-in-bst",
+              "difficulty": "Easy",
+              "rating": 1303
+            },
+            {
+              "slug": "minimum-distance-between-bst-nodes",
+              "difficulty": "Easy",
+              "rating": 1303
+            },
+            {
+              "slug": "range-sum-of-bst",
+              "difficulty": "Easy",
+              "rating": 1335
+            },
+            {
+              "slug": "all-elements-in-two-binary-search-trees",
+              "difficulty": "Medium",
+              "rating": 1260
+            },
+            {
+              "slug": "increasing-order-search-tree",
+              "difficulty": "Easy",
+              "rating": 1473
+            },
+            {
+              "slug": "maximum-binary-tree-ii",
+              "difficulty": "Medium",
+              "rating": 1498
+            },
+            {
+              "slug": "construct-binary-search-tree-from-preorder-traversal",
+              "difficulty": "Medium",
+              "rating": 1563
+            },
+            {
+              "slug": "balance-a-binary-search-tree",
+              "difficulty": "Medium",
+              "rating": 1541
+            },
+            {
+              "slug": "create-binary-tree-from-descriptions",
+              "difficulty": "Medium",
+              "rating": 1644
+            }
+          ]
+        },
+        {
+          "name": "5. 网格图 · 网格图 DFS",
+          "questionNum": 7,
+          "questions": [
+            {
+              "slug": "count-islands-with-total-value-divisible-by-k",
+              "difficulty": "Medium",
+              "rating": 1461
+            },
+            {
+              "slug": "maximum-number-of-fish-in-a-grid",
+              "difficulty": "Medium",
+              "rating": 1490
+            },
+            {
+              "slug": "coloring-a-border",
+              "difficulty": "Medium",
+              "rating": 1579
+            },
+            {
+              "slug": "number-of-enclaves",
+              "difficulty": "Medium",
+              "rating": 1615
+            },
+            {
+              "slug": "maximum-number-of-moves-in-a-grid",
+              "difficulty": "Medium",
+              "rating": 1626
+            },
+            {
+              "slug": "number-of-closed-islands",
+              "difficulty": "Medium",
+              "rating": 1659
+            },
+            {
+              "slug": "count-sub-islands",
+              "difficulty": "Medium",
+              "rating": 1679
+            }
+          ]
+        },
+        {
+          "name": "6. 链表树回溯 · 回溯",
+          "questionNum": 14,
+          "questions": [
+            {
+              "slug": "sum-of-all-subset-xor-totals",
+              "difficulty": "Easy",
+              "rating": 1372
+            },
+            {
+              "slug": "letter-case-permutation",
+              "difficulty": "Medium",
+              "rating": 1342
+            },
+            {
+              "slug": "valid-binary-strings-with-cost-limit",
+              "difficulty": "Medium",
+              "rating": 1429
+            },
+            {
+              "slug": "partition-array-into-two-equal-product-subsets",
+              "difficulty": "Medium",
+              "rating": 1459
+            },
+            {
+              "slug": "count-number-of-maximum-bitwise-or-subsets",
+              "difficulty": "Medium",
+              "rating": 1568
+            },
+            {
+              "slug": "find-the-punishment-number-of-an-integer",
+              "difficulty": "Medium",
+              "rating": 1679
+            },
+            {
+              "slug": "iterator-for-combination",
+              "difficulty": "Medium",
+              "rating": 1591
+            },
+            {
+              "slug": "word-squares-ii",
+              "difficulty": "Medium",
+              "rating": 1606
+            },
+            {
+              "slug": "generate-binary-strings-without-adjacent-zeros",
+              "difficulty": "Medium",
+              "rating": 1353
+            },
+            {
+              "slug": "numbers-with-same-consecutive-differences",
+              "difficulty": "Medium",
+              "rating": 1433
+            },
+            {
+              "slug": "finding-3-digit-even-numbers",
+              "difficulty": "Easy",
+              "rating": 1455
+            },
+            {
+              "slug": "unique-3-digit-even-numbers",
+              "difficulty": "Easy",
+              "rating": 1324
+            },
+            {
+              "slug": "the-k-th-lexicographical-string-of-all-happy-strings-of-length-n",
+              "difficulty": "Medium",
+              "rating": 1576
+            },
+            {
+              "slug": "path-with-maximum-gold",
+              "difficulty": "Medium",
+              "rating": 1663
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 入门 DP",
+          "questionNum": 7,
+          "questions": [
+            {
+              "slug": "min-cost-climbing-stairs",
+              "difficulty": "Easy",
+              "rating": 1358
+            },
+            {
+              "slug": "climbing-stairs-ii",
+              "difficulty": "Medium",
+              "rating": 1560
+            },
+            {
+              "slug": "combination-sum-iv",
+              "difficulty": "Medium",
+              "rating": 1600,
+              "ratingApprox": true
+            },
+            {
+              "slug": "count-ways-to-build-good-strings",
+              "difficulty": "Medium",
+              "rating": 1694
+            },
+            {
+              "slug": "count-number-of-ways-to-place-houses",
+              "difficulty": "Medium",
+              "rating": 1608
+            },
+            {
+              "slug": "house-robber-v",
+              "difficulty": "Medium",
+              "rating": 1619
+            },
+            {
+              "slug": "find-the-substring-with-maximum-cost",
+              "difficulty": "Medium",
+              "rating": 1422
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 网格图 DP",
+          "questionNum": 5,
+          "questions": [
+            {
+              "slug": "count-paths-with-the-given-xor-value",
+              "difficulty": "Medium",
+              "rating": 1573
+            },
+            {
+              "slug": "minimum-falling-path-sum",
+              "difficulty": "Medium",
+              "rating": 1573
+            },
+            {
+              "slug": "minimum-cost-path-with-alternating-directions-ii",
+              "difficulty": "Medium",
+              "rating": 1639
+            },
+            {
+              "slug": "minimum-path-cost-in-a-grid",
+              "difficulty": "Medium",
+              "rating": 1658
+            },
+            {
+              "slug": "minimum-falling-path-sum-ii",
+              "difficulty": "Hard",
+              "rating": 1697
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 背包",
+          "questionNum": 2,
+          "questions": [
+            {
+              "slug": "length-of-the-longest-subsequence-that-sums-to-target",
+              "difficulty": "Medium",
+              "rating": 1659
+            },
+            {
+              "slug": "number-of-dice-rolls-with-target-sum",
+              "difficulty": "Medium",
+              "rating": 1654
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 经典线性 DP",
+          "questionNum": 1,
+          "questions": [
+            {
+              "slug": "maximum-multiplication-score",
+              "difficulty": "Medium",
+              "rating": 1692
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 状态机 DP",
+          "questionNum": 4,
+          "questions": [
+            {
+              "slug": "maximum-energy-boost-from-two-drinks",
+              "difficulty": "Medium",
+              "rating": 1484
+            },
+            {
+              "slug": "number-of-ways-to-select-buildings",
+              "difficulty": "Medium",
+              "rating": 1657
+            },
+            {
+              "slug": "maximum-strength-of-a-group",
+              "difficulty": "Medium",
+              "rating": 1502
+            },
+            {
+              "slug": "knight-dialer",
+              "difficulty": "Medium",
+              "rating": 1690
+            }
+          ]
+        }
+      ]
+    },
+    "lingshen-unrated": {
+      "slug": "lingshen-unrated",
+      "name": "灵神题单 · 无难度分",
+      "questionNum": 203,
+      "builtIn": true,
+      "sourceUrl": "https://leetcode.cn/discuss/post/3141566/ru-he-ke-xue-shua-ti-by-endlesscheng-q3yd/",
+      "sourceName": "如何科学刷题（灵茶山艾府）",
+      "note": "按灵神「如何科学刷题」核心路线的必做内容整理（滑窗 → 二分查找 → 数据结构 → 二叉树 DFS → 网格图 DFS → 回溯 → DP 前六章），不含会员题和「选做」小节，跨章节重复的题只保留第一次出现。这里是没有难度分的非周赛题（如 3、643、144）。题单内容截至 2026-09-23。",
+      "groups": [
+        {
+          "name": "1. 滑动窗口 · 定长滑动窗口",
+          "questionNum": 1,
+          "questions": [
+            {
+              "slug": "maximum-average-subarray-i",
+              "difficulty": "Easy"
+            }
+          ]
+        },
+        {
+          "name": "1. 滑动窗口 · 不定长滑动窗口",
+          "questionNum": 6,
+          "questions": [
+            {
+              "slug": "longest-substring-without-repeating-characters",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "minimum-size-subarray-sum",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "minimum-window-substring",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "smallest-range-covering-elements-from-k-lists",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "subarray-product-less-than-k",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "1GxJYY",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "2. 二分算法 · 二分查找",
+          "questionNum": 7,
+          "questions": [
+            {
+              "slug": "find-first-and-last-position-of-element-in-sorted-array",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "search-insert-position",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "binary-search",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "find-smallest-letter-greater-than-target",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "find-k-closest-elements",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "ju-qing-hong-fa-shi-jian",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "search-a-2d-matrix",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 常用枚举技巧",
+          "questionNum": 9,
+          "questions": [
+            {
+              "slug": "two-sum",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "maximum-distance-in-arrays",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "pairs-with-sum-lcci",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "contains-duplicate-ii",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "4sum-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "contains-duplicate-iii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "132-pattern",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "diagonal-traverse",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 前缀和",
+          "questionNum": 9,
+          "questions": [
+            {
+              "slug": "range-sum-query-immutable",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "maximum-subarray",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "subarray-sum-equals-k",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "continuous-subarray-sum",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "contiguous-array",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "find-longest-subarray-lcci",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "max-sum-of-rectangle-no-larger-than-k",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "path-sum-iii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "range-sum-query-2d-immutable",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 栈",
+          "questionNum": 16,
+          "questions": [
+            {
+              "slug": "baseball-game",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "simplify-path",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "min-stack",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "exclusive-time-of-functions",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "asteroid-collision",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "valid-parentheses",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "longest-valid-parentheses",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "evaluate-reverse-polish-notation",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "decode-string",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "string-to-integer-atoi",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "basic-calculator",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "basic-calculator-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "number-of-atoms",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "tag-validator",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "parse-lisp-expression",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "valid-number",
+              "difficulty": "Hard"
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 队列",
+          "questionNum": 7,
+          "questions": [
+            {
+              "slug": "dota2-senate",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "implement-stack-using-queues",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "implement-queue-using-stacks",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "design-circular-queue",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "design-circular-deque",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "sliding-window-maximum",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "dui-lie-de-zui-da-zhi-lcof",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 堆",
+          "questionNum": 15,
+          "questions": [
+            {
+              "slug": "kth-largest-element-in-a-stream",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "merge-k-sorted-lists",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "ipo",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "trapping-rain-water-ii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "o8SXZn",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "ugly-number-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "kth-smallest-element-in-a-sorted-matrix",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "find-k-pairs-with-smallest-sums",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "task-scheduler",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "p0NxJO",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "course-schedule-iii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "the-skyline-problem",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "find-median-from-data-stream",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "sliding-window-median",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "5TxKeK",
+              "difficulty": "Hard"
+            }
+          ]
+        },
+        {
+          "name": "4. 链表树回溯 · 二叉树 DFS",
+          "questionNum": 47,
+          "questions": [
+            {
+              "slug": "binary-tree-preorder-traversal",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "binary-tree-inorder-traversal",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "binary-tree-postorder-traversal",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "sZ59z6",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "sum-of-left-leaves",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "second-minimum-node-in-a-binary-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "maximum-depth-of-binary-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "minimum-depth-of-binary-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "path-sum",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "sum-root-to-leaf-numbers",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "binary-tree-right-side-view",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "add-one-row-to-tree",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "same-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "symmetric-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "balanced-binary-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "invert-binary-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "merge-two-binary-trees",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "most-frequent-subtree-sum",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "binary-tree-tilt",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "construct-string-from-binary-tree",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "subtree-of-another-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "KnLfVT",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "diameter-of-binary-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "longest-univalue-path",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "binary-tree-maximum-path-sum",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "binary-tree-paths",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "path-sum-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "lowest-common-ancestor-of-a-binary-tree",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "search-in-a-binary-search-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "find-mode-in-binary-search-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "kth-smallest-element-in-a-bst",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "validate-binary-search-tree",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "recover-binary-search-tree",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "two-sum-iv-input-is-a-bst",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "convert-sorted-array-to-binary-search-tree",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "maximum-binary-tree",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "insert-into-a-binary-search-tree",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "delete-node-in-a-bst",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "trim-a-binary-search-tree",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "house-robber-iii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "er-cha-shu-ren-wu-diao-du",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "er-cha-shu-ran-se-UGC",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "U7WvvU",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "5. 网格图 · 网格图 DFS",
+          "questionNum": 10,
+          "questions": [
+            {
+              "slug": "number-of-islands",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "max-area-of-island",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "pond-sizes-lcci",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "YesdPw",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "island-perimeter",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "flood-fill",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "surrounded-regions",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "minesweeper",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "pacific-atlantic-water-flow",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "EXvqDp",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "6. 链表树回溯 · 回溯",
+          "questionNum": 32,
+          "questions": [
+            {
+              "slug": "letter-combinations-of-a-phone-number",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "subsets",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "UEcfPD",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "combination-sum",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "palindrome-partitioning",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "restore-ip-addresses",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "word-break-ii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "combinations",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "combination-sum-iii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "generate-parentheses",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "remove-invalid-parentheses",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "permutations",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "n-queens",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "n-queens-ii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "sudoku-solver",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "subsets-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "combination-sum-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "non-decreasing-subsequences",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "permutations-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "word-search",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "matchsticks-to-square",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "word-search-ii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "shopping-offers",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "24-game",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "expression-add-operators",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "word-ladder-ii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "stickers-to-spell-word",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "zuma-game",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "De4qBB",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "word-rectangle-lcci",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "target-sum",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "cnHoX6",
+              "difficulty": "Hard"
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 入门 DP",
+          "questionNum": 5,
+          "questions": [
+            {
+              "slug": "climbing-stairs",
+              "difficulty": "Easy"
+            },
+            {
+              "slug": "house-robber",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "house-robber-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "delete-and-earn",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "maximum-product-subarray",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 网格图 DP",
+          "questionNum": 7,
+          "questions": [
+            {
+              "slug": "minimum-path-sum",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "unique-paths",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "unique-paths-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "triangle",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "dungeon-game",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "longest-increasing-path-in-a-matrix",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "cherry-pickup",
+              "difficulty": "Hard"
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 背包",
+          "questionNum": 6,
+          "questions": [
+            {
+              "slug": "partition-equal-subset-sum",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "ones-and-zeroes",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "oPs9Bm",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "coin-change",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "coin-change-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "perfect-squares",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 经典线性 DP",
+          "questionNum": 13,
+          "questions": [
+            {
+              "slug": "longest-common-subsequence",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "delete-operation-for-two-strings",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "minimum-ascii-delete-sum-for-two-strings",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "edit-distance",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "maximum-length-of-repeated-subarray",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "distinct-subsequences",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "interleaving-string",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "wildcard-matching",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "regular-expression-matching",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "longest-increasing-subsequence",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "increasing-triplet-subsequence",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "russian-doll-envelopes",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "number-of-longest-increasing-subsequence",
+              "difficulty": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 划分型 DP",
+          "questionNum": 6,
+          "questions": [
+            {
+              "slug": "word-break",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "palindrome-partitioning-ii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "decode-ways",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "decode-ways-ii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "split-array-largest-sum",
+              "difficulty": "Hard"
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 状态机 DP",
+          "questionNum": 7,
+          "questions": [
+            {
+              "slug": "best-time-to-buy-and-sell-stock-ii",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-iii",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-iv",
+              "difficulty": "Hard"
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-with-cooldown",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "best-time-to-buy-and-sell-stock-with-transaction-fee",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "wiggle-subsequence",
+              "difficulty": "Medium"
+            },
+            {
+              "slug": "UlBDOe",
+              "difficulty": "Medium"
+            }
+          ]
+        }
+      ]
+    },
+    "lingshen-gt1700": {
+      "slug": "lingshen-gt1700",
+      "name": "灵神题单 · 难度分 >1700",
+      "questionNum": 331,
+      "builtIn": true,
+      "sourceUrl": "https://leetcode.cn/discuss/post/3141566/ru-he-ke-xue-shua-ti-by-endlesscheng-q3yd/",
+      "sourceName": "如何科学刷题（灵茶山艾府）",
+      "note": "按灵神「如何科学刷题」核心路线的必做内容整理（滑窗 → 二分查找 → 数据结构 → 二叉树 DFS → 网格图 DFS → 回溯 → DP 前六章），不含会员题和「选做」小节，跨章节重复的题只保留第一次出现。难度分取自题单，题单没写的用 zerotrac 周赛难度分补齐。题单内容截至 2026-09-23。",
+      "groups": [
+        {
+          "name": "1. 滑动窗口 · 不定长滑动窗口",
+          "questionNum": 12,
+          "questions": [
+            {
+              "slug": "replace-the-substring-for-balanced-string",
+              "difficulty": "Medium",
+              "rating": 1878
+            },
+            {
+              "slug": "minimum-size-subarray-in-infinite-array",
+              "difficulty": "Medium",
+              "rating": 1914
+            },
+            {
+              "slug": "count-subarrays-with-score-less-than-k",
+              "difficulty": "Hard",
+              "rating": 1808
+            },
+            {
+              "slug": "continuous-subarrays",
+              "difficulty": "Medium",
+              "rating": 1940
+            },
+            {
+              "slug": "find-the-median-of-the-uniqueness-array",
+              "difficulty": "Hard",
+              "rating": 2451
+            },
+            {
+              "slug": "count-substrings-that-satisfy-k-constraint-ii",
+              "difficulty": "Hard",
+              "rating": 2659
+            },
+            {
+              "slug": "count-subarrays-where-max-element-appears-at-least-k-times",
+              "difficulty": "Medium",
+              "rating": 1701
+            },
+            {
+              "slug": "count-the-number-of-good-subarrays",
+              "difficulty": "Medium",
+              "rating": 1892
+            },
+            {
+              "slug": "count-substrings-that-can-be-rearranged-to-contain-a-string-ii",
+              "difficulty": "Hard",
+              "rating": 1909
+            },
+            {
+              "slug": "count-of-substrings-containing-every-vowel-and-k-consonants-ii",
+              "difficulty": "Medium",
+              "rating": 2200
+            },
+            {
+              "slug": "subarrays-with-k-different-integers",
+              "difficulty": "Hard",
+              "rating": 2210
+            },
+            {
+              "slug": "count-subarrays-with-k-distinct-integers",
+              "difficulty": "Hard",
+              "rating": 2302
+            }
+          ]
+        },
+        {
+          "name": "2. 二分算法 · 二分查找",
+          "questionNum": 8,
+          "questions": [
+            {
+              "slug": "range-frequency-queries",
+              "difficulty": "Medium",
+              "rating": 1702
+            },
+            {
+              "slug": "count-the-number-of-fair-pairs",
+              "difficulty": "Medium",
+              "rating": 1721
+            },
+            {
+              "slug": "snapshot-array",
+              "difficulty": "Medium",
+              "rating": 1771
+            },
+            {
+              "slug": "implement-router",
+              "difficulty": "Medium",
+              "rating": 1851
+            },
+            {
+              "slug": "minimum-absolute-sum-difference",
+              "difficulty": "Medium",
+              "rating": 1934
+            },
+            {
+              "slug": "online-election",
+              "difficulty": "Medium",
+              "rating": 2001
+            },
+            {
+              "slug": "most-beautiful-item-for-each-query",
+              "difficulty": "Medium",
+              "rating": 1724
+            },
+            {
+              "slug": "count-of-unfinished-tasks-after-each-shift",
+              "difficulty": "Medium",
+              "rating": 1736
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 常用枚举技巧",
+          "questionNum": 19,
+          "questions": [
+            {
+              "slug": "best-sightseeing-pair",
+              "difficulty": "Medium",
+              "rating": 1730
+            },
+            {
+              "slug": "count-nice-pairs-in-an-array",
+              "difficulty": "Medium",
+              "rating": 1738
+            },
+            {
+              "slug": "maximum-product-of-first-and-last-elements-of-a-subsequence",
+              "difficulty": "Medium",
+              "rating": 1763
+            },
+            {
+              "slug": "find-indices-with-index-and-value-difference-ii",
+              "difficulty": "Medium",
+              "rating": 1764
+            },
+            {
+              "slug": "check-if-array-pairs-are-divisible-by-k",
+              "difficulty": "Medium",
+              "rating": 1787
+            },
+            {
+              "slug": "maximize-win-from-two-segments",
+              "difficulty": "Medium",
+              "rating": 2081
+            },
+            {
+              "slug": "count-special-subsequences",
+              "difficulty": "Medium",
+              "rating": 2445
+            },
+            {
+              "slug": "count-almost-equal-pairs-ii",
+              "difficulty": "Hard",
+              "rating": 2545
+            },
+            {
+              "slug": "maximize-subarrays-after-removing-one-conflicting-pair",
+              "difficulty": "Hard",
+              "rating": 2764
+            },
+            {
+              "slug": "find-the-number-of-ways-to-place-people-ii",
+              "difficulty": "Hard",
+              "rating": 2020
+            },
+            {
+              "slug": "equal-sum-grid-partition-ii",
+              "difficulty": "Hard",
+              "rating": 2245
+            },
+            {
+              "slug": "count-pairs-of-connectable-servers-in-a-weighted-tree-network",
+              "difficulty": "Medium",
+              "rating": 1909
+            },
+            {
+              "slug": "shortest-matching-substring",
+              "difficulty": "Hard",
+              "rating": 2303
+            },
+            {
+              "slug": "maximum-score-of-a-node-sequence",
+              "difficulty": "Hard",
+              "rating": 2304
+            },
+            {
+              "slug": "count-valid-paths-in-a-tree",
+              "difficulty": "Hard",
+              "rating": 2428
+            },
+            {
+              "slug": "count-increasing-quadruplets",
+              "difficulty": "Hard",
+              "rating": 2433
+            },
+            {
+              "slug": "maximum-value-sum-by-placing-three-rooks-ii",
+              "difficulty": "Hard",
+              "rating": 2553
+            },
+            {
+              "slug": "max-black-square-lcci",
+              "difficulty": "Medium",
+              "rating": 2800,
+              "ratingApprox": true
+            },
+            {
+              "slug": "diagonal-traverse-ii",
+              "difficulty": "Medium",
+              "rating": 1780
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 前缀和",
+          "questionNum": 41,
+          "questions": [
+            {
+              "slug": "maximum-good-subarray-sum",
+              "difficulty": "Medium",
+              "rating": 1817
+            },
+            {
+              "slug": "find-two-non-overlapping-sub-arrays-each-with-target-sum",
+              "difficulty": "Medium",
+              "rating": 1851
+            },
+            {
+              "slug": "maximum-number-of-non-overlapping-subarrays-with-sum-equals-target",
+              "difficulty": "Medium",
+              "rating": 1855
+            },
+            {
+              "slug": "longest-well-performing-interval",
+              "difficulty": "Medium",
+              "rating": 1908
+            },
+            {
+              "slug": "stable-subarrays-with-equal-boundary-and-interior-sum",
+              "difficulty": "Medium",
+              "rating": 1909
+            },
+            {
+              "slug": "maximum-subarray-sum-with-length-divisible-by-k",
+              "difficulty": "Medium",
+              "rating": 1943
+            },
+            {
+              "slug": "count-subarrays-with-median-k",
+              "difficulty": "Hard",
+              "rating": 1999
+            },
+            {
+              "slug": "make-sum-divisible-by-p",
+              "difficulty": "Medium",
+              "rating": 2039
+            },
+            {
+              "slug": "count-of-interesting-subarrays",
+              "difficulty": "Medium",
+              "rating": 2073
+            },
+            {
+              "slug": "count-subarrays-with-majority-element-ii",
+              "difficulty": "Hard",
+              "rating": 2090
+            },
+            {
+              "slug": "longest-balanced-substring-after-one-swap",
+              "difficulty": "Medium",
+              "rating": 2135
+            },
+            {
+              "slug": "number-of-submatrices-that-sum-to-target",
+              "difficulty": "Hard",
+              "rating": 2189
+            },
+            {
+              "slug": "longest-balanced-substring-ii",
+              "difficulty": "Medium",
+              "rating": 2202
+            },
+            {
+              "slug": "maximum-number-of-ways-to-partition-an-array",
+              "difficulty": "Hard",
+              "rating": 2218
+            },
+            {
+              "slug": "count-distinct-subarrays-divisible-by-k-in-sorted-array",
+              "difficulty": "Hard",
+              "rating": 2248
+            },
+            {
+              "slug": "count-beautiful-substrings-ii",
+              "difficulty": "Hard",
+              "rating": 2445
+            },
+            {
+              "slug": "sum-of-distances",
+              "difficulty": "Medium",
+              "rating": 1793
+            },
+            {
+              "slug": "minimum-operations-to-make-all-array-elements-equal",
+              "difficulty": "Medium",
+              "rating": 1903
+            },
+            {
+              "slug": "apply-operations-to-maximize-frequency-score",
+              "difficulty": "Hard",
+              "rating": 2444
+            },
+            {
+              "slug": "minimum-adjacent-swaps-for-k-consecutive-ones",
+              "difficulty": "Hard",
+              "rating": 2467
+            },
+            {
+              "slug": "minimum-moves-to-pick-k-ones",
+              "difficulty": "Hard",
+              "rating": 2673
+            },
+            {
+              "slug": "can-make-palindrome-from-substring",
+              "difficulty": "Medium",
+              "rating": 1848
+            },
+            {
+              "slug": "find-the-longest-substring-containing-vowels-in-even-counts",
+              "difficulty": "Medium",
+              "rating": 2041
+            },
+            {
+              "slug": "find-longest-awesome-substring",
+              "difficulty": "Hard",
+              "rating": 2222
+            },
+            {
+              "slug": "number-of-wonderful-substrings",
+              "difficulty": "Medium",
+              "rating": 2235
+            },
+            {
+              "slug": "count-paths-that-can-form-a-palindrome-in-a-tree",
+              "difficulty": "Hard",
+              "rating": 2677
+            },
+            {
+              "slug": "minimum-cost-to-move-between-indices",
+              "difficulty": "Medium",
+              "rating": 1777
+            },
+            {
+              "slug": "largest-magic-square",
+              "difficulty": "Medium",
+              "rating": 1781
+            },
+            {
+              "slug": "plates-between-candles",
+              "difficulty": "Medium",
+              "rating": 1819
+            },
+            {
+              "slug": "can-you-eat-your-favorite-candy-on-your-favorite-day",
+              "difficulty": "Medium",
+              "rating": 1859
+            },
+            {
+              "slug": "get-biggest-three-rhombus-sums-in-a-grid",
+              "difficulty": "Medium",
+              "rating": 1898
+            },
+            {
+              "slug": "concatenate-non-zero-digits-and-multiply-by-sum-ii",
+              "difficulty": "Medium",
+              "rating": 1968
+            },
+            {
+              "slug": "maximum-trailing-zeros-in-a-cornered-path",
+              "difficulty": "Medium",
+              "rating": 2037
+            },
+            {
+              "slug": "ways-to-split-array-into-three-subarrays",
+              "difficulty": "Medium",
+              "rating": 2079
+            },
+            {
+              "slug": "sum-of-floored-pairs",
+              "difficulty": "Hard",
+              "rating": 2170
+            },
+            {
+              "slug": "count-stable-subarrays",
+              "difficulty": "Hard",
+              "rating": 2209
+            },
+            {
+              "slug": "sum-of-total-strength-of-wizards",
+              "difficulty": "Hard",
+              "rating": 2621
+            },
+            {
+              "slug": "maximum-difference-between-even-and-odd-frequency-ii",
+              "difficulty": "Hard",
+              "rating": 2694
+            },
+            {
+              "slug": "palindrome-rearrangement-queries",
+              "difficulty": "Hard",
+              "rating": 2780
+            },
+            {
+              "slug": "maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold",
+              "difficulty": "Medium",
+              "rating": 1735
+            },
+            {
+              "slug": "maximum-difference-score-in-a-grid",
+              "difficulty": "Medium",
+              "rating": 1820
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 栈",
+          "questionNum": 18,
+          "questions": [
+            {
+              "slug": "lexicographically-minimum-string-after-removing-stars",
+              "difficulty": "Medium",
+              "rating": 1772
+            },
+            {
+              "slug": "using-a-robot-to-print-the-lexicographically-smallest-string",
+              "difficulty": "Medium",
+              "rating": 1953
+            },
+            {
+              "slug": "maximum-frequency-stack",
+              "difficulty": "Hard",
+              "rating": 2028
+            },
+            {
+              "slug": "dinner-plate-stacks",
+              "difficulty": "Hard",
+              "rating": 2110
+            },
+            {
+              "slug": "minimum-time-to-complete-all-tasks",
+              "difficulty": "Hard",
+              "rating": 2381
+            },
+            {
+              "slug": "remove-k-balanced-substrings",
+              "difficulty": "Medium",
+              "rating": 1802
+            },
+            {
+              "slug": "maximum-score-from-removing-substrings",
+              "difficulty": "Medium",
+              "rating": 1868
+            },
+            {
+              "slug": "replace-non-coprime-numbers-in-array",
+              "difficulty": "Hard",
+              "rating": 2057
+            },
+            {
+              "slug": "robot-collisions",
+              "difficulty": "Hard",
+              "rating": 2092
+            },
+            {
+              "slug": "car-fleet-ii",
+              "difficulty": "Hard",
+              "rating": 2531
+            },
+            {
+              "slug": "maximum-nesting-depth-of-two-valid-parentheses-strings",
+              "difficulty": "Medium",
+              "rating": 1749
+            },
+            {
+              "slug": "minimum-insertions-to-balance-a-parentheses-string",
+              "difficulty": "Medium",
+              "rating": 1759
+            },
+            {
+              "slug": "check-if-a-parentheses-string-can-be-valid",
+              "difficulty": "Medium",
+              "rating": 2038
+            },
+            {
+              "slug": "parsing-a-boolean-expression",
+              "difficulty": "Hard",
+              "rating": 1880
+            },
+            {
+              "slug": "brace-expansion-ii",
+              "difficulty": "Hard",
+              "rating": 2349
+            },
+            {
+              "slug": "minimum-cost-to-change-the-final-value-of-expression",
+              "difficulty": "Hard",
+              "rating": 2532
+            },
+            {
+              "slug": "basic-calculator-iv",
+              "difficulty": "Hard",
+              "rating": 2863
+            },
+            {
+              "slug": "design-a-text-editor",
+              "difficulty": "Hard",
+              "rating": 1912
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 队列",
+          "questionNum": 6,
+          "questions": [
+            {
+              "slug": "maximum-number-of-tasks-you-can-assign",
+              "difficulty": "Hard",
+              "rating": 2648
+            },
+            {
+              "slug": "count-subarrays-with-cost-less-than-or-equal-to-k",
+              "difficulty": "Medium",
+              "rating": 1759
+            },
+            {
+              "slug": "maximum-number-of-robots-within-budget",
+              "difficulty": "Hard",
+              "rating": 1917
+            },
+            {
+              "slug": "count-prime-gap-balanced-subarrays",
+              "difficulty": "Medium",
+              "rating": 2235
+            },
+            {
+              "slug": "shortest-subarray-with-sum-at-least-k",
+              "difficulty": "Hard",
+              "rating": 2307
+            },
+            {
+              "slug": "max-value-of-equation",
+              "difficulty": "Hard",
+              "rating": 2456
+            }
+          ]
+        },
+        {
+          "name": "3. 数据结构 · 堆",
+          "questionNum": 59,
+          "questions": [
+            {
+              "slug": "number-of-orders-in-the-backlog",
+              "difficulty": "Medium",
+              "rating": 1711
+            },
+            {
+              "slug": "divide-intervals-into-minimum-number-of-groups",
+              "difficulty": "Medium",
+              "rating": 1713
+            },
+            {
+              "slug": "choose-k-elements-with-maximum-sum",
+              "difficulty": "Medium",
+              "rating": 1753
+            },
+            {
+              "slug": "total-cost-to-hire-k-workers",
+              "difficulty": "Medium",
+              "rating": 1764
+            },
+            {
+              "slug": "single-threaded-cpu",
+              "difficulty": "Medium",
+              "rating": 1798
+            },
+            {
+              "slug": "maximum-average-pass-ratio",
+              "difficulty": "Medium",
+              "rating": 1818
+            },
+            {
+              "slug": "maximum-spending-after-buying-items",
+              "difficulty": "Hard",
+              "rating": 1822
+            },
+            {
+              "slug": "maximum-score-after-binary-swaps",
+              "difficulty": "Medium",
+              "rating": 1823
+            },
+            {
+              "slug": "maximum-number-of-eaten-apples",
+              "difficulty": "Medium",
+              "rating": 1930
+            },
+            {
+              "slug": "swim-in-rising-water",
+              "difficulty": "Hard",
+              "rating": 2097
+            },
+            {
+              "slug": "path-with-minimum-effort",
+              "difficulty": "Medium",
+              "rating": 1948
+            },
+            {
+              "slug": "process-tasks-using-servers",
+              "difficulty": "Medium",
+              "rating": 1979
+            },
+            {
+              "slug": "construct-target-array-with-multiple-sums",
+              "difficulty": "Hard",
+              "rating": 2015
+            },
+            {
+              "slug": "maximum-number-of-events-that-can-be-attended",
+              "difficulty": "Medium",
+              "rating": 2016
+            },
+            {
+              "slug": "maximum-profit-in-job-scheduling",
+              "difficulty": "Hard",
+              "rating": 2023
+            },
+            {
+              "slug": "maximum-subsequence-score",
+              "difficulty": "Medium",
+              "rating": 2056
+            },
+            {
+              "slug": "maximum-performance-of-a-team",
+              "difficulty": "Hard",
+              "rating": 2091
+            },
+            {
+              "slug": "meeting-rooms-iii",
+              "difficulty": "Hard",
+              "rating": 2093
+            },
+            {
+              "slug": "maximum-number-of-points-from-grid-queries",
+              "difficulty": "Hard",
+              "rating": 2196
+            },
+            {
+              "slug": "minimum-difference-in-sums-after-removal-of-elements",
+              "difficulty": "Hard",
+              "rating": 2225
+            },
+            {
+              "slug": "minimum-cost-to-hire-k-workers",
+              "difficulty": "Hard",
+              "rating": 2260
+            },
+            {
+              "slug": "find-servers-that-handled-most-number-of-requests",
+              "difficulty": "Hard",
+              "rating": 2276
+            },
+            {
+              "slug": "minimum-interval-to-include-each-query",
+              "difficulty": "Hard",
+              "rating": 2286
+            },
+            {
+              "slug": "find-building-where-alice-and-bob-can-meet",
+              "difficulty": "Hard",
+              "rating": 2327
+            },
+            {
+              "slug": "smallest-substring-with-identical-characters-ii",
+              "difficulty": "Hard",
+              "rating": 2376
+            },
+            {
+              "slug": "final-array-state-after-k-multiplication-operations-ii",
+              "difficulty": "Hard",
+              "rating": 2509
+            },
+            {
+              "slug": "minimize-deviation-in-array",
+              "difficulty": "Hard",
+              "rating": 2533
+            },
+            {
+              "slug": "minimum-number-of-visited-cells-in-a-grid",
+              "difficulty": "Hard",
+              "rating": 2582
+            },
+            {
+              "slug": "time-to-cross-a-bridge",
+              "difficulty": "Hard",
+              "rating": 2589
+            },
+            {
+              "slug": "tweet-counts-per-frequency",
+              "difficulty": "Medium",
+              "rating": 2037
+            },
+            {
+              "slug": "exam-room",
+              "difficulty": "Medium",
+              "rating": 2067
+            },
+            {
+              "slug": "design-movie-rental-system",
+              "difficulty": "Hard",
+              "rating": 2182
+            },
+            {
+              "slug": "find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows",
+              "difficulty": "Hard",
+              "rating": 2134
+            },
+            {
+              "slug": "k-th-smallest-prime-fraction",
+              "difficulty": "Medium",
+              "rating": 2169
+            },
+            {
+              "slug": "maximum-total-subarray-value-ii",
+              "difficulty": "Hard",
+              "rating": 2469
+            },
+            {
+              "slug": "find-the-k-sum-of-an-array",
+              "difficulty": "Hard",
+              "rating": 2648
+            },
+            {
+              "slug": "distant-barcodes",
+              "difficulty": "Medium",
+              "rating": 1702
+            },
+            {
+              "slug": "longest-happy-string",
+              "difficulty": "Medium",
+              "rating": 1821
+            },
+            {
+              "slug": "replace-question-marks-in-string-to-minimize-its-value",
+              "difficulty": "Medium",
+              "rating": 1905
+            },
+            {
+              "slug": "furthest-building-you-can-reach",
+              "difficulty": "Medium",
+              "rating": 1962
+            },
+            {
+              "slug": "minimum-number-of-refueling-stops",
+              "difficulty": "Hard",
+              "rating": 2074
+            },
+            {
+              "slug": "zero-array-transformation-iii",
+              "difficulty": "Medium",
+              "rating": 2424
+            },
+            {
+              "slug": "maximum-elegance-of-a-k-length-subsequence",
+              "difficulty": "Hard",
+              "rating": 2582
+            },
+            {
+              "slug": "pizza-with-3n-slices",
+              "difficulty": "Hard",
+              "rating": 2410
+            },
+            {
+              "slug": "minimum-operations-to-achieve-at-least-k-peaks",
+              "difficulty": "Hard",
+              "rating": 2280
+            },
+            {
+              "slug": "earliest-second-to-mark-indices-ii",
+              "difficulty": "Hard",
+              "rating": 3111
+            },
+            {
+              "slug": "design-a-food-rating-system",
+              "difficulty": "Medium",
+              "rating": 1782
+            },
+            {
+              "slug": "most-frequent-ids",
+              "difficulty": "Medium",
+              "rating": 1793
+            },
+            {
+              "slug": "design-task-manager",
+              "difficulty": "Medium",
+              "rating": 1807
+            },
+            {
+              "slug": "stock-price-fluctuation",
+              "difficulty": "Medium",
+              "rating": 1832
+            },
+            {
+              "slug": "design-auction-system",
+              "difficulty": "Medium",
+              "rating": 1854
+            },
+            {
+              "slug": "minimum-pair-removal-to-sort-array-ii",
+              "difficulty": "Hard",
+              "rating": 2608
+            },
+            {
+              "slug": "sequentially-ordinal-rank-tracker",
+              "difficulty": "Hard",
+              "rating": 2159
+            },
+            {
+              "slug": "sliding-subarray-beauty",
+              "difficulty": "Medium",
+              "rating": 1786
+            },
+            {
+              "slug": "finding-mk-average",
+              "difficulty": "Hard",
+              "rating": 2396
+            },
+            {
+              "slug": "minimum-operations-to-make-elements-within-k-subarrays-equal",
+              "difficulty": "Hard",
+              "rating": 2539
+            },
+            {
+              "slug": "divide-an-array-into-subarrays-with-minimum-cost-ii",
+              "difficulty": "Hard",
+              "rating": 2540
+            },
+            {
+              "slug": "find-x-sum-of-all-k-long-subarrays-ii",
+              "difficulty": "Hard",
+              "rating": 2598
+            },
+            {
+              "slug": "maximum-subarray-sum-after-at-most-k-swaps",
+              "difficulty": "Hard",
+              "rating": 2672
+            }
+          ]
+        },
+        {
+          "name": "4. 链表树回溯 · 二叉树 DFS",
+          "questionNum": 12,
+          "questions": [
+            {
+              "slug": "longest-zigzag-path-in-a-binary-tree",
+              "difficulty": "Medium",
+              "rating": 1713
+            },
+            {
+              "slug": "flip-binary-tree-to-match-preorder-traversal",
+              "difficulty": "Medium",
+              "rating": 1787
+            },
+            {
+              "slug": "binary-tree-coloring-game",
+              "difficulty": "Medium",
+              "rating": 1741
+            },
+            {
+              "slug": "number-of-good-leaf-nodes-pairs",
+              "difficulty": "Medium",
+              "rating": 1746
+            },
+            {
+              "slug": "insufficient-nodes-in-root-to-leaf-paths",
+              "difficulty": "Medium",
+              "rating": 1805
+            },
+            {
+              "slug": "amount-of-time-for-binary-tree-to-be-infected",
+              "difficulty": "Medium",
+              "rating": 1711
+            },
+            {
+              "slug": "step-by-step-directions-from-a-binary-tree-node-to-another",
+              "difficulty": "Medium",
+              "rating": 1805
+            },
+            {
+              "slug": "maximum-sum-bst-in-binary-tree",
+              "difficulty": "Hard",
+              "rating": 1914
+            },
+            {
+              "slug": "merge-bsts-to-create-single-bst",
+              "difficulty": "Hard",
+              "rating": 2484
+            },
+            {
+              "slug": "construct-binary-tree-from-preorder-and-postorder-traversal",
+              "difficulty": "Medium",
+              "rating": 1732
+            },
+            {
+              "slug": "recover-a-tree-from-preorder-traversal",
+              "difficulty": "Hard",
+              "rating": 1797
+            },
+            {
+              "slug": "binary-tree-cameras",
+              "difficulty": "Hard",
+              "rating": 2124
+            }
+          ]
+        },
+        {
+          "name": "5. 网格图 · 网格图 DFS",
+          "questionNum": 4,
+          "questions": [
+            {
+              "slug": "check-if-there-is-a-valid-path-in-a-grid",
+              "difficulty": "Medium",
+              "rating": 1746
+            },
+            {
+              "slug": "detect-cycles-in-2d-grid",
+              "difficulty": "Medium",
+              "rating": 1838
+            },
+            {
+              "slug": "making-a-large-island",
+              "difficulty": "Hard",
+              "rating": 1934
+            },
+            {
+              "slug": "last-day-where-you-can-still-cross",
+              "difficulty": "Hard",
+              "rating": 2124
+            }
+          ]
+        },
+        {
+          "name": "6. 链表树回溯 · 回溯",
+          "questionNum": 34,
+          "questions": [
+            {
+              "slug": "closest-dessert-cost",
+              "difficulty": "Medium",
+              "rating": 1702
+            },
+            {
+              "slug": "maximum-rows-covered-by-columns",
+              "difficulty": "Medium",
+              "rating": 1719
+            },
+            {
+              "slug": "maximum-length-of-a-concatenated-string-with-unique-characters",
+              "difficulty": "Medium",
+              "rating": 1720
+            },
+            {
+              "slug": "count-connected-subgraphs-with-even-node-sum",
+              "difficulty": "Hard",
+              "rating": 1859
+            },
+            {
+              "slug": "maximum-points-in-an-archery-competition",
+              "difficulty": "Medium",
+              "rating": 1869
+            },
+            {
+              "slug": "maximum-score-words-formed-by-letters",
+              "difficulty": "Hard",
+              "rating": 1882
+            },
+            {
+              "slug": "maximum-good-people-based-on-statements",
+              "difficulty": "Hard",
+              "rating": 1980
+            },
+            {
+              "slug": "the-number-of-beautiful-subsets",
+              "difficulty": "Medium",
+              "rating": 2023
+            },
+            {
+              "slug": "number-of-possible-sets-of-closing-branches",
+              "difficulty": "Hard",
+              "rating": 2077
+            },
+            {
+              "slug": "maximum-number-of-achievable-transfer-requests",
+              "difficulty": "Hard",
+              "rating": 2119
+            },
+            {
+              "slug": "count-subtrees-with-max-distance-between-cities",
+              "difficulty": "Hard",
+              "rating": 2309
+            },
+            {
+              "slug": "maximum-product-of-the-length-of-two-palindromic-subsequences",
+              "difficulty": "Medium",
+              "rating": 1869
+            },
+            {
+              "slug": "split-a-string-into-the-max-number-of-unique-substrings",
+              "difficulty": "Medium",
+              "rating": 1740
+            },
+            {
+              "slug": "splitting-a-string-into-descending-consecutive-values",
+              "difficulty": "Medium",
+              "rating": 1747
+            },
+            {
+              "slug": "minimum-time-to-break-locks-i",
+              "difficulty": "Medium",
+              "rating": 1793
+            },
+            {
+              "slug": "minimum-moves-to-spread-stones-over-grid",
+              "difficulty": "Medium",
+              "rating": 2001
+            },
+            {
+              "slug": "construct-the-lexicographically-largest-valid-sequence",
+              "difficulty": "Medium",
+              "rating": 2080
+            },
+            {
+              "slug": "verbal-arithmetic-puzzle",
+              "difficulty": "Hard",
+              "rating": 2250
+            },
+            {
+              "slug": "letter-tile-possibilities",
+              "difficulty": "Medium",
+              "rating": 1741
+            },
+            {
+              "slug": "next-special-palindrome-number",
+              "difficulty": "Hard",
+              "rating": 2445
+            },
+            {
+              "slug": "longest-subsequence-repeated-k-times",
+              "difficulty": "Hard",
+              "rating": 2558
+            },
+            {
+              "slug": "unique-paths-iii",
+              "difficulty": "Hard",
+              "rating": 1830
+            },
+            {
+              "slug": "balanced-k-factor-decomposition",
+              "difficulty": "Medium",
+              "rating": 1917
+            },
+            {
+              "slug": "pyramid-transition-matrix",
+              "difficulty": "Medium",
+              "rating": 1990
+            },
+            {
+              "slug": "tiling-a-rectangle-with-the-fewest-squares",
+              "difficulty": "Hard",
+              "rating": 2242
+            },
+            {
+              "slug": "number-of-valid-move-combinations-on-chessboard",
+              "difficulty": "Hard",
+              "rating": 2611
+            },
+            {
+              "slug": "maximum-product-of-subsequences-with-an-alternating-sum-equal-to-k",
+              "difficulty": "Hard",
+              "rating": 2703
+            },
+            {
+              "slug": "split-array-with-same-average",
+              "difficulty": "Hard",
+              "rating": 1983
+            },
+            {
+              "slug": "minimum-removals-to-achieve-target-xor",
+              "difficulty": "Medium",
+              "rating": 1745
+            },
+            {
+              "slug": "count-sequences-to-k",
+              "difficulty": "Hard",
+              "rating": 1965
+            },
+            {
+              "slug": "closest-subsequence-sum",
+              "difficulty": "Hard",
+              "rating": 2364
+            },
+            {
+              "slug": "tallest-billboard",
+              "difficulty": "Hard",
+              "rating": 2381
+            },
+            {
+              "slug": "partition-array-into-two-arrays-to-minimize-sum-difference",
+              "difficulty": "Hard",
+              "rating": 2490
+            },
+            {
+              "slug": "minimum-cost-to-merge-sorted-lists",
+              "difficulty": "Hard",
+              "rating": 2399
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 入门 DP",
+          "questionNum": 9,
+          "questions": [
+            {
+              "slug": "count-number-of-texts",
+              "difficulty": "Medium",
+              "rating": 1857
+            },
+            {
+              "slug": "maximum-total-damage-with-spell-casting",
+              "difficulty": "Medium",
+              "rating": 1841
+            },
+            {
+              "slug": "solving-questions-with-brainpower",
+              "difficulty": "Medium",
+              "rating": 1709
+            },
+            {
+              "slug": "k-concatenation-maximum-sum",
+              "difficulty": "Medium",
+              "rating": 1748
+            },
+            {
+              "slug": "maximum-sum-circular-subarray",
+              "difficulty": "Medium",
+              "rating": 1777
+            },
+            {
+              "slug": "maximum-score-of-spliced-array",
+              "difficulty": "Hard",
+              "rating": 1791
+            },
+            {
+              "slug": "maximum-subarray-sum-with-one-deletion",
+              "difficulty": "Medium",
+              "rating": 1799
+            },
+            {
+              "slug": "divisible-game",
+              "difficulty": "Medium",
+              "rating": 1944
+            },
+            {
+              "slug": "maximum-path-intersection-sum-in-a-grid",
+              "difficulty": "Medium",
+              "rating": 2252
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 网格图 DP",
+          "questionNum": 14,
+          "questions": [
+            {
+              "slug": "minimum-xor-path-in-a-grid",
+              "difficulty": "Medium",
+              "rating": 1771
+            },
+            {
+              "slug": "maximum-amount-of-money-robot-can-earn",
+              "difficulty": "Medium",
+              "rating": 1798
+            },
+            {
+              "slug": "maximum-path-score-in-a-grid",
+              "difficulty": "Medium",
+              "rating": 1804
+            },
+            {
+              "slug": "minimum-sideway-jumps",
+              "difficulty": "Medium",
+              "rating": 1778
+            },
+            {
+              "slug": "maximum-non-negative-product-in-a-matrix",
+              "difficulty": "Medium",
+              "rating": 1807
+            },
+            {
+              "slug": "number-of-paths-with-max-score",
+              "difficulty": "Hard",
+              "rating": 1853
+            },
+            {
+              "slug": "twisted-mirror-path-count",
+              "difficulty": "Medium",
+              "rating": 1883
+            },
+            {
+              "slug": "paths-in-matrix-whose-sum-is-divisible-by-k",
+              "difficulty": "Hard",
+              "rating": 1952
+            },
+            {
+              "slug": "number-of-increasing-paths-in-a-grid",
+              "difficulty": "Hard",
+              "rating": 2001
+            },
+            {
+              "slug": "check-if-there-is-a-valid-parentheses-string-path",
+              "difficulty": "Hard",
+              "rating": 2085
+            },
+            {
+              "slug": "maximum-number-of-points-with-cost",
+              "difficulty": "Medium",
+              "rating": 2106
+            },
+            {
+              "slug": "find-the-maximum-number-of-fruits-collected",
+              "difficulty": "Hard",
+              "rating": 2404
+            },
+            {
+              "slug": "cherry-pickup-ii",
+              "difficulty": "Hard",
+              "rating": 1957
+            },
+            {
+              "slug": "length-of-longest-v-shaped-diagonal-segment",
+              "difficulty": "Hard",
+              "rating": 2337
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 背包",
+          "questionNum": 16,
+          "questions": [
+            {
+              "slug": "ways-to-express-an-integer-as-sum-of-powers",
+              "difficulty": "Medium",
+              "rating": 1818
+            },
+            {
+              "slug": "maximum-number-of-items-from-sale-i",
+              "difficulty": "Medium",
+              "rating": 1728
+            },
+            {
+              "slug": "maximum-total-reward-using-operations-i",
+              "difficulty": "Medium",
+              "rating": 1849
+            },
+            {
+              "slug": "zero-array-transformation-iv",
+              "difficulty": "Medium",
+              "rating": 2068
+            },
+            {
+              "slug": "subsequence-sum-after-capping-elements",
+              "difficulty": "Medium",
+              "rating": 2073
+            },
+            {
+              "slug": "last-stone-weight-ii",
+              "difficulty": "Medium",
+              "rating": 2092
+            },
+            {
+              "slug": "profitable-schemes",
+              "difficulty": "Hard",
+              "rating": 2204
+            },
+            {
+              "slug": "find-the-sum-of-the-power-of-all-subsequences",
+              "difficulty": "Hard",
+              "rating": 2242
+            },
+            {
+              "slug": "number-of-great-partitions",
+              "difficulty": "Hard",
+              "rating": 2415
+            },
+            {
+              "slug": "painting-the-walls",
+              "difficulty": "Hard",
+              "rating": 2425
+            },
+            {
+              "slug": "find-the-maximum-sequence-value-of-array",
+              "difficulty": "Hard",
+              "rating": 2545
+            },
+            {
+              "slug": "maximum-total-reward-using-operations-ii",
+              "difficulty": "Hard",
+              "rating": 2688
+            },
+            {
+              "slug": "inverse-coin-change",
+              "difficulty": "Medium",
+              "rating": 1701
+            },
+            {
+              "slug": "form-largest-integer-with-digits-that-add-up-to-target",
+              "difficulty": "Hard",
+              "rating": 1927
+            },
+            {
+              "slug": "minimize-the-difference-between-target-and-chosen-elements",
+              "difficulty": "Medium",
+              "rating": 2010
+            },
+            {
+              "slug": "maximum-value-of-k-coins-from-piles",
+              "difficulty": "Hard",
+              "rating": 2158
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 经典线性 DP",
+          "questionNum": 23,
+          "questions": [
+            {
+              "slug": "uncrossed-lines",
+              "difficulty": "Medium",
+              "rating": 1806
+            },
+            {
+              "slug": "maximum-number-of-subsequences-after-one-inserting",
+              "difficulty": "Medium",
+              "rating": 1754
+            },
+            {
+              "slug": "max-dot-product-of-two-subsequences",
+              "difficulty": "Hard",
+              "rating": 1824
+            },
+            {
+              "slug": "maximum-score-using-exactly-k-pairs",
+              "difficulty": "Hard",
+              "rating": 1988
+            },
+            {
+              "slug": "find-maximum-removals-from-source-string",
+              "difficulty": "Medium",
+              "rating": 2062
+            },
+            {
+              "slug": "number-of-ways-to-form-a-target-string-given-a-dictionary",
+              "difficulty": "Hard",
+              "rating": 2082
+            },
+            {
+              "slug": "shortest-common-supersequence",
+              "difficulty": "Hard",
+              "rating": 1977
+            },
+            {
+              "slug": "sorting-three-groups",
+              "difficulty": "Medium",
+              "rating": 1721
+            },
+            {
+              "slug": "find-the-longest-valid-obstacle-course-at-each-position",
+              "difficulty": "Hard",
+              "rating": 1933
+            },
+            {
+              "slug": "minimum-operations-to-make-the-array-k-increasing",
+              "difficulty": "Hard",
+              "rating": 1941
+            },
+            {
+              "slug": "longest-strictly-increasing-subsequence-with-non-zero-bitwise-and",
+              "difficulty": "Medium",
+              "rating": 1846
+            },
+            {
+              "slug": "minimum-number-of-removals-to-make-mountain-array",
+              "difficulty": "Hard",
+              "rating": 1913
+            },
+            {
+              "slug": "best-team-with-no-conflicts",
+              "difficulty": "Medium",
+              "rating": 2027
+            },
+            {
+              "slug": "maximum-height-by-stacking-cuboids",
+              "difficulty": "Hard",
+              "rating": 2172
+            },
+            {
+              "slug": "delete-columns-to-make-sorted-iii",
+              "difficulty": "Hard",
+              "rating": 2247
+            },
+            {
+              "slug": "maximize-fixed-points-after-deletions",
+              "difficulty": "Hard",
+              "rating": 2264
+            },
+            {
+              "slug": "longest-increasing-subsequence-ii",
+              "difficulty": "Hard",
+              "rating": 2280
+            },
+            {
+              "slug": "make-array-strictly-increasing",
+              "difficulty": "Hard",
+              "rating": 2316
+            },
+            {
+              "slug": "minimum-operations-to-make-a-subsequence",
+              "difficulty": "Hard",
+              "rating": 2351
+            },
+            {
+              "slug": "length-of-the-longest-increasing-path",
+              "difficulty": "Hard",
+              "rating": 2450
+            },
+            {
+              "slug": "largest-divisible-subset",
+              "difficulty": "Medium",
+              "rating": 1800,
+              "ratingApprox": true
+            },
+            {
+              "slug": "longest-unequal-adjacent-groups-subsequence-ii",
+              "difficulty": "Medium",
+              "rating": 1899
+            },
+            {
+              "slug": "count-distinct-ways-to-form-target-from-two-strings",
+              "difficulty": "Hard",
+              "rating": 2128
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 划分型 DP",
+          "questionNum": 32,
+          "questions": [
+            {
+              "slug": "check-if-there-is-a-valid-partition-for-the-array",
+              "difficulty": "Medium",
+              "rating": 1780
+            },
+            {
+              "slug": "extra-characters-in-a-string",
+              "difficulty": "Medium",
+              "rating": 1736
+            },
+            {
+              "slug": "maximize-total-cost-of-alternating-subarrays",
+              "difficulty": "Medium",
+              "rating": 1847
+            },
+            {
+              "slug": "partition-string-into-minimum-beautiful-substrings",
+              "difficulty": "Medium",
+              "rating": 1865
+            },
+            {
+              "slug": "partition-array-for-maximum-sum",
+              "difficulty": "Medium",
+              "rating": 1916
+            },
+            {
+              "slug": "minimum-substring-partition-of-equal-character-frequency",
+              "difficulty": "Medium",
+              "rating": 1917
+            },
+            {
+              "slug": "restore-the-array",
+              "difficulty": "Hard",
+              "rating": 1920
+            },
+            {
+              "slug": "maximum-number-of-non-overlapping-palindrome-substrings",
+              "difficulty": "Hard",
+              "rating": 2013
+            },
+            {
+              "slug": "filling-bookcase-shelves",
+              "difficulty": "Medium",
+              "rating": 2014
+            },
+            {
+              "slug": "minimum-cost-to-split-an-array",
+              "difficulty": "Hard",
+              "rating": 2020
+            },
+            {
+              "slug": "count-partitions-with-max-min-difference-at-most-k",
+              "difficulty": "Medium",
+              "rating": 2033
+            },
+            {
+              "slug": "maximum-deletions-on-a-string",
+              "difficulty": "Hard",
+              "rating": 2102
+            },
+            {
+              "slug": "minimum-total-distance-traveled",
+              "difficulty": "Hard",
+              "rating": 2454
+            },
+            {
+              "slug": "minimum-steps-to-convert-string-with-operations",
+              "difficulty": "Hard",
+              "rating": 2493
+            },
+            {
+              "slug": "minimum-cost-to-divide-array-into-subarrays",
+              "difficulty": "Hard",
+              "rating": 2569
+            },
+            {
+              "slug": "minimum-cost-to-convert-string-ii",
+              "difficulty": "Hard",
+              "rating": 2696
+            },
+            {
+              "slug": "minimum-cost-good-caption",
+              "difficulty": "Hard",
+              "rating": 2765
+            },
+            {
+              "slug": "largest-sum-of-averages",
+              "difficulty": "Medium",
+              "rating": 1937
+            },
+            {
+              "slug": "partition-array-to-minimize-xor",
+              "difficulty": "Medium",
+              "rating": 1955
+            },
+            {
+              "slug": "palindrome-partitioning-iii",
+              "difficulty": "Hard",
+              "rating": 1979
+            },
+            {
+              "slug": "palindrome-partitioning-iv",
+              "difficulty": "Hard",
+              "rating": 1925
+            },
+            {
+              "slug": "minimum-difficulty-of-a-job-schedule",
+              "difficulty": "Hard",
+              "rating": 2035
+            },
+            {
+              "slug": "paint-house-iii",
+              "difficulty": "Hard",
+              "rating": 2056
+            },
+            {
+              "slug": "minimum-white-tiles-after-covering-with-carpets",
+              "difficulty": "Hard",
+              "rating": 2106
+            },
+            {
+              "slug": "allocate-mailboxes",
+              "difficulty": "Hard",
+              "rating": 2190
+            },
+            {
+              "slug": "sum-of-k-subarrays-with-length-at-least-m",
+              "difficulty": "Medium",
+              "rating": 2274
+            },
+            {
+              "slug": "minimum-total-space-wasted-with-k-resizing-operations",
+              "difficulty": "Medium",
+              "rating": 2310
+            },
+            {
+              "slug": "number-of-beautiful-partitions",
+              "difficulty": "Hard",
+              "rating": 2344
+            },
+            {
+              "slug": "merge-operations-for-minimum-travel-time",
+              "difficulty": "Hard",
+              "rating": 2461
+            },
+            {
+              "slug": "maximum-strength-of-k-disjoint-subarrays",
+              "difficulty": "Hard",
+              "rating": 2557
+            },
+            {
+              "slug": "minimum-changes-to-make-k-semi-palindromes",
+              "difficulty": "Hard",
+              "rating": 2608
+            },
+            {
+              "slug": "minimum-sum-of-values-by-dividing-array",
+              "difficulty": "Hard",
+              "rating": 2735
+            }
+          ]
+        },
+        {
+          "name": "7. 动态规划 · 状态机 DP",
+          "questionNum": 24,
+          "questions": [
+            {
+              "slug": "best-time-to-buy-and-sell-stock-v",
+              "difficulty": "Medium",
+              "rating": 1777
+            },
+            {
+              "slug": "maximum-length-of-subarray-with-positive-product",
+              "difficulty": "Medium",
+              "rating": 1710
+            },
+            {
+              "slug": "visit-array-positions-to-maximize-score",
+              "difficulty": "Medium",
+              "rating": 1733
+            },
+            {
+              "slug": "maximum-total-value-of-covered-indices",
+              "difficulty": "Medium",
+              "rating": 1763
+            },
+            {
+              "slug": "maximum-alternating-subsequence-sum",
+              "difficulty": "Medium",
+              "rating": 1786
+            },
+            {
+              "slug": "subsequence-after-one-replacement",
+              "difficulty": "Medium",
+              "rating": 1755
+            },
+            {
+              "slug": "longest-non-decreasing-subarray-from-two-arrays",
+              "difficulty": "Medium",
+              "rating": 1792
+            },
+            {
+              "slug": "longest-non-decreasing-subarray-after-replacing-at-most-one-element",
+              "difficulty": "Medium",
+              "rating": 1811
+            },
+            {
+              "slug": "minimum-operations-to-transform-binary-string",
+              "difficulty": "Medium",
+              "rating": 1846
+            },
+            {
+              "slug": "minimum-increase-to-maximize-special-indices",
+              "difficulty": "Medium",
+              "rating": 1953
+            },
+            {
+              "slug": "get-the-maximum-score",
+              "difficulty": "Hard",
+              "rating": 1961
+            },
+            {
+              "slug": "maximum-subarray-sum-after-multiplier",
+              "difficulty": "Medium",
+              "rating": 1981
+            },
+            {
+              "slug": "number-of-alternating-xor-partitions",
+              "difficulty": "Medium",
+              "rating": 2006
+            },
+            {
+              "slug": "minimum-increment-operations-to-make-array-beautiful",
+              "difficulty": "Medium",
+              "rating": 2031
+            },
+            {
+              "slug": "longest-arithmetic-sequence-after-changing-at-most-one-element",
+              "difficulty": "Medium",
+              "rating": 2042
+            },
+            {
+              "slug": "minimum-swaps-to-make-sequences-increasing",
+              "difficulty": "Hard",
+              "rating": 2066
+            },
+            {
+              "slug": "maximum-frequency-after-subarray-operation",
+              "difficulty": "Medium",
+              "rating": 2094
+            },
+            {
+              "slug": "count-number-of-special-subsequences",
+              "difficulty": "Hard",
+              "rating": 2125
+            },
+            {
+              "slug": "longest-alternating-subarray-after-removing-at-most-one-element",
+              "difficulty": "Hard",
+              "rating": 2162
+            },
+            {
+              "slug": "find-the-maximum-sum-of-node-values",
+              "difficulty": "Hard",
+              "rating": 2268
+            },
+            {
+              "slug": "trionic-array-ii",
+              "difficulty": "Hard",
+              "rating": 2278
+            },
+            {
+              "slug": "substring-with-largest-variance",
+              "difficulty": "Hard",
+              "rating": 2516
+            },
+            {
+              "slug": "maximum-walls-destroyed-by-robots",
+              "difficulty": "Hard",
+              "rating": 2525
+            },
+            {
+              "slug": "maximize-cyclic-partition-score",
+              "difficulty": "Hard",
+              "rating": 3125
             }
           ]
         }

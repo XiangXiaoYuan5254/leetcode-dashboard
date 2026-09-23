@@ -34,6 +34,10 @@ function keyOf(s) { return s.slug || 't:' + s.title; }
 function problemOf(key) {
   return state.problems[key] || { frontendId: '', translatedTitle: key.startsWith('t:') ? key.slice(2) : key, difficulty: 'Unknown', tags: [] };
 }
+function difficultyOf(key, fallback = 'Unknown') {
+  const current = problemOf(key).difficulty;
+  return current && current !== 'Unknown' ? current : (fallback || 'Unknown');
+}
 
 /* ================= 统计计算 ================= */
 
@@ -192,11 +196,18 @@ function yearLabel() { return state.year === 'all' ? '累计' : state.year === n
 /* ---------- 首屏 ---------- */
 
 // 重刷：题单的当前轮次以最后一次重刷时间点为分界，之前的完成不计入本轮
+// roundMeta（手工修正）优先：{ round?, startedAt? }
 function planCutoff(p) {
+  const meta = p.roundMeta || {};
+  if (meta.startedAt) return meta.startedAt;
   const r = p.restarts || [];
   return r.length ? r[r.length - 1] : 0; // 毫秒；0 = 从头计
 }
-function planRound(p) { return (p.restarts || []).length + 1; }
+function planRound(p) {
+  const meta = p.roundMeta || {};
+  if (Number.isFinite(meta.round)) return meta.round;
+  return (p.restarts || []).length + 1;
+}
 
 // 某题在 cutoff（毫秒）之后是否被 AC 过；cutoff=0 表示只要历史上做过即可
 function solvedSince(solvedTsByKey, slug, cutoff) {
@@ -222,6 +233,76 @@ function planProgress(p, solvedTsByKey, cutoff) {
   return { done, total, pct: total ? done / total : 0 };
 }
 
+// 题单里参与统计的题目 slug（与 planProgress 的口径一致）
+function planTrackedSlugs(p) {
+  const out = new Set();
+  for (const g of p.groups) {
+    if (g.questions.length === 0 && g.questionNum > 0) continue; // 🔒 会员章节
+    for (const q of g.questions) {
+      if (q.trackable === false) continue;
+      out.add(q.slug);
+    }
+  }
+  return out;
+}
+
+// 本轮时间跨度：起始日 + 最近一次 AC；cutoff=0 时起始日按最早一次 AC 推断
+function planRoundSpan(p, solvedTsByKey, cutoff) {
+  let firstTs = null, lastTs = null;
+  for (const slug of planTrackedSlugs(p)) {
+    const arr = solvedTsByKey.get(slug);
+    if (!arr) continue;
+    for (const ts of arr) {
+      const ms = ts * 1000;
+      if (cutoff && ms < cutoff) continue;
+      if (firstTs === null || ms < firstTs) firstTs = ms;
+      if (lastTs === null || ms > lastTs) lastTs = ms;
+    }
+  }
+  return {
+    start: cutoff || firstTs,       // 毫秒，或 null（本轮还没做过题）
+    lastAc: lastTs,
+    inferred: !cutoff && firstTs !== null, // 起始日是推断出来的，不是重刷点
+  };
+}
+
+function dayStart(ms) { const d = new Date(ms); d.setHours(0, 0, 0, 0); return d.getTime(); }
+// 含首尾的自然天数：同一天算 1 天
+function daysBetween(fromMs, toMs) {
+  return Math.max(1, Math.round((dayStart(toMs) - dayStart(fromMs)) / 86400000) + 1);
+}
+function fmtFullDate(ms) { return new Date(ms).toLocaleDateString('zh-CN'); }
+function dateInputValue(ms) {
+  const d = new Date(ms);
+  return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+}
+
+// 本轮用时：已刷完的轮次冻结在最后一次 AC，未刷完的算到今天
+function roundDuration(span, finished) {
+  if (!span.start) return null;
+  const end = finished && span.lastAc ? span.lastAc : Date.now();
+  return { days: daysBetween(span.start, end), frozen: !!(finished && span.lastAc) };
+}
+
+// 上一轮的起止（只用重刷时间点划界，够用于提示，不做完整历史回放）
+function prevRoundSpan(p, solvedTsByKey, cutoff) {
+  const r = p.restarts || [];
+  if (!cutoff || !r.length) return null;
+  const idx = r.lastIndexOf(cutoff);
+  const prevCut = idx > 0 ? r[idx - 1] : (idx === 0 ? 0 : r[r.length - 1]);
+  let firstTs = null, lastTs = null;
+  for (const slug of planTrackedSlugs(p)) {
+    for (const ts of solvedTsByKey.get(slug) || []) {
+      const ms = ts * 1000;
+      if (ms >= cutoff || (prevCut && ms < prevCut)) continue;
+      if (firstTs === null || ms < firstTs) firstTs = ms;
+      if (lastTs === null || ms > lastTs) lastTs = ms;
+    }
+  }
+  if (firstTs === null) return null;
+  return { start: prevCut || firstTs, lastAc: lastTs, days: daysBetween(prevCut || firstTs, lastTs) };
+}
+
 // 题单整体折叠状态（本地记忆）
 function collapsedPlans() {
   try { return new Set(JSON.parse(localStorage.getItem('lc-plan-collapsed') || '[]')); } catch (e) { return new Set(); }
@@ -241,14 +322,20 @@ function primaryPlan() {
 function renderHero(s) {
   // 首页大环：优先展示“主题单”的完成进度，没有题单时退回提交通过率
   const plan = state.demoMode ? null : primaryPlan();
-  let rate, pctText, fracText, label;
+  let rate, pctText, fracText, label, durText = '';
   if (plan) {
-    const pr = planProgress(plan, s.allSolvedTs, planCutoff(plan));
+    const cutoff = planCutoff(plan);
+    const pr = planProgress(plan, s.allSolvedTs, cutoff);
     const round = planRound(plan);
+    const dur = roundDuration(
+      planRoundSpan(plan, s.allSolvedTs, cutoff),
+      pr.done === pr.total && pr.total > 0
+    );
     rate = pr.pct;
     pctText = Math.round(pr.pct * 100) + '%';
     fracText = `已完成 ${pr.done} / ${pr.total} 题`;
-    label = `「${plan.name}」进度${round > 1 ? ` · 第 ${round} 轮` : ''}`;
+    durText = dur ? `${dur.frozen ? '用时' : '已刷'} ${dur.days} 天` : '';
+    label = `「${plan.name}」进度 · 第 ${round} 轮`;
   } else {
     rate = s.totalSubs ? s.acSubs / s.totalSubs : 0;
     pctText = Math.round(rate * 100) + '%';
@@ -269,6 +356,7 @@ function renderHero(s) {
       <div class="ring-center">
         <span class="pct num-font">${pctText}</span>
         <span class="frac num-font">${fracText}</span>
+        ${durText ? `<span class="dur num-font">${durText}</span>` : ''}
       </div>
     </div>
     <span class="ring-label">${escapeHtml(label)}${plan ? '<br><span class="ring-hint">在题单卡片上点 ★ 可切换首页展示的题单</span>' : ''}</span>`;
@@ -427,6 +515,11 @@ function renderPlans(s) {
     const difficultyBySlug = new Map(
       p.groups.flatMap((group) => group.questions.map((q) => [q.slug, q.difficulty]))
     );
+    const excludedBySlug = new Map(
+      p.groups.flatMap((group) => group.questions
+        .filter((q) => q.trackable === false)
+        .map((q) => [q.slug, q.exclusionReason || '']))
+    );
     // 会员锁定章节（接口读不到题目）不展示；内置课程可用 lessons 展示逐期视频
     const groupRows = p.groups.filter((g) => g.questions.length > 0 || (g.lessons || []).length > 0).map((g) => {
       const questions = g.questions.filter((q) => q.trackable !== false);
@@ -440,7 +533,7 @@ function renderPlans(s) {
           const info = problemOf(slug);
           const solved = solvedSince(s.allSolvedTs, slug, cutoff);
           const id = info.frontendId || slug;
-          const difficulty = difficultyBySlug.get(slug) || info.difficulty || 'Unknown';
+          const difficulty = difficultyOf(slug, difficultyBySlug.get(slug));
           return `<span class="lesson-question">
             <a class="lesson-q${solved ? ' solved' : ''}" href="https://leetcode.cn/problems/${slug}/" target="_blank" title="${escapeHtml(info.translatedTitle || slug)}">${solved ? '✓ ' : ''}LC ${escapeHtml(id)}</a>
             <span class="diff ${difficulty}">${DIFF_NAME[difficulty] || difficulty}</span>
@@ -448,15 +541,21 @@ function renderPlans(s) {
         }).join('');
         const related = (lesson.relatedQuestionSlugs || []).map((slug) => {
           const info = problemOf(slug);
+          const excluded = excludedBySlug.has(slug);
+          const solved = !excluded && solvedSince(s.allSolvedTs, slug, cutoff);
           const id = info.frontendId || slug;
-          const difficulty = difficultyBySlug.get(slug) || info.difficulty || 'Unknown';
+          const difficulty = difficultyOf(slug, difficultyBySlug.get(slug));
           return `<span class="lesson-question">
-            <a class="lesson-q related" href="https://leetcode.cn/problems/${slug}/" target="_blank" title="同类力扣题：${escapeHtml(info.translatedTitle || slug)}">同类 LC ${escapeHtml(id)}</a>
-            <span class="diff ${difficulty}">${DIFF_NAME[difficulty] || difficulty}</span>
+            <a class="lesson-q related${solved ? ' solved' : ''}" href="https://leetcode.cn/problems/${slug}/" target="_blank" title="同类力扣题：${escapeHtml(info.translatedTitle || slug)}">${solved ? '✓ ' : ''}同类 LC ${escapeHtml(id)}</a>
+            ${excluded
+              ? `<span class="lesson-kind">${escapeHtml(excludedBySlug.get(slug))}${excludedBySlug.get(slug) ? ' · ' : ''}不计入统计</span>`
+              : `<span class="diff ${difficulty}">${DIFF_NAME[difficulty] || difficulty}</span>`}
           </span>`;
         }).join('');
         const exactSlugs = lesson.questionSlugs || [];
-        const solved = exactSlugs.length > 0 && exactSlugs.every((slug) => solvedSince(s.allSolvedTs, slug, cutoff));
+        const trackedSlugs = [...exactSlugs, ...(lesson.relatedQuestionSlugs || [])]
+          .filter((slug) => !excludedBySlug.has(slug));
+        const solved = trackedSlugs.length > 0 && trackedSlugs.every((slug) => solvedSince(s.allSolvedTs, slug, cutoff));
         const kind = !exact && !related ? '<span class="lesson-kind">课程</span>' : '';
         return `<div class="pq lesson-row${solved ? ' solved' : ''}">
           <i>${solved ? '✓' : '▶'}</i>
@@ -468,10 +567,16 @@ function renderPlans(s) {
         const info = problemOf(q.slug);
         const solved = solvedSince(s.allSolvedTs, q.slug, cutoff);
         const title = (info.frontendId ? info.frontendId + '. ' : '') + (info.translatedTitle || q.slug);
+        const difficulty = difficultyOf(q.slug, q.difficulty);
+        // 灵神题单带周赛难度分；「约」表示题单作者给的估计值
+        const rating = Number.isFinite(q.rating)
+          ? `<span class="pq-rating" title="${q.ratingApprox ? '估计难度分' : '难度分'}">${q.ratingApprox ? '约 ' : ''}${q.rating}</span>`
+          : '';
         return `<a class="pq${solved ? ' solved' : ''}" href="https://leetcode.cn/problems/${q.slug}/" target="_blank">
           <i>${solved ? '✓' : ''}</i>
           <span class="pq-t">${escapeHtml(title)}</span>
-          <span class="diff ${q.difficulty}">${DIFF_NAME[q.difficulty] || q.difficulty}</span></a>`;
+          ${rating}
+          <span class="diff ${difficulty}">${DIFF_NAME[difficulty] || difficulty}</span></a>`;
       }).join('');
       const detailRows = lessons.length ? lessonRows : questionRows;
       const frac = total
@@ -487,12 +592,27 @@ function renderPlans(s) {
     const pr = planProgress(p, s.allSolvedTs, cutoff);
     const pct = Math.round(pr.pct * 100);
     const isPrimary = primary && primary.slug === p.slug;
-    const roundBadge = round > 1
-      ? `<span class="plan-round" title="自 ${new Date(cutoff).toLocaleDateString('zh-CN')} 起重新计数">第 ${round} 轮 · ${new Date(cutoff).toLocaleDateString('zh-CN', { month: 'numeric', day: 'numeric' })} 起<button class="round-undo" data-slug="${p.slug}" title="撤销本次重刷，回到上一轮">撤销</button></span>`
-      : '';
+    const span = planRoundSpan(p, s.allSolvedTs, cutoff);
+    const dur = roundDuration(span, pr.done === pr.total && pr.total > 0);
+    const prev = prevRoundSpan(p, s.allSolvedTs, cutoff);
+    const tipLines = [`第 ${round} 轮`];
+    if (span.start) {
+      tipLines.push(`起始：${fmtFullDate(span.start)}${span.inferred ? '（按最早一次通过推算）' : ''}`);
+      if (span.lastAc) tipLines.push(`最近通过：${fmtFullDate(span.lastAc)}`);
+      if (dur) tipLines.push(dur.frozen ? `本轮用时 ${dur.days} 天（已刷完）` : `已历时 ${dur.days} 天`);
+    } else {
+      tipLines.push(cutoff ? `自 ${fmtFullDate(cutoff)} 起重新计数，本轮还没通过题目` : '本轮还没通过题目');
+    }
+    // 已被修正成第 1 轮时不提“上一轮”，免得和用户自己的标注打架
+    if (prev && round > 1) {
+      tipLines.push(`上一轮（第 ${round - 1} 轮）：${fmtFullDate(prev.start)} → ${fmtFullDate(prev.lastAc)}，${prev.days} 天`);
+    }
+    tipLines.push('点「改」可修正轮次编号与起始日');
+    const durText = dur ? ` · ${dur.frozen ? '用时' : '已刷'} ${dur.days} 天` : (span.start ? '' : ' · 未开始');
+    const roundBadge = `<span class="plan-round" data-tip="${escapeHtml(tipLines.join('\n'))}">第 ${round} 轮${durText}<button class="round-edit" data-slug="${p.slug}" data-name="${escapeHtml(p.name)}" data-round="${round}" data-start="${span.start ? dateInputValue(span.start) : ''}" title="修正轮次编号与起始日">改</button>${(p.restarts || []).length ? `<button class="round-undo" data-slug="${p.slug}" title="撤销本次重刷，回到上一轮">撤销</button>` : ''}</span>`;
     const sourceStats = p.sourceStats
-      ? `<div class="plan-source-note">合集 ${p.sourceStats.videoCount} 期 = ${p.sourceStats.problemVideoCount} 期力扣题相关视频 + ${p.sourceStats.basicTheoryOrSummaryVideoCount} 期基础理论/总结 + ${p.sourceStats.graphVideoCount} 期图论（卡码网 ACM） · 章节内共 ${p.sourceStats.groupQuestionOccurrenceCount} 个题目位置，全局去重 ${p.sourceStats.uniqueLeetcodeQuestionCount} 题</div>`
-      : '';
+      ? `<div class="plan-source-note">合集 ${p.sourceStats.videoCount} 期 = ${p.sourceStats.problemVideoCount} 期力扣题相关视频 + ${p.sourceStats.basicTheoryOrSummaryVideoCount} 期基础理论/总结 + ${p.sourceStats.graphVideoCount} 期图论（卡码网 ACM，含 ${p.sourceStats.graphRelatedLeetcodeQuestionCount || 0} 道关联力扣题） · 章节内共 ${p.sourceStats.groupQuestionOccurrenceCount} 个题目位置，全局去重 ${p.sourceStats.uniqueLeetcodeQuestionCount} 题</div>`
+      : (p.note ? `<div class="plan-source-note">${escapeHtml(p.note)}</div>` : '');
     return `<div class="card plan-card${isCollapsed ? ' collapsed' : ''}">
       <div class="plan-top">
         <button class="plan-collapse" data-slug="${p.slug}" title="${isCollapsed ? '展开题单' : '收起题单'}">▾</button>
@@ -520,6 +640,9 @@ function renderPlans(s) {
 
 const PLAN_PRESETS = [
   { slug: 'code-thinking', name: '代码随想录' },
+  { slug: 'lingshen-le1700', name: '灵神 · ≤1700' },
+  { slug: 'lingshen-unrated', name: '灵神 · 无难度分' },
+  { slug: 'lingshen-gt1700', name: '灵神 · >1700' },
   { slug: 'programming-skills', name: '编程基础 0 到 1' },
   { slug: 'top-100-liked', name: 'LeetCode 热题 100' },
   { slug: 'top-interview-150', name: '面试经典 150 题' },
@@ -582,6 +705,56 @@ async function restartPlan(slug, name) {
     body: JSON.stringify({ slug }),
   });
   if (r.ok) { toast(`↻ 已开始第 ${r.round} 轮`); await loadData(); }
+}
+
+let roundEditSlug = null;
+let roundEditStartWas = '';
+
+function openRoundDialog(btn) {
+  roundEditSlug = btn.dataset.slug;
+  $('#roundPlanName').textContent = btn.dataset.name;
+  $('#roundNum').value = btn.dataset.round;
+  roundEditStartWas = btn.dataset.start || '';
+  $('#roundStart').value = roundEditStartWas;
+  const msg = $('#roundMsg');
+  msg.textContent = ''; msg.className = 'dialog-msg';
+  $('#roundDialog').showModal();
+}
+
+async function saveRound() {
+  const msg = $('#roundMsg');
+  const round = Number($('#roundNum').value);
+  if (!Number.isInteger(round) || round < 1 || round > 999) {
+    msg.textContent = '轮次请填 1 ~ 999 的整数'; msg.className = 'dialog-msg error';
+    return;
+  }
+  // 起始日没动过就不提交，避免把「只改编号」变成挪动计数分界
+  const startVal = $('#roundStart').value;
+  const payload = { slug: roundEditSlug, round };
+  if (startVal !== roundEditStartWas) payload.startedAt = startVal || null;
+  const btn = $('#roundOkBtn');
+  btn.disabled = true;
+  msg.textContent = '保存中…'; msg.className = 'dialog-msg';
+  let r;
+  try {
+    r = await api('/api/plans/round', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  } catch (e) {
+    msg.textContent = e.message; msg.className = 'dialog-msg error';
+    return;
+  } finally {
+    btn.disabled = false;
+  }
+  if (!r.ok) {
+    msg.textContent = r.error || '保存失败'; msg.className = 'dialog-msg error';
+    return;
+  }
+  $('#roundDialog').close();
+  toast(`已改为第 ${r.round} 轮`);
+  await loadData();
 }
 
 async function undoRestart(slug) {
@@ -808,8 +981,22 @@ function buildDemoData() {
 /* ================= 数据加载 / 同步 ================= */
 
 async function api(path, opts) {
-  const res = await fetch(path, opts);
-  return res.json();
+  let res;
+  try {
+    res = await fetch(path, opts);
+  } catch (e) {
+    throw new Error('连不上本地服务，请确认仪表盘还在运行');
+  }
+  // 未知路由返回的是纯文本 Not Found，直接 res.json() 会抛 SyntaxError 且无声失败
+  const body = await res.text();
+  let data = null;
+  try { data = body ? JSON.parse(body) : null; } catch (e) { /* 非 JSON */ }
+  if (data === null) {
+    throw new Error(res.status === 404
+      ? '接口不存在：代码更新过，请重启仪表盘'
+      : `服务返回异常（HTTP ${res.status}）`);
+  }
+  return data;
 }
 
 async function loadData() {
@@ -1024,6 +1211,8 @@ $('#planPresets').addEventListener('click', (e) => {
   const b = e.target.closest('button[data-slug]');
   if (b && !b.disabled) addPlan(b.dataset.slug);
 });
+$('#roundCancelBtn').addEventListener('click', () => $('#roundDialog').close());
+$('#roundOkBtn').addEventListener('click', saveRound);
 $('#plansGrid').addEventListener('click', (e) => {
   const collapse = e.target.closest('.plan-collapse');
   if (collapse) {
@@ -1038,6 +1227,8 @@ $('#plansGrid').addEventListener('click', (e) => {
     }
     return;
   }
+  const roundEdit = e.target.closest('.round-edit');
+  if (roundEdit) { openRoundDialog(roundEdit); return; }
   const undo = e.target.closest('.round-undo');
   if (undo) { undoRestart(undo.dataset.slug); return; }
   const restart = e.target.closest('.plan-restart');
@@ -1070,6 +1261,11 @@ document.querySelectorAll('#problemTable thead th[data-sort]').forEach((th) => {
   });
 });
 window.addEventListener('resize', () => Object.values(state.charts).forEach((c) => c.resize()));
+// 兜底：没被 catch 的异步错误至少让用户看见，别静默失败
+window.addEventListener('unhandledrejection', (e) => {
+  const m = e.reason && e.reason.message ? e.reason.message : '操作失败';
+  toast('⚠ ' + m);
+});
 
 // 即时悬浮提示（事件委托，re-render 后无需重新绑定）
 (function () {

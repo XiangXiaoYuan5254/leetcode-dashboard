@@ -182,6 +182,24 @@
   </div>
 </dialog>
 
+<!-- 修正轮次弹窗 -->
+<dialog id="roundDialog">
+  <h2>修正轮次</h2>
+  <p class="dialog-tip" style="margin-top:0">题单：<b id="roundPlanName"></b></p>
+  <div class="auth-pane">
+    <label for="roundNum">第几轮</label>
+    <input id="roundNum" type="number" min="1" max="999" step="1" placeholder="1">
+    <label for="roundStart">本轮起始日</label>
+    <input id="roundStart" type="date">
+    <p class="dialog-tip">轮次编号只改显示，不影响进度统计。<br><b>起始日</b>是本轮的计数分界：只有这天之后通过的题才算本轮完成，「历时多少天」也从这天算起。留空则沿用最近一次重刷时间，没重刷过就按最早一次通过推算。</p>
+  </div>
+  <div id="roundMsg" class="dialog-msg"></div>
+  <div class="dialog-actions">
+    <button id="roundCancelBtn" class="iconbtn">取消</button>
+    <button id="roundOkBtn" class="iconbtn primary">保存</button>
+  </div>
+</dialog>
+
 <div id="chartTip" class="tip"></div>
 <div id="toast" class="toast"></div>
 

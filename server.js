@@ -39,7 +39,12 @@ const CATALOG_TTL_MS = 30 * 24 * 3600 * 1000;
 const PLAN_TTL_MS = 7 * 24 * 3600 * 1000; // 题单详情缓存 7 天
 const DEFAULT_PLANS = ['programming-skills', 'top-100-liked', 'code-thinking'];
 const BUILTIN_PLANS = (readJson(BUILTIN_PLANS_FILE, {}).plans) || {};
-const BUILTIN_PLANS_VERSION = 1;
+// 各版本新增的内置题单：迁移时只补上比当前安装更新的那批
+const BUILTIN_PLAN_RELEASES = [
+  { version: 1, slugs: ['code-thinking'] },
+  { version: 2, slugs: ['lingshen-le1700', 'lingshen-unrated', 'lingshen-gt1700'] },
+];
+const BUILTIN_PLANS_VERSION = BUILTIN_PLAN_RELEASES[BUILTIN_PLAN_RELEASES.length - 1].version;
 
 // ---------- 小工具 ----------
 
@@ -55,9 +60,14 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // 新增内置题单时为已有安装执行一次迁移；用户迁移后主动移除题单不会被再次添加。
 function migrateBuiltInPlans() {
   const config = readJson(FILES.config, {});
-  if ((config.builtinPlansVersion || 0) >= BUILTIN_PLANS_VERSION) return;
+  const from = config.builtinPlansVersion || 0;
+  if (from >= BUILTIN_PLANS_VERSION) return;
+  const added = BUILTIN_PLAN_RELEASES
+    .filter((r) => r.version > from)
+    .flatMap((r) => r.slugs)
+    .filter((slug) => BUILTIN_PLANS[slug]);
   const current = Array.isArray(config.plans) ? config.plans : DEFAULT_PLANS;
-  config.plans = [...new Set([...current, ...Object.keys(BUILTIN_PLANS)])];
+  config.plans = [...new Set([...current, ...added])];
   config.builtinPlansVersion = BUILTIN_PLANS_VERSION;
   writeJson(FILES.config, config);
 }
@@ -335,6 +345,32 @@ function writePlanCache(plans) {
   writeJson(FILES.plans, { plans: remotePlans });
 }
 
+// "YYYY-MM-DD" -> 当天 0 点的本地毫秒时间戳（服务端与前端同机，时区一致）
+function parseLocalDate(input) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(input || '').trim());
+  if (!m) return null;
+  const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  const dt = new Date(y, mo - 1, d);
+  if (dt.getFullYear() !== y || dt.getMonth() !== mo - 1 || dt.getDate() !== d) return null;
+  return dt.getTime();
+}
+
+// 轮次修正：planRounds[slug] = { round?, startedAt? }，覆盖由 planRestarts 推出的默认值
+function readRoundMeta(config, slug) {
+  const all = config.planRounds || {};
+  const meta = all[slug];
+  return meta && typeof meta === 'object' ? meta : {};
+}
+
+function writeRoundMeta(config, slug, meta) {
+  config.planRounds = config.planRounds || {};
+  const clean = {};
+  if (Number.isFinite(meta.round) && meta.round >= 1) clean.round = Math.floor(meta.round);
+  if (Number.isFinite(meta.startedAt) && meta.startedAt > 0) clean.startedAt = meta.startedAt;
+  if (Object.keys(clean).length) config.planRounds[slug] = clean;
+  else delete config.planRounds[slug];
+}
+
 // 从用户输入（slug 或题单页 URL）提取 slug
 function parsePlanSlug(input) {
   const s = String(input || '').trim();
@@ -607,7 +643,11 @@ const server = http.createServer(async (req, res) => {
       const plans = enabledPlanSlugs()
         .map((s) => planCache[s])
         .filter(Boolean)
-        .map((d) => ({ ...d, restarts: restarts[d.slug] || [] }));
+        .map((d) => ({
+          ...d,
+          restarts: restarts[d.slug] || [],
+          roundMeta: readRoundMeta(config, d.slug),
+        }));
       return sendJson(res, 200, {
         submissions: readJson(FILES.submissions, []),
         problems: catalog.questions || {},
@@ -624,8 +664,13 @@ const server = http.createServer(async (req, res) => {
       config.planRestarts = config.planRestarts || {};
       config.planRestarts[slug] = config.planRestarts[slug] || [];
       config.planRestarts[slug].push(Date.now());
+      // 若此前手工修正过轮次，新一轮在修正值上 +1；起始日回落到本次重刷时间
+      const meta = readRoundMeta(config, slug);
+      if (Number.isFinite(meta.round)) writeRoundMeta(config, slug, { round: meta.round + 1 });
+      else writeRoundMeta(config, slug, {});
       writeJson(FILES.config, config);
-      return sendJson(res, 200, { ok: true, round: config.planRestarts[slug].length + 1 });
+      const round = readRoundMeta(config, slug).round || config.planRestarts[slug].length + 1;
+      return sendJson(res, 200, { ok: true, round });
     }
     // 取消最近一次重刷，回到上一轮的计数
     if (p === '/api/plans/restart-cancel' && req.method === 'POST') {
@@ -634,9 +679,44 @@ const server = http.createServer(async (req, res) => {
       const config = readJson(FILES.config, {});
       if (config.planRestarts && Array.isArray(config.planRestarts[slug])) {
         config.planRestarts[slug].pop();
+        const meta = readRoundMeta(config, slug);
+        if (Number.isFinite(meta.round)) writeRoundMeta(config, slug, { round: Math.max(1, meta.round - 1) });
+        else writeRoundMeta(config, slug, {});
         writeJson(FILES.config, config);
       }
       return sendJson(res, 200, { ok: true });
+    }
+    // 手工修正轮次编号与本轮起始日
+    if (p === '/api/plans/round' && req.method === 'POST') {
+      const body = await readBody(req);
+      const slug = parsePlanSlug(body.slug);
+      if (!slug || !enabledPlanSlugs().includes(slug)) {
+        return sendJson(res, 400, { ok: false, error: '题单不存在' });
+      }
+      const round = Number(body.round);
+      if (!Number.isFinite(round) || round < 1 || round > 999) {
+        return sendJson(res, 400, { ok: false, error: '轮次请填 1 ~ 999 的整数' });
+      }
+      const config = readJson(FILES.config, {});
+      const meta = { ...readRoundMeta(config, slug) };
+      // 起始日：body 里没这个字段 = 不改动；给了空值 = 清除（回落到重刷时间／最早一次 AC）
+      if (Object.prototype.hasOwnProperty.call(body, 'startedAt')) {
+        if (body.startedAt) {
+          const ts = parseLocalDate(body.startedAt);
+          if (ts === null) return sendJson(res, 400, { ok: false, error: '起始日期格式不对' });
+          if (ts > Date.now()) return sendJson(res, 400, { ok: false, error: '起始日期不能晚于今天' });
+          meta.startedAt = ts;
+        } else {
+          delete meta.startedAt;
+        }
+      }
+      // 轮次与默认推算值一致时不落盘，保持配置干净
+      const restarts = (config.planRestarts || {})[slug] || [];
+      if (Math.floor(round) === restarts.length + 1) delete meta.round;
+      else meta.round = Math.floor(round);
+      writeRoundMeta(config, slug, meta);
+      writeJson(FILES.config, config);
+      return sendJson(res, 200, { ok: true, round: Math.floor(round) });
     }
     if (p === '/api/plans/add' && req.method === 'POST') {
       const body = await readBody(req);

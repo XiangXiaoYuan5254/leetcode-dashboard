@@ -125,7 +125,8 @@ html[data-skin="brutal"][data-theme="light"] .kpi .num small{color:#111 !importa
 html[data-skin="brutal"] .ring-track,
 html[data-skin="brutal"] .ring-val{stroke-width:18px}
 html[data-skin="brutal"] .ring-center .pct{background:none;color:var(--heat);font-weight:900}
-html[data-skin="brutal"] .ring-center .frac{font-weight:700}
+html[data-skin="brutal"] .ring-center .frac,
+html[data-skin="brutal"] .ring-center .dur{font-weight:700}
 html[data-skin="brutal"] .ring-label{font-weight:900}
 
 /* ---------- 年历墙 / 月视图 ---------- */
